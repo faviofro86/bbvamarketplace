@@ -1,0 +1,393 @@
+@font-face {
+  font-family: "Benton Sans BBVA";
+  src: url("../fonts/BentonSansBBVA-Bold.eot");
+  src: url("../fonts/BentonSansBBVA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/BentonSansBBVA-Bold.woff2") format("woff2"), url("../fonts/BentonSansBBVA-Bold.woff") format("woff"), url("../fonts/BentonSansBBVA-Bold.ttf") format("truetype"), url("../fonts/BentonSansBBVA-Bold.svg#BentonSansBBVA-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Benton Sans BBVA";
+  src: url("../fonts/BentonSansBBVA-Book.eot");
+  src: url("../fonts/BentonSansBBVA-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/BentonSansBBVA-Book.woff2") format("woff2"), url("../fonts/BentonSansBBVA-Book.woff") format("woff"), url("../fonts/BentonSansBBVA-Book.ttf") format("truetype"), url("../fonts/BentonSansBBVA-Book.svg#BentonSansBBVA-Book") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Benton Sans BBVA";
+  src: url("../fonts/BentonSansBBVA-BookItalic.eot");
+  src: url("../fonts/BentonSansBBVA-BookItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/BentonSansBBVA-BookItalic.woff2") format("woff2"), url("../fonts/BentonSansBBVA-BookItalic.woff") format("woff"), url("../fonts/BentonSansBBVA-BookItalic.ttf") format("truetype"), url("../fonts/BentonSansBBVA-BookItalic.svg#BentonSansBBVA-BookItalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Benton Sans BBVA";
+  src: url("../fonts/BentonSansBBVA-Light.eot");
+  src: url("../fonts/BentonSansBBVA-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/BentonSansBBVA-Light.woff2") format("woff2"), url("../fonts/BentonSansBBVA-Light.woff") format("woff"), url("../fonts/BentonSansBBVA-Light.ttf") format("truetype"), url("../fonts/BentonSansBBVA-Light.svg#BentonSansBBVA-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Benton Sans BBVA";
+  src: url("../fonts/BentonSansBBVA-MediumItalic.eot");
+  src: url("../fonts/BentonSansBBVA-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/BentonSansBBVA-MediumItalic.woff2") format("woff2"), url("../fonts/BentonSansBBVA-MediumItalic.woff") format("woff"), url("../fonts/BentonSansBBVA-MediumItalic.ttf") format("truetype"), url("../fonts/BentonSansBBVA-MediumItalic.svg#BentonSansBBVA-MediumItalic") format("svg");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Benton Sans BBVA";
+  src: url("../fonts/BentonSansBBVA-Medium.eot");
+  src: url("../fonts/BentonSansBBVA-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/BentonSansBBVA-Medium.woff2") format("woff2"), url("../fonts/BentonSansBBVA-Medium.woff") format("woff"), url("../fonts/BentonSansBBVA-Medium.ttf") format("truetype"), url("../fonts/BentonSansBBVA-Medium.svg#BentonSansBBVA-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+* {
+  font-family: "Benton Sans BBVA";
+}
+
+.bl {
+  color: #ffffff;
+}
+
+.am {
+  color: #F8CD51;
+}
+
+.ba1 {
+  background-color: #072146;
+}
+
+.ba2 {
+  background-color: #004480;
+}
+
+.ba3 {
+  background-color: #19739E;
+}
+
+.bgr {
+  background-color: #E4E4E4;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+header {
+  background-color: #072146;
+  margin-bottom: 70px;
+}
+
+.fixed {
+  position: sticky;
+  top: 15px;
+}
+
+.fmd {
+  font-weight: 500;
+  font-style: normal;
+}
+
+.btn-g {
+  background-color: #072146;
+  color: #F8CD51;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  padding: 15px;
+  border: 0;
+  margin: 15px 0;
+}
+.btn-g img {
+  height: 1.5em;
+  margin-right: 6px;
+}
+
+.btn-s {
+  border: 0;
+  width: 100%;
+  background-color: #19739E;
+  color: #ffffff;
+  padding: 15px;
+  font-weight: 500;
+}
+
+.single-item {
+  background-color: #004480;
+}
+
+.cont {
+  background-color: #004480;
+}
+.cont .titulo {
+  font-size: calc(55px - .5vw);
+  line-height: calc(55px - .5vw);
+  font-weight: 500;
+}
+.cont .parrafo {
+  font-size: calc(36px - .5vw);
+  line-height: calc(36px - .5vw);
+}
+
+.poly {
+  height: 528px;
+  position: relative;
+  background-size: cover;
+}
+
+.poly-f {
+  width: 0;
+  height: 0;
+  border-top: 528px solid #004480;
+  border-right: calc(50vw * .28) solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slick-arrow {
+  position: absolute;
+}
+
+.slick-prev {
+  top: 50%;
+  left: 5%;
+  z-index: 100;
+}
+
+.slick-next {
+  top: 50%;
+  right: 5%;
+}
+
+.dest-car .slick-prev {
+  top: 50%;
+  left: -2%;
+  z-index: 100;
+}
+.dest-car .slick-next {
+  top: 50%;
+  right: -2%;
+}
+
+@media (max-width: 767.98px) {
+  .cont .titulo {
+    font-size: calc(32px - .5vw);
+    line-height: calc(32px - .5vw);
+    font-weight: 500;
+  }
+  .cont .parrafo {
+    font-size: calc(18px - .5vw);
+    line-height: calc(18px - .5vw);
+  }
+
+  .poly {
+    height: 182px;
+  }
+
+  .poly-f {
+    display: none;
+  }
+}
+.calcula {
+  color: #072146;
+}
+.calcula .titulo {
+  font-size: calc(53px - .5vw);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.calcula .parr {
+  font-size: calc(22px - .5vw);
+  font-weight: 500;
+  margin-bottom: 60px;
+}
+.calcula label {
+  font-weight: 500;
+}
+.calcula .lbl {
+  font-size: calc(28px - .5vw);
+}
+.calcula .form-check-label {
+  font-weight: normal;
+}
+.calcula input {
+  border: 1px solid #072146;
+  border-radius: 0;
+}
+.calcula .input-group-text {
+  border: 1px solid #072146;
+  border-left: 0;
+  border-radius: 0;
+  background-color: #ffffff;
+  color: #C03851;
+  font-weight: 500;
+}
+
+.busca-home {
+  color: #072146;
+}
+.busca-home label {
+  font-weight: 500;
+}
+
+.destacados .card {
+  border: 0;
+  border-radius: 0;
+  min-height: 320px;
+}
+.destacados .card-img-top {
+  border-radius: 0;
+}
+.destacados hr {
+  border-color: #ffffff;
+  margin: 0.2rem;
+}
+
+@media (max-width: 767px) {
+  .destacados .card {
+    min-height: 290px;
+  }
+}
+.det-header {
+  color: #072146;
+}
+.det-header h1.titulo {
+  font-size: calc(55px - .5vw);
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 0;
+}
+.det-header h3.modelo {
+  font-size: calc(40px - .5vw);
+  font-weight: normal;
+}
+.det-header .precio,
+.det-header .version {
+  font-size: calc(36px - .5vw);
+  font-weight: normal;
+}
+.det-header hr {
+  border-top: 1px solid #072146;
+}
+
+.slider-for img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.slider-nav div {
+  padding: 5px;
+}
+.slider-nav img {
+  width: 200px;
+  height: 140px;
+  border: 1px solid #072146;
+  object-fit: cover;
+}
+
+.credito .titulo-credito {
+  font-size: calc(40px - .5vw);
+  font-weight: 500;
+  line-height: calc(46px - .5vw);
+}
+.credito .monto {
+  font-size: calc(36px - .8vw);
+  font-weight: 500;
+}
+.credito hr {
+  border: 1px solid #ffffff;
+  margin: 0;
+}
+.credito .cuota {
+  font-size: calc(30px - .8vw);
+  font-weight: 300;
+}
+
+.lista hr,
+.descr hr,
+.encuentra hr {
+  border-top: 1px solid #072146;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: calc(42px - .8vw);
+}
+
+.contacto {
+  color: #072146;
+}
+.contacto .titulo {
+  font-weight: 500;
+  font-size: calc(40px - .8vw);
+  margin-bottom: 6px;
+}
+.form-contacto label {
+  color: #072146;
+  font-weight: 500;
+}
+.form-contacto input {
+  border-radius: 0;
+  border: 1px solid #072146;
+  background-color: #E4E4E4;
+  color: #072146;
+}
+
+@media (max-width: 767.98px) {
+  h4 {
+    font-weight: 500;
+    font-size: calc(30px - .8vw);
+  }
+
+  .btn-g {
+    width: 100%;
+  }
+
+  .det-header {
+    color: #072146;
+  }
+  .det-header h1.titulo {
+    font-size: calc(36px - .5vw);
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 0;
+  }
+  .det-header h3.modelo {
+    font-size: calc(26px - .5vw);
+    font-weight: normal;
+  }
+  .det-header .precio,
+.det-header .version {
+    font-size: calc(20px - .5vw);
+    font-weight: normal;
+  }
+  .det-header hr {
+    border-top: 1px solid #072146;
+  }
+
+  .contacto .titulo {
+    font-size: calc(26px - .8vw);
+  }
+
+  .credito .titulo-credito {
+    font-size: calc(32px - .5vw);
+    font-weight: 500;
+    line-height: calc(32px - .5vw);
+  }
+  .credito .monto {
+    font-size: calc(24px - .8vw);
+    font-weight: 500;
+  }
+  .credito hr {
+    border: 1px solid #ffffff;
+    margin: 0;
+  }
+  .credito .cuota {
+    font-size: calc(24px - .8vw);
+    font-weight: 300;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -12,7 +12,7 @@
   |
  */
 
-class Home {
+class Autos {
     public function index() {
         $meta = array(
             'title' => 'Home',
@@ -59,11 +59,11 @@ class Home {
 		}
 	}
 	
-	public function auto($id) {
+	public function detalle($id=null) {
 		if($id!=null){
 			$a = DB::getinstance()->query("SELECT * FROM vehiculos WHERE id=".$id)->results();
 			$a = json_decode(json_encode($a), true);
-        	View::render('home/index', ['meta' => $meta, 'data'=>$a]);
+        	View::render('home/index', ['data'=>$a]);
 		}else{
 			View::render('home/index');
 		}		

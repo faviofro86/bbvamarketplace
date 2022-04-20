@@ -1,0 +1,449 @@
+@import 'fonts';
+
+$a1: #072146;
+$a2: #004480;
+$a3: #19739E;
+$am: #F8CD51;
+$ro: #C03851;
+$gr: #E4E4E4;
+$bl: #ffffff;
+
+// Colores
+
+.bl {
+    color: $bl;
+}
+
+.am {
+    color: $am;
+}
+
+// Background
+
+.ba1 {
+    background-color: $a1;
+}
+
+.ba2 {
+    background-color: $a2;
+}
+
+.ba3 {
+    background-color: $a3;
+}
+
+.bgr {
+    background-color: $gr;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+header {
+    background-color: $a1;
+    margin-bottom: 70px;
+}
+
+.fixed {
+    position: sticky;
+    top: 15px;
+}
+
+// Estilos
+
+.fmd {
+    font-weight: 500;
+    font-style: normal;
+}
+
+.btn-g {
+    background-color: $a1;
+    color: $am;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    padding: 15px;
+    border: 0;
+    margin: 15px 0;
+
+    img {
+        height: 1.5em;
+        margin-right: 6px;
+    }
+}
+
+.btn-s {
+    border: 0;
+    width: 100%;
+    background-color: $a3;
+    color: $bl;
+    padding: 15px;
+    font-weight: 500;
+
+}
+
+// CAROUSEL
+
+.single-item {
+    background-color: #004480;
+
+}
+
+.cont {
+    background-color: #004480;
+
+    .titulo {
+        font-size: calc(55px - .5vw);
+        line-height: calc(55px - .5vw);
+        font-weight: 500;
+    }
+
+    .parrafo {
+        font-size: calc(36px - .5vw);
+        line-height: calc(36px - .5vw);
+    }
+}
+
+.poly {
+    height: 528px;
+    position: relative;
+    background-size: cover;
+}
+
+.poly-f {
+    width: 0;
+    height: 0;
+    border-top: 528px solid #004480;
+    border-right: calc(50vw * .28) solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slick-arrow {
+    position: absolute;
+}
+
+.slick-prev {
+    top: 50%;
+    left: 5%;
+    z-index: 100;
+}
+
+.slick-next {
+    top: 50%;
+    right: 5%;
+}
+
+
+.dest-car {
+    .slick-prev {
+        top: 50%;
+        left: -2%;
+        z-index: 100;
+    }
+
+    .slick-next {
+        top: 50%;
+        right: -2%;
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .cont {
+        .titulo {
+            font-size: calc(32px - .5vw);
+            line-height: calc(32px - .5vw);
+            font-weight: 500;
+        }
+
+        .parrafo {
+            font-size: calc(18px - .5vw);
+            line-height: calc(18px - .5vw);
+        }
+    }
+
+    .poly {
+        height: 182px;
+
+    }
+
+    .poly-f {
+        display: none;
+    }
+}
+
+.calcula {
+    color: $a1;
+
+    .titulo {
+        font-size: calc(53px - .5vw);
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+
+    .parr {
+        font-size: calc(22px - .5vw);
+        font-weight: 500;
+        margin-bottom: 60px;
+    }
+
+    label {
+        font-weight: 500;
+
+    }
+
+    .lbl {
+        font-size: calc(28px - .5vw);
+    }
+
+    .form-check-label {
+        font-weight: normal;
+    }
+
+    input {
+        border: 1px solid $a1;
+        border-radius: 0;
+    }
+
+    .input-group-text {
+        border: 1px solid $a1;
+        border-left: 0;
+        border-radius: 0;
+        background-color: $bl;
+        color: $ro;
+        font-weight: 500;
+    }
+}
+
+.busca-home {
+    color: $a1;
+
+    label {
+        font-weight: 500;
+    }
+}
+
+.destacados {
+    .card {
+        border: 0;
+        border-radius: 0;
+        min-height: 320px;
+    }
+
+    .card-img-top {
+        border-radius: 0;
+    }
+
+    hr {
+        border-color: $bl;
+        margin: .2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .destacados {
+        .card {
+            min-height: 290px;
+        }
+    }
+}
+
+
+// DETALLES
+
+.det-header {
+    color: $a1;
+
+    h1.titulo {
+        font-size: calc(55px - .5vw);
+        font-weight: 500;
+        font-style: normal;
+        margin-bottom: 0;
+    }
+
+    h3.modelo {
+        font-size: calc(40px - .5vw);
+        font-weight: normal;
+    }
+
+    .precio,
+    .version {
+        font-size: calc(36px - .5vw);
+        font-weight: normal;
+    }
+
+    hr {
+        border-top: 1px solid $a1;
+    }
+}
+
+.slider-for {
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+}
+
+.slider-nav {
+    div {
+        padding: 5px;
+    }
+
+    img {
+        width: 200px;
+        height: 140px;
+        border: 1px solid $a1;
+        object-fit: cover;
+    }
+
+}
+
+// CREDITO
+
+.credito {
+    .titulo-credito {
+        font-size: calc(40px - .5vw);
+        font-weight: 500;
+        line-height: calc(46px - .5vw);
+
+    }
+
+    .monto {
+        //font-size: 1.6vmax;
+        font-size: calc(36px - .8vw);
+        font-weight: 500;
+    }
+
+    hr {
+        border: 1px solid $bl;
+        margin: 0;
+    }
+
+    .cuota {
+        font-size: calc(30px - .8vw);
+        font-weight: 300;
+    }
+}
+
+.lista,
+.descr,
+.encuentra {
+    hr {
+        border-top: 1px solid $a1;
+    }
+}
+
+h4 {
+    font-weight: 500;
+    font-size: calc(42px - .8vw);
+}
+
+// CONTACTO
+
+.contacto {
+    color: $a1;
+
+    .titulo {
+        font-weight: 500;
+        font-size: calc(40px - .8vw);
+        margin-bottom: 6px;
+    }
+
+    .sub {}
+}
+
+.form-contacto {
+
+    label {
+        color: $a1;
+        font-weight: 500;
+    }
+
+    input {
+        border-radius: 0;
+        border: 1px solid $a1;
+        background-color: $gr;
+        color: $a1;
+    }
+
+}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 767.98px) {
+
+    h4 {
+        font-weight: 500;
+        font-size: calc(30px - .8vw);
+    }
+
+    .btn-g {
+        width: 100%;
+    }
+
+    // DETALLES
+
+    .det-header {
+        color: $a1;
+
+        h1.titulo {
+            font-size: calc(36px - .5vw);
+            font-weight: 500;
+            font-style: normal;
+            margin-bottom: 0;
+        }
+
+        h3.modelo {
+            font-size: calc(26px - .5vw);
+            font-weight: normal;
+        }
+
+        .precio,
+        .version {
+            font-size: calc(20px - .5vw);
+            font-weight: normal;
+        }
+
+        hr {
+            border-top: 1px solid $a1;
+        }
+    }
+
+    // CONTACTO
+    .contacto {
+        .titulo {
+            font-size: calc(26px - .8vw);
+        }
+    }
+
+    .credito {
+        .titulo-credito {
+            font-size: calc(32px - .5vw);
+            font-weight: 500;
+            line-height: calc(32px - .5vw);
+
+        }
+
+        .monto {
+            //font-size: 1.6vmax;
+            font-size: calc(24px - .8vw);
+            font-weight: 500;
+        }
+
+        hr {
+            border: 1px solid $bl;
+            margin: 0;
+        }
+
+        .cuota {
+            font-size: calc(24px - .8vw);
+            font-weight: 300;
+        }
+    }
+}

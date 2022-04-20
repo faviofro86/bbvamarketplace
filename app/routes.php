@@ -28,7 +28,18 @@ Route::get('test','Prueba@index');
 Route::get('pruebaxd','Home@index');
 
 //Ruta asignada a controlador y funcion
+Route::get('pruebaxd2','Autos@index');
+
+//Ruta asignada a controlador y funcion
 Route::post('insert','Home@insertar');
 
 //Controlador RestFul asignado a una ruta
 Route::controller('restfules','Restful');
+
+Route::get('auto/{id}',function($id = null){
+	View::render('home/index');
+});
+
+Route::get('autos/{id}','Autos@detalle');
+
+
