@@ -2,7 +2,7 @@ Options -MultiViews
 Options -Indexes
 
 RewriteEngine On
-RewriteBase /Snipe
+RewriteBase /bbvamarketplace
 
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{REQUEST_FILENAME} !-d

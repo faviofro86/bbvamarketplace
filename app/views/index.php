@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=URL::to('public/css/bootstrap.min.css')?>">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="<?=URL::to('public/css/slick-theme.css')?>" />
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?=URL::to('public/css/style.css')?>">
 
     <title>Hello, world!</title>
 </head>
@@ -39,7 +39,7 @@
                             <div class="cta"></div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(img/prestamo.png)">
+                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
                         <div class="poly-f"></div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                             <div class="cta"></div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(img/prestamo.png)">
+                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
                         <div class="poly-f"></div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                             <div class="cta"></div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(img/prestamo.png)">
+                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
                         <div class="poly-f"></div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
 
             </div>
             <div class="col-12 col-lg-6 offset-md-1">
-                <img src="img/llave-banner.png" alt="" class="img-fluid">
+                <img src="<?=URL::to('public/img/llave-banner.png')?>" alt="" class="img-fluid">
             </div>
         </div>
     </section>
@@ -190,7 +190,7 @@
                 </div>
                 <div class="col-12">
                     <div class="buttom">
-                        <button class="btn-g">Buscar <img src="img/lupa.svg" alt="" class="img-fluid ml-2"></button>
+                        <button class="btn-g">Buscar <img src="<?=URL::to('public/img/lupa.svg')?>" alt="" class="img-fluid ml-2"></button>
                     </div>
                 </div>
 
@@ -298,8 +298,8 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="js/jquery.slim.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="<?=URL::to('public/js/jquery.slim.min.js'?>"></script>
+    <script src="<?=URL::to('public/js/bootstrap.bundle.min.js')?>"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
 
