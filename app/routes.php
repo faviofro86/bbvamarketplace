@@ -40,10 +40,10 @@ Route::post('insert','Home@insertar');
 //Controlador RestFul asignado a una ruta
 Route::controller('restfules','Restful');
 
-Route::get('auto/{id}',function($id = null){
+Route::get('auto/{slug}',function($slug = null){
 	View::render('home/index');
 });
 
-Route::get('autos/{id}','Autos@detalle');
+Route::get('autos/{slug}','Autos@detalle');
 
 

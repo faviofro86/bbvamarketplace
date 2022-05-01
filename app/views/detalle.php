@@ -84,10 +84,10 @@
 
                 <div class="row det-header">
                     <div class="col-12">
-                        <h1 class="titulo">HYUNDAI</h1>
-                        <h3 class="modelo">NEW TUCSON</h3>
+                        <h1 class="titulo"><?= $data['data'][0]['marca']; ?></h1>
+                        <h3 class="modelo"><?= $data['data'][0]['modelo']; ?></h3>
                         <hr>
-                        <p class="precio text-right">Desde US$ 25,140</p>
+                        <p class="precio text-right">Desde US$ <?= $data['data'][0]['precio']; ?></p>
                         <hr>
                         <p class="version text-right">
                             3 versiones disponibles: LX AT - Highline - Highline AWD
@@ -210,37 +210,37 @@
                     <div class="col-12 col-md-6 caract">
                         <p>
                             <strong>Marca</strong>
-                            Hyundai
+                            <?= $data['data'][0]['marca']; ?>
                         </p>
                     </div>
                     <div class="col-12 col-md-6 caract">
                         <p>
                             <strong>Modelo</strong>
-                            Tucson
+                            <?= $data['data'][0]['modelo']; ?>
                         </p>
                     </div>
                     <div class="col-12 col-md-6 caract">
                         <p>
                             <strong>Categoría</strong>
-                            SUV
+                            <?= $data['data'][0]['categoria']; ?>
                         </p>
                     </div>
                     <div class="col-12 col-md-6 caract">
                         <p>
                             <strong>Año de fabricación </strong>
-                            2021
+                            <?= $data['data'][0]['ano_fabricacion']; ?>
                         </p>
                     </div>
                     <div class="col-12 col-md-6 caract">
                         <p>
                             <strong>Transmisión </strong>
-                            Mecánica
+                            <?= $data['data'][0]['transmision']; ?>
                         </p>
                     </div>
                     <div class="col-12 col-md-6 caract">
                         <p>
                             <strong>Motor </strong>
-                            2.0 L
+                            <?= $data['data'][0]['cilindrada']; ?> L
                         </p>
                     </div>
 
@@ -250,7 +250,7 @@
                     <div class="col-12">
                         <h4 class="modelo">Descripción</h4>
                         <hr>
-                        <p class="precio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, molestias saepe, facilis assumenda voluptates aliquid quod non natus quae in ipsam soluta quia minima vero provident consequatur inventore atque at.</p>
+                        <p class="precio"><?= $data['data'][0]['descripcion']; ?></p>
                         <div class="buttom">
                             <button class="btn-g"><img src="<?=URL::to('public/img/archivo.svg')?>" alt=""> Ficha técnica</button>
                         </div>

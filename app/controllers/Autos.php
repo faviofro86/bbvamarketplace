@@ -59,13 +59,13 @@ class Autos {
 		}
 	}
 	
-	public function detalle($id=null) {
-		if($id!=null){
-			$a = DB::getinstance()->query("SELECT * FROM vehiculos WHERE id=".$id)->results();
+	public function detalle($slug=null) {
+		if($slug!=null){
+			$a = DB::getinstance()->query("SELECT v.*, m.marca, mo.modelo, c.categoria FROM vehiculos v JOIN marca m ON v.marca_id=m.id JOIN modelo mo ON v.modelo_id=mo.id JOIN categorias c ON v.categoria_id=c.id WHERE slug='$slug' ")->results();
 			$a = json_decode(json_encode($a), true);
-        	View::render('home/index', ['data'=>$a]);
+        	View::render('detalle', ['data'=>$a]);
 		}else{
-			View::render('home/index');
+			View::render('detalle');
 		}		
     }
 }
