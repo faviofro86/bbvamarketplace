@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=URL::to('public/css/bootstrap.min.css')?>">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?=URL::to('public/css/slick-theme.css')?>" />
+    <link rel="stylesheet" href="<?=URL::to('public/css/style.css')?>">
 
     <title>Hello, world!</title>
 </head>
@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 py-4 text-center text-md-left">
-                    <img src="img/bbva_logo.webp" alt="" height="40">
+                    <img src="<?=URL::to('public/img/bbva_logo.webp')?>" alt="" height="40">
                 </div>
                 <div class="col-6"></div>
             </div>
@@ -37,7 +37,7 @@
                             <div class="cta"></div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(img/prestamo.png)">
+                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
                         <div class="poly-f"></div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                             <div class="cta"></div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(img/prestamo.png)">
+                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
                         <div class="poly-f"></div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                             <div class="cta"></div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(img/prestamo.png)">
+                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
                         <div class="poly-f"></div>
                     </div>
                 </div>
@@ -100,35 +100,35 @@
                     <div class="col-12">
                         <div class="slider slider-for">
                             <div>
-                                <img src="img/carro2-2x.png" alt="" class="img-fluid">
+                                <img src="<?=URL::to('public/img/carro2-2x.png')?>" alt="" class="img-fluid">
                             </div>
                             <div>
-                                <img src="galeria/Fallas-comunes-del-hyundai-tucson-9.jpg" alt="" class="img-fluid">
+                                <img src="<?=URL::to('public/galeria/Fallas-comunes-del-hyundai-tucson-9.jpg')?>" alt="" class="img-fluid">
                             </div>
                             <div>
-                                <img src="galeria/hyundai-new-tucson-destacados-04.jpg" alt="" class="img-fluid">
+                                <img src="<?=URL::to('public/galeria/hyundai-new-tucson-destacados-04.jpg')?>" alt="" class="img-fluid">
                             </div>
                             <div>
-                                <img src="galeria/NAZ_c0238cd155d748c585a0fb3ddc1bc4bb.jpg" alt="" class="img-fluid">
+                                <img src="<?=URL::to('public/galeria/NAZ_c0238cd155d748c585a0fb3ddc1bc4bb.jpg')?>" alt="" class="img-fluid">
                             </div>
                         </div>
 
                         <div class="buttom my-4">
-                            <button class="btn-g"><img src="img/corazon.svg" alt=""> Agregar a mis favoritos</button>
+                            <button class="btn-g"><img src="<?=URL::to('public/img/corazon.svg')?>" alt=""> Agregar a mis favoritos</button>
                         </div>
 
                         <div class="slider slider-nav">
                             <div>
-                                <img src="img/carro2.png" alt="" class="img-fluid">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" alt="" class="img-fluid">
                             </div>
                             <div>
-                                <img src="galeria/Fallas-comunes-del-hyundai-tucson-9.jpg" alt="" class="img-fluid">
+                                <img src="<?=URL::to('public/galeria/Fallas-comunes-del-hyundai-tucson-9.jpg')?>" alt="" class="img-fluid">
                             </div>
                             <div>
-                                <img src="galeria/hyundai-new-tucson-destacados-04.jpg" alt="" class="img-fluid">
+                                <img src="<?=URL::to('public/galeria/hyundai-new-tucson-destacados-04.jpg')?>" alt="" class="img-fluid">
                             </div>
                             <div>
-                                <img src="galeria/NAZ_c0238cd155d748c585a0fb3ddc1bc4bb.jpg" alt="" class="img-fluid">
+                                <img src="<?=URL::to('public/galeria/NAZ_c0238cd155d748c585a0fb3ddc1bc4bb.jpg')?>" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -252,7 +252,7 @@
                         <hr>
                         <p class="precio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, molestias saepe, facilis assumenda voluptates aliquid quod non natus quae in ipsam soluta quia minima vero provident consequatur inventore atque at.</p>
                         <div class="buttom">
-                            <button class="btn-g"><img src="img/archivo.svg" alt=""> Ficha técnica</button>
+                            <button class="btn-g"><img src="<?=URL::to('public/img/archivo.svg')?>" alt=""> Ficha técnica</button>
                         </div>
                     </div>
                 </div>
@@ -312,7 +312,7 @@
                     </div>
                     <div class="row bgr mt-5 p-3">
                         <div class="col-12">
-                            <img src="img/hyundai.svg" alt="" class="img-fluid my-4">
+                            <img src="<?=URL::to('public/img/hyundai.svg')?>" alt="" class="img-fluid my-4">
                             <button class="btn-s mb-4">
                                 Ver más vehículos
                             </button>
@@ -336,7 +336,7 @@
                     <div class="d-flex flex-wrap flex-row dest-car">
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                 <div class="card-body ba3 bl">
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
@@ -347,7 +347,7 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                 <div class="card-body ba3 bl">
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
@@ -358,7 +358,7 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                 <div class="card-body ba3 bl">
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
@@ -369,7 +369,7 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                 <div class="card-body ba3 bl">
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
@@ -380,7 +380,7 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                 <div class="card-body ba3 bl">
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
@@ -400,14 +400,14 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center"><img src="img/footer_01.jpg" alt="" class="img-fluid"></div>
+                    <div class="col-12 text-center"><img src="<?=URL::to('public/img/footer_01.jpg')?>" alt="" class="img-fluid"></div>
                 </div>
             </div>
         </div>
         <div class="container-fluid ba1">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center"><img src="img/footer_02.jpg" alt="" class="img-fluid"></div>
+                    <div class="col-12 text-center"><img src="<?=URL::to('public/img/footer_02.jpg')?>" alt="" class="img-fluid"></div>
                 </div>
             </div>
         </div>
@@ -417,8 +417,8 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="js/jquery.slim.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="<?=URL::to('public/js/jquery.slim.min.js')?>"></script>
+    <script src="<?=URL::to('public/js/bootstrap.bundle.min.js')?>"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

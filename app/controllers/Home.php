@@ -24,7 +24,13 @@ class Home {
 		$a = DB::getinstance()->query("SELECT * from vehiculos")->results();
 		$a = json_decode(json_encode($a), true);
 		//Debug::varDump($a);
-        View::render('home/index', ['meta' => $meta, 'data'=>$a]);
+        View::render('index', ['meta' => $meta, 'data'=>$a]);
+    }
+	public function listado() {
+        View::render('listado');
+    }
+	public function detalle() {
+        View::render('detalle');
     }
 	public function index2() {
         $meta = array(

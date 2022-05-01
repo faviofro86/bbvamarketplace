@@ -3,9 +3,13 @@
 //Example of routes
 
 //Ruta Inicial del Proyecto
-Route::get('/',function(){
-	View::render('home/index');
-});
+Route::get('/','Home@index');
+
+//Ruta asignada a controlador y funcion
+Route::get('detalle','Home@detalle');
+
+//Ruta asignada a controlador y funcion
+Route::get('listado','Home@listado');
 
 Route::get('function',function(){
 	//Puedes definir rutas con nombres diferentes

@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 py-4 text-center text-md-left">
-                    <img src="img/bbva_logo.webp" alt="" height="40">
+                    <img src="<?=URL::to('public/img/bbva_logo.webp')?>" alt="" height="40">
                 </div>
                 <div class="col-6"></div>
             </div>
@@ -211,12 +211,12 @@
                     <div class="d-flex flex-wrap flex-row">
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card py-5">
-                                <img src="img/ad.png" class="img-fluid" alt="...">
+                                <img src="<?=URL::to('public/img/ad.png')?>" class="img-fluid" alt="...">
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                 <div class="card-body ba3 bl">
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
@@ -227,7 +227,7 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                 <div class="card-body ba3 bl">
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
@@ -238,7 +238,7 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                 <div class="card-body ba3 bl">
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
@@ -249,7 +249,7 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                 <div class="card-body ba3 bl">
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
@@ -260,7 +260,7 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
+                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                 <div class="card-body ba3 bl">
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
@@ -282,14 +282,14 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center"><img src="img/footer_01.jpg" alt="" class="img-fluid"></div>
+                    <div class="col-12 text-center"><img src="<?=URL::to('public/img/footer_01.jpg')?>" alt="" class="img-fluid"></div>
                 </div>
             </div>
         </div>
         <div class="container-fluid ba1">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center"><img src="img/footer_02.jpg" alt="" class="img-fluid"></div>
+                    <div class="col-12 text-center"><img src="<?=URL::to('public/img/footer_02.jpg')?>" alt="" class="img-fluid"></div>
                 </div>
             </div>
         </div>
@@ -298,7 +298,7 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="<?=URL::to('public/js/jquery.slim.min.js'?>"></script>
+    <script src="<?=URL::to('public/js/jquery.slim.min.js')?>"></script>
     <script src="<?=URL::to('public/js/bootstrap.bundle.min.js')?>"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
