@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<?=URL::to('public/css/slick-theme.css')?>" />
     <link rel="stylesheet" href="<?=URL::to('public/css/style.css')?>">
 
-    <title>Hello, world!</title>
+    <title>BBVA Marketplace - <?= $data['data'][0]['modelo']; ?></title>
 </head>
 
 <body>
@@ -87,10 +87,10 @@
                         <h1 class="titulo"><?= $data['data'][0]['marca']; ?></h1>
                         <h3 class="modelo"><?= $data['data'][0]['modelo']; ?></h3>
                         <hr>
-                        <p class="precio text-right">Desde US$ <?= $data['data'][0]['precio']; ?></p>
+                        <p class="precio text-right">Desde US$ <?= number_format($data['data'][0]['precio']); ?></p>
                         <hr>
                         <p class="version text-right">
-                            3 versiones disponibles: LX AT - Highline - Highline AWD
+                            <?= $data['data'][0]['resumen']; ?>
                         </p>
                     </div>
                 </div>
@@ -252,7 +252,7 @@
                         <hr>
                         <p class="precio"><?= $data['data'][0]['descripcion']; ?></p>
                         <div class="buttom">
-                            <button class="btn-g"><img src="<?=URL::to('public/img/archivo.svg')?>" alt=""> Ficha técnica</button>
+                            <a class="btn-g" target="_blank" href="<?=URL::to('public/fichas/'.$data['data'][0]['slug'].'.pdf')?>"><img src="<?=URL::to('public/img/archivo.svg')?>" alt=""> Ficha técnica</a>
                         </div>
                     </div>
                 </div>

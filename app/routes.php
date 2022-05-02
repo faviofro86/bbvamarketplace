@@ -11,39 +11,19 @@ Route::get('detalle','Home@detalle');
 //Ruta asignada a controlador y funcion
 Route::get('listado','Home@listado');
 
-Route::get('function',function(){
-	//Puedes definir rutas con nombres diferentes
-});
-
-
-Route::post('user/register',function(){
-	//Puedes definir rutas de tipo POST
-});
-
-Route::get('home/index/{id}/{var}',function($id,$var = null){
-	//Si deseas que un parametro sea obligatorio solo debes poner null a la variable
-	echo 'Ruta con Parametros: '.$id.'-'.$var;
-});
-
-//Ruta asignada a controlador y funcion
-Route::get('test','Prueba@index');
-
-//Ruta asignada a controlador y funcion
-Route::get('pruebaxd','Home@index');
-
-//Ruta asignada a controlador y funcion
-Route::get('pruebaxd2','Autos@index');
-
-//Ruta asignada a controlador y funcion
-Route::post('insert','Home@insertar');
-
-//Controlador RestFul asignado a una ruta
-Route::controller('restfules','Restful');
-
-Route::get('auto/{slug}',function($slug = null){
-	View::render('home/index');
-});
-
+//Ruta para vista detalle de vehículo
 Route::get('autos/{slug}','Autos@detalle');
+
+//Ruta para cargar vista de registro de vehículo
+Route::get('admin/auto_form','Autos@auto_form');
+
+//Ruta para grabar datos de registro de vehículo
+Route::post('admin/auto_registrar','Autos@auto_registrar');
+
+//Ruta para acceder a la ficha técnica
+Route::post('ficha/{slug}','Autos@ficha');
+
+//Ruta asignada a controlador y funcion
+Route::post('admin/poblarmodelo','Autos@poblarmodelo');
 
 
