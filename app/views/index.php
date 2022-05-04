@@ -154,19 +154,23 @@
                     <div class="form-row">
                         <div class="form-group col-12 col-md-3">
                             <label for="inputState">Marca</label>
-                            <select id="inputState" class="form-control">
-                                <option selected></option>
-                                <option>Audi</option>
-                            </select>
+                            <select class="form-control" name="marca" required onchange="load(this.value)">
+								<option selected disabled hidden value="">Selecciona una marca</option>
+								<?php foreach($data['marcas'] as $marca){ ?>
+									<option value="<?php echo $marca->id; ?>"><?php echo $marca->marca; ?></option>
+								<?php } ?>
+							</select>
                         </div>
-                        <div class="form-group col-12 col-md-3">
+                        <div class="form-group col-12 col-md-3" id="modelo">
                             <label for="inputState">Modelo</label>
-                            <select id="inputState" class="form-control">
+                            <select id="inputState" class="form-control" disabled>
                                 <option selected></option>
                                 <option>Mercedes</option>
                                 <option>Audi</option>
                             </select>
                         </div>
+                        
+                      
                         <div class="form-group col-12 col-md-3">
                             <label for="inputState">Tipo</label>
                             <select id="inputState" class="form-control">
@@ -318,6 +322,25 @@
         })
 
     </script>
+   <script>
+	function load(str){
+	  var xmlhttp;
+	  if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	  }
+	  else{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+		  document.getElementById("modelo").innerHTML=xmlhttp.responseText;
+		}
+	  }
+	  xmlhttp.open("POST","<?=URL::to('admin/poblarmodelo')?>",true);
+	  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	  xmlhttp.send("q="+str);
+	}  
+	</script>
 </body>
 
 </html>
