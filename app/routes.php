@@ -26,4 +26,10 @@ Route::post('ficha/{slug}','Autos@ficha');
 //Ruta asignada a controlador y funcion
 Route::post('admin/poblarmodelo','Autos@poblarmodelo');
 
+//Ruta para cargar vista de registro de marca
+Route::get('admin/marca_form','Autos@marca_form');
+
+//Ruta para cargar vista de registro de marca
+Route::post('admin/marca_registrar','Autos@marca_registrar');
+
 

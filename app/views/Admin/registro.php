@@ -16,10 +16,10 @@
   <body>    
 	  <div class="container-fluid">
 		  <div class="container">
-		  <?php var_dump($data); ?>
+		  <?php //var_dump($data); ?>
 		  <h1>BBVA Marketplace</h1>
 		  <h2>Registro de vehículo</h2>
-		  	<form action="<?=URL::to('admin/auto_registrar')?>" method="post">
+		  	<form action="<?=URL::to('admin/auto_registrar')?>" method="post" enctype="multipart/form-data">
 			  <div class="mb-3">
 				<label class="form-label">Marca</label>
 				<select class="form-control" name="marca" required onchange="load(this.value)">
@@ -55,9 +55,18 @@
 				<label class="form-label">Precio</label>
 				<input type="text" class="form-control" name="precio">
 			  </div>
-			  <div class="mb-3">
-				<label class="form-label">Banner central</label>
-				<input type="text" class="form-control" name="banner">
+			  <div class="mb-3 imagenes">
+				<label class="form-label">Imágenes</label>
+				<input type="hidden" class="form-control" name="cantidad" id="cantidad" value="1">
+				<input type="file" class="form-control" name="banner1">
+				<a id="delete-img" href="#" class="btn btn-danger btn-animate">-</a>
+				<a id="add-img" href="#" class="btn btn-warning btn-animate">Agregar imagen</a>
+			  </div>
+			  <div class="col-sm-7 col-7">
+				<div class=" mt-4">
+					
+					
+				</div>
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Modelo Año</label>
@@ -93,7 +102,7 @@
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Ficha Técnica</label>
-				<input type="text" class="form-control" name="ficha">
+				<input type="file" class="form-control" name="ficha">
 			  </div>
 			  <div class="mb-3">
 				<label class="form-label">Encuentralo en</label>
@@ -137,6 +146,33 @@
 	  xmlhttp.send("q="+str);
 	}  
 	</script>
+    <script>
+        var campos_max = 6;
+        var x = 1;
+        $('#add-img').click(function (e) {
+            e.preventDefault();
+            if (x < campos_max) {
+				$('#cantidad').val(x+1);
+                $('.imagenes').append(`<div class="d-flex"><input class="form-control banner` + (x+1) +`" type="file" name="banner` + (x+1) +`"></div>`)
+                x++;
+            } else {
+                alert("Límite de imagenes alcanzado")
+            }
+			if(x<1){
+				$('#delete-img').addClass("d-none");
+			}
+		});
+
+        $('.imagenes').on("click", "#delete-img", function (e) {
+            e.preventDefault();
+            $('.banner' + (x)).parent('div').remove();
+            x--;
+			if(x==0){x=1;}
+			$('#cantidad').val(x);
+        });
+		
+		
+    </script>
 
     
   </body>

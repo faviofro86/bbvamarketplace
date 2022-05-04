@@ -99,18 +99,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="slider slider-for">
-                            <div>
-                                <img src="<?=URL::to('public/img/carro2-2x.png')?>" alt="" class="img-fluid">
-                            </div>
-                            <div>
-                                <img src="<?=URL::to('public/galeria/Fallas-comunes-del-hyundai-tucson-9.jpg')?>" alt="" class="img-fluid">
-                            </div>
-                            <div>
-                                <img src="<?=URL::to('public/galeria/hyundai-new-tucson-destacados-04.jpg')?>" alt="" class="img-fluid">
-                            </div>
-                            <div>
-                                <img src="<?=URL::to('public/galeria/NAZ_c0238cd155d748c585a0fb3ddc1bc4bb.jpg')?>" alt="" class="img-fluid">
-                            </div>
+                            <?php foreach($data['imgs'] as $img){ ?>
+								<div>
+									<img src="<?=URL::to('public/galeria/imgs/'.$data['data'][0]['slug'].'/'.$img['imagen']); ?>" alt="" class="img-fluid">
+                            	</div>
+                            <?php } ?>                           
                         </div>
 
                         <div class="buttom my-4">
@@ -118,18 +111,11 @@
                         </div>
 
                         <div class="slider slider-nav">
-                            <div>
-                                <img src="<?=URL::to('public/img/carro2.png')?>" alt="" class="img-fluid">
-                            </div>
-                            <div>
-                                <img src="<?=URL::to('public/galeria/Fallas-comunes-del-hyundai-tucson-9.jpg')?>" alt="" class="img-fluid">
-                            </div>
-                            <div>
-                                <img src="<?=URL::to('public/galeria/hyundai-new-tucson-destacados-04.jpg')?>" alt="" class="img-fluid">
-                            </div>
-                            <div>
-                                <img src="<?=URL::to('public/galeria/NAZ_c0238cd155d748c585a0fb3ddc1bc4bb.jpg')?>" alt="" class="img-fluid">
-                            </div>
+                            <?php foreach($data['imgs'] as $img){ ?>
+								<div>
+									<img src="<?=URL::to('public/galeria/imgs/'.$data['data'][0]['slug'].'/'.$img['imagen']); ?>" alt="" class="img-fluid">
+                            	</div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -252,7 +238,7 @@
                         <hr>
                         <p class="precio"><?= $data['data'][0]['descripcion']; ?></p>
                         <div class="buttom">
-                            <a class="btn-g" target="_blank" href="<?=URL::to('public/fichas/'.$data['data'][0]['slug'].'.pdf')?>"><img src="<?=URL::to('public/img/archivo.svg')?>" alt=""> Ficha técnica</a>
+                            <a class="btn-g" target="_blank" href="<?=URL::to('public/fichas/'.$data['data'][0]['fichatecnica'])?>"><img src="<?=URL::to('public/img/archivo.svg')?>" alt=""> Ficha técnica</a>
                         </div>
                     </div>
                 </div>
