@@ -27,3 +27,39 @@ Route::post('ficha/{slug}','Autos@ficha');
 Route::post('admin/poblarmodelo','Autos@poblarmodelo');
 
 
+
+/***************USUARIOS*****************/
+Route::get('usuario/registrar_form','Usuario@registrar_form');
+Route::post('usuario/registrar','Usuario@registrar');
+Route::get('usuario/editar_form','Usuario@editar_form');
+Route::post('usuario/editar','Usuario@editar');
+
+Route::get('login','Usuario@login_view');
+Route::post('login','Usuario@login');
+
+
+
+
+Route::get('decrypt',function(){
+
+
+	$user = DB::getinstance()->table('usuarios')->where('correo','mjaguinagap@gmail.com')->where('password','NmFlc2JSZXE5Vks1Q0xzS1JmTlhRZz09')->first();
+	Debug::varDump($user);
+
+
+	$encode = Encrypter::encode('123');
+	echo  $encode;
+	echo "<br>";
+
+
+	$encode = Encrypter::encode('123125|165145194323123');
+	echo  $encode;
+	echo "<br>";
+	echo Encrypter::decode($encode);
+
+	$marcas = DB::getinstance()->table('usuarios')->where('estado','3')->get();
+	Debug::varDump($marcas);
+});
+
+
+

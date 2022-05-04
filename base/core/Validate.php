@@ -30,7 +30,7 @@ class Validate {
                             }
                             break;
                         case 'unique':
-                            $check = DB::getInstance()->table($rule_value[0])->where($rule_value,$value)->count();
+                            $check = DB::getInstance()->table($rule_value['tabla'])->where($rule_value['campo'],$value)->count();
                             if ($check > 0) {
                                 $this->addError($item, 'Este Campo ya fue registrado, intente con otro');
                             }

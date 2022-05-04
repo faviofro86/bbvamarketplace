@@ -16,6 +16,40 @@ class Auth {
         return null;
     }
 
+    public static function get_array($attribute = null) {
+        if ($attribute) {
+            if (Session::exists(Config::get('session/session_name'))) {
+                $user = Session::get(Config::get('session/session_name'));
+                if ($user) {
+                    if (array_key_exists($attribute, $user)) {
+                        return $user[$attribute];
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    public static function login($username = null, $password = null) {
+        if ($username != null && $password != null) {
+            $user = DB::getinstance()->table('usuarios')->where('correo',$username)->where('password',$password)->first();
+            if ($user != null) {      
+                Session::put(Config::get('session/session_name'), ['id'=>Encrypter::encode($user->id),'nombre'=>$user->nombres,'apellidos'=>$user->apellidos,'correo'=>$user->correo]);
+                Session::put('isLoggedIn', true);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static function validate($rute = "/"){
+        if(Session::exists(Config::get('session/session_name'))){
+           return true;
+        } else {
+            Redirect::to(404);
+        }
+    }
+    /*
     public static function login($username = null, $password = null) {
         if ($username != null && $password != null) {
             $class = Config::get('user/user_class');
@@ -33,7 +67,7 @@ class Auth {
                 $user = $class::where(Config::get('user/userField'),$username)
                 ->where(Config::get('user/passwordField'),$password)
                 ->first();
-                 if ($user != null) {
+                if ($user != null) {
                     //Estas Dos Lineas Loguean realmente al Usuario         
                     Session::put(Config::get('session/session_name'), $user);
                     Session::put('isLoggedIn', true);
@@ -44,7 +78,7 @@ class Auth {
         }
         return false;
     }
-
+    */
     public static function logout() {
         Session::destroy();
     }
