@@ -139,7 +139,7 @@ class Autos {
 						}
 					}
 					
-					$b = DB::getinstance()->query("INSERT INTO `imagenes_vehiculos`(`id_vehiculo`,`imagen`,`estado`) VALUES (?,?,?)", [$c, $target_file, 1 ])->results();
+					$b = DB::getinstance()->query("INSERT INTO `imagenes_vehiculos`(`id_vehiculo`,`imagen`,`estado`) VALUES (?,?,?)", [$c, $imagen["name"], 1 ])->results();
 
 				}
 				
@@ -162,7 +162,8 @@ class Autos {
 			$c = DB::getinstance()->query("SELECT imagen from imagenes_vehiculos WHERE id_vehiculo ='$b'")->results();
 			$c = json_decode(json_encode($c), true);
 			//echo var_dump($c);
-
+			
+			DB::getinstance()->table('vehiculos')->where('slug',$slug)->update(['numvisitas'=>($a[0]["numvisitas"]+1)]);
         	View::render('detalle', ['data'=>$a, 'imgs'=>$c]);
 		}else{
 			View::render('detalle');
@@ -204,6 +205,35 @@ class Autos {
 			if($validation->passed()){
 								
 				$a = DB::getinstance()->query("INSERT INTO marca(marca, estado) VALUES (?,?)", [Input::get('marca'), Input::get('estado')])->query("SELECT LAST_INSERT_ID()")->results();
+				
+				$b = json_decode(json_encode($a), true);
+				$c = $b[0]["LAST_INSERT_ID()"];
+
+			}else{
+				$p = $validation->errors();
+				$p = json_encode($a);
+				echo $p;
+			}
+			
+		}
+	}
+	
+	public function modelo_form(){
+		$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
+		$condicion = DB::getinstance()->table('condicion')->get();
+		View::render('Admin/modelonew', ['marcas'=>$marcas]);
+	}
+	
+	public function modelo_registrar(){
+		if(Input::exists()){
+			$validate = new Validate();
+			$validation = $validate->check(Input::all(),[
+				'marca' => ['required' =>true],
+				'estado' => ['required' =>true],
+			]);  
+			if($validation->passed()){
+								
+				$a = DB::getinstance()->query("INSERT INTO modelo(marca_id, modelo, estado) VALUES (?,?,?)", [Input::get('marca'), Input::get('modelo'), Input::get('estado')])->query("SELECT LAST_INSERT_ID()")->results();
 				
 				$b = json_decode(json_encode($a), true);
 				$c = $b[0]["LAST_INSERT_ID()"];

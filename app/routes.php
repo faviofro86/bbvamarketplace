@@ -32,6 +32,12 @@ Route::get('admin/marca_form','Autos@marca_form');
 //Ruta para cargar vista de registro de marca
 Route::post('admin/marca_registrar','Autos@marca_registrar');
 
+//Ruta para cargar vista de registro de modelo
+Route::get('admin/modelo_form','Autos@modelo_form');
+
+//Ruta para cargar vista de registro de modelo
+Route::post('admin/modelo_registrar','Autos@modelo_registrar');
+
 
 
 /***************USUARIOS*****************/

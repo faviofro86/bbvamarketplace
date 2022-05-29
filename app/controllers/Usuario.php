@@ -45,7 +45,7 @@ class Usuario {
 					echo json_encode(["status"=> 400,"message"=>"Error al intentar registrar, intentelo nuevamente"]);
 				}else{
 					$user = DB::getinstance()->table('usuarios')->where('id',$respuesta)->first();
-					Session::put(Config::get('session/session_name'), ['id'=>Encrypter::encode($user->id),'nombre'=>$user->nombre,'correo'=>$user->correo]);
+					Session::put(Config::get('session/session_name'), ['id'=>Encrypter::encode($user->id),'nombre'=>$user->nombres,'correo'=>$user->correo]);
                 	Session::put('isLoggedIn', true);
 					echo json_encode(["status"=> 200,"message"=>"Registro exitoso"]);
 				}
