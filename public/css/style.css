@@ -120,13 +120,13 @@ header {
   background-color: #004480;
 }
 .cont .titulo {
-  font-size: calc(55px - .5vw);
-  line-height: calc(55px - .5vw);
+  font-size: calc(55px - 0.5vw);
+  line-height: calc(55px - 0.5vw);
   font-weight: 500;
 }
 .cont .parrafo {
-  font-size: calc(36px - .5vw);
-  line-height: calc(36px - .5vw);
+  font-size: calc(36px - 0.5vw);
+  line-height: calc(36px - 0.5vw);
 }
 
 .poly {
@@ -139,7 +139,7 @@ header {
   width: 0;
   height: 0;
   border-top: 528px solid #004480;
-  border-right: calc(50vw * .28) solid transparent;
+  border-right: 14vw solid transparent;
   position: absolute;
   top: 0;
   left: 0;
@@ -172,13 +172,13 @@ header {
 
 @media (max-width: 767.98px) {
   .cont .titulo {
-    font-size: calc(32px - .5vw);
-    line-height: calc(32px - .5vw);
+    font-size: calc(32px - 0.5vw);
+    line-height: calc(32px - 0.5vw);
     font-weight: 500;
   }
   .cont .parrafo {
-    font-size: calc(18px - .5vw);
-    line-height: calc(18px - .5vw);
+    font-size: calc(18px - 0.5vw);
+    line-height: calc(18px - 0.5vw);
   }
 
   .poly {
@@ -193,12 +193,12 @@ header {
   color: #072146;
 }
 .calcula .titulo {
-  font-size: calc(53px - .5vw);
+  font-size: calc(53px - 0.5vw);
   font-weight: 500;
   margin-bottom: 0;
 }
 .calcula .parr {
-  font-size: calc(22px - .5vw);
+  font-size: calc(22px - 0.5vw);
   font-weight: 500;
   margin-bottom: 60px;
 }
@@ -206,7 +206,7 @@ header {
   font-weight: 500;
 }
 .calcula .lbl {
-  font-size: calc(28px - .5vw);
+  font-size: calc(28px - 0.5vw);
 }
 .calcula .form-check-label {
   font-weight: normal;
@@ -253,18 +253,18 @@ header {
   color: #072146;
 }
 .det-header h1.titulo {
-  font-size: calc(55px - .5vw);
+  font-size: calc(55px - 0.5vw);
   font-weight: 500;
   font-style: normal;
   margin-bottom: 0;
 }
 .det-header h3.modelo {
-  font-size: calc(40px - .5vw);
+  font-size: calc(40px - 0.5vw);
   font-weight: normal;
 }
 .det-header .precio,
 .det-header .version {
-  font-size: calc(36px - .5vw);
+  font-size: calc(36px - 0.5vw);
   font-weight: normal;
 }
 .det-header hr {
@@ -288,12 +288,12 @@ header {
 }
 
 .credito .titulo-credito {
-  font-size: calc(40px - .5vw);
+  font-size: calc(40px - 0.5vw);
   font-weight: 500;
-  line-height: calc(46px - .5vw);
+  line-height: calc(46px - 0.5vw);
 }
 .credito .monto {
-  font-size: calc(36px - .8vw);
+  font-size: calc(36px - 0.8vw);
   font-weight: 500;
 }
 .credito hr {
@@ -301,7 +301,7 @@ header {
   margin: 0;
 }
 .credito .cuota {
-  font-size: calc(30px - .8vw);
+  font-size: calc(30px - 0.8vw);
   font-weight: 300;
 }
 
@@ -313,7 +313,7 @@ header {
 
 h4 {
   font-weight: 500;
-  font-size: calc(42px - .8vw);
+  font-size: calc(42px - 0.8vw);
 }
 
 .contacto {
@@ -321,7 +321,7 @@ h4 {
 }
 .contacto .titulo {
   font-weight: 500;
-  font-size: calc(40px - .8vw);
+  font-size: calc(40px - 0.8vw);
   margin-bottom: 6px;
 }
 .form-contacto label {
@@ -338,7 +338,7 @@ h4 {
 @media (max-width: 767.98px) {
   h4 {
     font-weight: 500;
-    font-size: calc(30px - .8vw);
+    font-size: calc(30px - 0.8vw);
   }
 
   .btn-g {
@@ -349,18 +349,18 @@ h4 {
     color: #072146;
   }
   .det-header h1.titulo {
-    font-size: calc(36px - .5vw);
+    font-size: calc(36px - 0.5vw);
     font-weight: 500;
     font-style: normal;
     margin-bottom: 0;
   }
   .det-header h3.modelo {
-    font-size: calc(26px - .5vw);
+    font-size: calc(26px - 0.5vw);
     font-weight: normal;
   }
   .det-header .precio,
 .det-header .version {
-    font-size: calc(20px - .5vw);
+    font-size: calc(20px - 0.5vw);
     font-weight: normal;
   }
   .det-header hr {
@@ -368,16 +368,16 @@ h4 {
   }
 
   .contacto .titulo {
-    font-size: calc(26px - .8vw);
+    font-size: calc(26px - 0.8vw);
   }
 
   .credito .titulo-credito {
-    font-size: calc(32px - .5vw);
+    font-size: calc(32px - 0.5vw);
     font-weight: 500;
-    line-height: calc(32px - .5vw);
+    line-height: calc(32px - 0.5vw);
   }
   .credito .monto {
-    font-size: calc(24px - .8vw);
+    font-size: calc(24px - 0.8vw);
     font-weight: 500;
   }
   .credito hr {
@@ -385,7 +385,7 @@ h4 {
     margin: 0;
   }
   .credito .cuota {
-    font-size: calc(24px - .8vw);
+    font-size: calc(24px - 0.8vw);
     font-weight: 300;
   }
 }
