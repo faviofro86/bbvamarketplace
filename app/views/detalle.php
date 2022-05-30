@@ -16,67 +16,10 @@
 </head>
 
 <body>
+    <?php include "navbar.php"; ?>
     <header class="container-fluid p-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 py-4 text-center text-md-left">
-                    <img src="<?=URL::to('public/img/bbva_logo.webp')?>" alt="" height="40">
-                </div>
-                <div class="col-6"></div>
-            </div>
-        </div>
-        <div class="single-item">
-
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php include "carrusel.php"; ?>
     </header>
-
 
     <div class="container">
         <div class="row">
@@ -100,10 +43,10 @@
                     <div class="col-12">
                         <div class="slider slider-for">
                             <?php foreach($data['imgs'] as $img){ ?>
-								<div>
-									<img src="<?=URL::to('public/galeria/imgs/'.$data['data'][0]['slug'].'/'.$img['imagen']); ?>" alt="" class="img-fluid">
-                            	</div>
-                            <?php } ?>                           
+                            <div>
+                                <img src="<?=URL::to('public/galeria/imgs/'.$data['data'][0]['slug'].'/'.$img['imagen']); ?>" alt="" class="img-fluid">
+                            </div>
+                            <?php } ?>
                         </div>
 
                         <div class="buttom my-4">
@@ -112,9 +55,9 @@
 
                         <div class="slider slider-nav">
                             <?php foreach($data['imgs'] as $img){ ?>
-								<div>
-									<img src="<?=URL::to('public/galeria/imgs/'.$data['data'][0]['slug'].'/'.$img['imagen']); ?>" alt="" class="img-fluid">
-                            	</div>
+                            <div>
+                                <img src="<?=URL::to('public/galeria/imgs/'.$data['data'][0]['slug'].'/'.$img['imagen']); ?>" alt="" class="img-fluid">
+                            </div>
                             <?php } ?>
                         </div>
                     </div>
@@ -279,6 +222,10 @@
                                     <input type="text" class="form-control" id="nombre">
                                 </div>
                                 <div class="form-group">
+                                    <label for="nombre">DNI</label>
+                                    <input type="text" class="form-control" id="nombre">
+                                </div>
+                                <div class="form-group">
                                     <label for="correo">Correo</label>
                                     <input type="email" class="form-control" id="correo">
                                 </div>
@@ -309,7 +256,7 @@
             </div>
         </div>
     </div>
-    
+
     <section class="container-fluid destacados ba1 mt-5">
         <div class="container py-3">
             <div class="row py-5">
@@ -317,64 +264,71 @@
                     <h2 class="bl">Destacados</h2>
                 </div>
                 <div class="col-12 px-0">
-
-
                     <div class="d-flex flex-wrap flex-row dest-car">
+
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                <div class="card-body ba3 bl">
-                                    <h5 class="card-title mb-0">MAZDA</h5>
-                                    <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                    <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                </div>
+                                <a href="autos/mini-cooper-s">
+                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
+                                    <div class="card-body ba3 bl">
+                                        <h5 class="card-title mb-0">MAZDA</h5>
+                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
+                                        <hr>
+                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
+
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                <div class="card-body ba3 bl">
-                                    <h5 class="card-title mb-0">MAZDA</h5>
-                                    <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                    <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                </div>
+                                <a href="autos/mini-cooper-s">
+                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
+                                    <div class="card-body ba3 bl">
+                                        <h5 class="card-title mb-0">MAZDA</h5>
+                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
+                                        <hr>
+                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
+
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                <div class="card-body ba3 bl">
-                                    <h5 class="card-title mb-0">MAZDA</h5>
-                                    <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                    <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                </div>
+                                <a href="autos/mini-cooper-s">
+                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
+                                    <div class="card-body ba3 bl">
+                                        <h5 class="card-title mb-0">MAZDA</h5>
+                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
+                                        <hr>
+                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
+
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                <div class="card-body ba3 bl">
-                                    <h5 class="card-title mb-0">MAZDA</h5>
-                                    <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                    <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                </div>
+                                <a href="autos/mini-cooper-s">
+                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
+                                    <div class="card-body ba3 bl">
+                                        <h5 class="card-title mb-0">MAZDA</h5>
+                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
+                                        <hr>
+                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 p-3">
-                            <div class="card">
-                                <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                <div class="card-body ba3 bl">
-                                    <h5 class="card-title mb-0">MAZDA</h5>
-                                    <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                    <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                </div>
-                            </div>
-                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="legal p-3">
+                        <p class="card-text text-right bl"><small>* sujeto a evaluación crediticia, cuotas estimadas con una inicial del 20% + cuotas dobles en julio y diciembre</small></p>
                     </div>
 
                 </div>
@@ -382,22 +336,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container-fluid">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center"><img src="<?=URL::to('public/img/footer_01.jpg')?>" alt="" class="img-fluid"></div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid ba1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center"><img src="<?=URL::to('public/img/footer_02.jpg')?>" alt="" class="img-fluid"></div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "footer.php" ?>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
