@@ -56,12 +56,12 @@
 
 
                             <div class="form-group row mb-0">
-                                <label for="staticEmail" class="col-sm-6 col-form-label pb-0 label-leg"><small>Mínimo</small></label>
-                                <label for="staticEmail" class="col-sm-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pb-0 label-leg"><small>Mínimo</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
                             </div>
                             <div class="form-group row label-leg">
-                                <label for="staticEmail" class="col-sm-6 col-form-label pt-0 label-leg"><small>$2,000.00</small></label>
-                                <label for="staticEmail" class="col-sm-6 col-form-label text-right pt-0 label-leg"><small>$100,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small>$2,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small>$100,000.00</small></label>
                             </div>
 
 
@@ -78,12 +78,12 @@
 
 
                             <div class="form-group row mb-0 label-leg">
-                                <label for="staticEmail" class="col-sm-6 col-form-label pb-0 label-leg"><small>Mínimo</small></label>
-                                <label for="staticEmail" class="col-sm-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pb-0 label-leg"><small>Mínimo</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
                             </div>
                             <div class="form-group row label-leg">
-                                <label for="staticEmail" class="col-sm-6 col-form-label pt-0 label-leg"><small>$10,000.00</small></label>
-                                <label for="staticEmail" class="col-sm-6 col-form-label text-right pt-0 label-leg"><small>$1,000,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small>$10,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small>$1,000,000.00</small></label>
                             </div>
 
 
@@ -100,12 +100,12 @@
 
 
                             <div class="form-group row mb-0">
-                                <label for="staticEmail" class="col-sm-6 col-form-label pb-0 label-leg"><small>Mínimo</small></label>
-                                <label for="staticEmail" class="col-sm-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pb-0 label-leg"><small>Mínimo</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
                             </div>
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-6 col-form-label pt-0 label-leg"><small>6 meses</small></label>
-                                <label for="staticEmail" class="col-sm-6 col-form-label text-right pt-0 label-leg"><small>48 meses</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small>6 meses</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small>48 meses</small></label>
                             </div>
 
 
