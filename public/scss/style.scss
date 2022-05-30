@@ -52,6 +52,13 @@ header {
     top: 15px;
 }
 
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 // Estilos
 
 .fmd {

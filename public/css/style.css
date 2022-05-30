@@ -82,6 +82,13 @@ header {
   top: 15px;
 }
 
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
 .fmd {
   font-weight: 500;
   font-style: normal;

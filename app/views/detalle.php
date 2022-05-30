@@ -16,65 +16,9 @@
 </head>
 
 <body>
-    <header class="container-fluid p-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 py-4 text-center text-md-left">
-                    <img src="<?=URL::to('public/img/bbva_logo.webp')?>" alt="" height="40">
-                </div>
-                <div class="col-6"></div>
-            </div>
-        </div>
-        <div class="single-item">
-
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <header class="container-fluid p-0 pt-5">
+        <?php include "navbar.php"; ?>
+        <?php include "carrusel.php"; ?>
     </header>
 
 
@@ -279,6 +223,10 @@
                                     <input type="text" class="form-control" id="nombre">
                                 </div>
                                 <div class="form-group">
+                                    <label for="nombre">DNI</label>
+                                    <input type="text" class="form-control" id="nombre">
+                                </div>
+                                <div class="form-group">
                                     <label for="correo">Correo</label>
                                     <input type="email" class="form-control" id="correo">
                                 </div>
@@ -382,22 +330,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container-fluid">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center"><img src="<?=URL::to('public/img/footer_01.jpg')?>" alt="" class="img-fluid"></div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid ba1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center"><img src="<?=URL::to('public/img/footer_02.jpg')?>" alt="" class="img-fluid"></div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "footer.php" ?>
 
 
     <!-- Optional JavaScript; choose one of the two! -->

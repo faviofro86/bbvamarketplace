@@ -7,77 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=URL::to('public/css/bootstrap.min.css')?>">
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?=URL::to('public/css/slick-theme.css')?>" />
+
+    <link rel="stylesheet" href="<?=URL::to('public/css/style.css')?>">
 
     <title>Hello, world!</title>
 </head>
 
 <body>
-    <header class="container-fluid p-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 py-4 text-center text-md-left">
-                    <img src="img/bbva_logo.webp" alt="" height="40">
-                </div>
-                <div class="col-6"></div>
-            </div>
-        </div>
-        <div class="single-item">
-
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(img/prestamo.png)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(img/prestamo.png)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(img/prestamo.png)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <header class="container-fluid p-0 pt-5">
+        <?php include "navbar.php"; ?>
+        <?php include "carrusel.php"; ?>
     </header>
-
-
 
 
     <div class="container">
@@ -95,7 +39,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="inputPassword">
                                         <div class="input-group-prepend" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
-                                            <button class="input-group-text"><img src="img/lupa-r.svg" alt="" width="15"></button>
+                                            <button class="input-group-text"><img src="<?=URL::to('public/img/lupa-r.svg')?>" alt="" width="15"></button>
                                         </div>
                                     </div>
                                 </div>
@@ -157,6 +101,10 @@
                                     <input type="text" class="form-control" id="nombre">
                                 </div>
                                 <div class="form-group">
+                                    <label for="nombre">DNI</label>
+                                    <input type="text" class="form-control" id="nombre">
+                                </div>
+                                <div class="form-group">
                                     <label for="correo">Correo</label>
                                     <input type="email" class="form-control" id="correo">
                                 </div>
@@ -186,90 +134,15 @@
                         <div class="d-flex flex-wrap flex-row">
                             <div class="col-12 col-md-6 p-3">
                                 <div class="card">
-                                    <img src="img/carro2.png" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 p-3">
-                                <div class="card">
-                                    <img src="img/carro2.png" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 p-3">
-                                <div class="card">
-                                    <img src="img/carro2.png" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 p-3">
-                                <div class="card">
-                                    <img src="img/carro2.png" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 p-3">
-                                <div class="card">
-                                    <img src="img/carro2.png" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 p-3">
-                                <div class="card">
-                                    <img src="img/carro2.png" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 p-3">
-                                <div class="card">
-                                    <img src="img/carro2.png" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 p-3">
-                                <div class="card">
-                                    <img src="img/carro2.png" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                    </div>
+                                    <a href="autos/mini-cooper-s">
+                                        <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
+                                        <div class="card-body ba3 bl">
+                                            <h5 class="card-title mb-0">MAZDA</h5>
+                                            <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
+                                            <hr>
+                                            <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -328,101 +201,84 @@
                     <h2 class="bl">Destacados</h2>
                 </div>
                 <div class="col-12 px-0">
-
-
                     <div class="d-flex flex-wrap flex-row dest-car">
+                       
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
-                                <div class="card-body ba3 bl">
-                                    <h5 class="card-title mb-0">MAZDA</h5>
-                                    <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                    <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                </div>
+                                <a href="autos/mini-cooper-s">
+                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
+                                    <div class="card-body ba3 bl">
+                                        <h5 class="card-title mb-0">MAZDA</h5>
+                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
+                                        <hr>
+                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
+                       
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
-                                <div class="card-body ba3 bl">
-                                    <h5 class="card-title mb-0">MAZDA</h5>
-                                    <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                    <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                </div>
+                                <a href="autos/mini-cooper-s">
+                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
+                                    <div class="card-body ba3 bl">
+                                        <h5 class="card-title mb-0">MAZDA</h5>
+                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
+                                        <hr>
+                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
+                       
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
-                                <div class="card-body ba3 bl">
-                                    <h5 class="card-title mb-0">MAZDA</h5>
-                                    <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                    <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                </div>
+                                <a href="autos/mini-cooper-s">
+                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
+                                    <div class="card-body ba3 bl">
+                                        <h5 class="card-title mb-0">MAZDA</h5>
+                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
+                                        <hr>
+                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
+                       
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
-                                <div class="card-body ba3 bl">
-                                    <h5 class="card-title mb-0">MAZDA</h5>
-                                    <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                    <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                </div>
+                                <a href="autos/mini-cooper-s">
+                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
+                                    <div class="card-body ba3 bl">
+                                        <h5 class="card-title mb-0">MAZDA</h5>
+                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
+                                        <hr>
+                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 p-3">
-                            <div class="card">
-                                <img src="img/carro2.png" class="card-img-top" alt="...">
-                                <div class="card-body ba3 bl">
-                                    <h5 class="card-title mb-0">MAZDA</h5>
-                                    <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                    <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
-                                </div>
-                            </div>
-                        </div>
+                        
+                        
+                        
+                        
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container-fluid">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center"><img src="img/footer_01.jpg" alt="" class="img-fluid"></div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid ba1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center"><img src="img/footer_02.jpg" alt="" class="img-fluid"></div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "footer.php" ?>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="js/jquery.slim.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="<?=URL::to('public/js/jquery.slim.min.js')?>"></script>
+    <script src="<?=URL::to('public/js/bootstrap.bundle.min.js')?>"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-    -->
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script>
@@ -436,8 +292,6 @@
                 $("<div class='col-12'><hr class='mt-0'></div>").insertAfter(".caract");
             }
 
-
-
             $('.slider-for').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -445,6 +299,7 @@
                 fade: true,
                 asNavFor: '.slider-nav'
             });
+
             $('.slider-nav').slick({
                 slidesToShow: 3,
                 slidesToScroll: 1,
@@ -481,12 +336,19 @@
                     // instead of a settings object
                 ]
             });
+
             $('.single-item').slick({
                 dots: true,
                 arrows: true,
                 infinite: true,
-                speed: 300
+                speed: 300,
+                autoplaySpeed: 2000
             });
+
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+
             $('.dest-car').slick({
                 dots: false,
                 arrows: true,
