@@ -1,5 +1,7 @@
 @import 'fonts';
 
+
+
 $a1: #072146;
 $a2: #004480;
 $a3: #19739E;
@@ -74,6 +76,10 @@ header {
     }
 }
 
+.display-n {
+    display: none !important;
+}
+
 .btn-s {
     border: 0;
     width: 100%;
@@ -84,140 +90,10 @@ header {
 
 }
 
-// CAROUSEL
 
-.single-item {
-    background-color: #004480;
-
-}
-
-.cont {
-    background-color: #004480;
-
-    .titulo {
-        font-size: calc(55px - .5vw);
-        line-height: calc(55px - .5vw);
-        font-weight: 500;
-    }
-
-    .parrafo {
-        font-size: calc(36px - .5vw);
-        line-height: calc(36px - .5vw);
-    }
-}
-
-.poly {
-    height: 528px;
-    position: relative;
-    background-size: cover;
-}
-
-.poly-f {
-    width: 0;
-    height: 0;
-    border-top: 528px solid #004480;
-    border-right: calc(50vw * .28) solid transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.slick-arrow {
-    position: absolute;
-}
-
-.slick-prev {
-    top: 50%;
-    left: 5%;
-    z-index: 100;
-}
-
-.slick-next {
-    top: 50%;
-    right: 5%;
-}
+@import 'banners';
 
 
-.dest-car {
-    .slick-prev {
-        top: 50%;
-        left: -2%;
-        z-index: 100;
-    }
-
-    .slick-next {
-        top: 50%;
-        right: -2%;
-    }
-}
-
-
-@media (max-width: 767.98px) {
-    .cont {
-        .titulo {
-            font-size: calc(32px - .5vw);
-            line-height: calc(32px - .5vw);
-            font-weight: 500;
-        }
-
-        .parrafo {
-            font-size: calc(18px - .5vw);
-            line-height: calc(18px - .5vw);
-        }
-    }
-
-    .poly {
-        height: 182px;
-
-    }
-
-    .poly-f {
-        display: none;
-    }
-}
-
-.calcula {
-    color: $a1;
-
-    .titulo {
-        font-size: calc(53px - .5vw);
-        font-weight: 500;
-        margin-bottom: 0;
-    }
-
-    .parr {
-        font-size: calc(22px - .5vw);
-        font-weight: 500;
-        margin-bottom: 60px;
-    }
-
-    label {
-        font-weight: 500;
-
-    }
-
-    .lbl {
-        font-size: calc(28px - .5vw);
-    }
-
-    .form-check-label {
-        font-weight: normal;
-    }
-
-    input {
-        border: 1px solid $a1;
-        border-radius: 0;
-    }
-
-    .input-group-text {
-        border: 1px solid $a1;
-        border-left: 0;
-        border-radius: 0;
-        background-color: $bl;
-        color: $ro;
-        font-weight: 500;
-    }
-}
 
 .busca-home {
     color: $a1;
@@ -374,6 +250,48 @@ h4 {
 
 }
 
+.btn-lead {
+    background-color: $bl;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    width: 174px;
+    height: 46px;
+    border: 1px solid #f4f4f4;
+    border-radius: 30px;
+    line-height: 16px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+    cursor: pointer;
+    text-align: center;
+    color: $a3;
+    font-weight: 500;
+    font-size: 13px;
+
+    &:hover {
+        background-color: $a3;
+        color: $bl;
+
+        svg {
+            fill: $bl;
+
+        }
+    }
+
+    svg {
+        fill: $a3;
+        max-width: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+}
+
+.bootstrap-select {
+    border: 1px solid #ced4da !important;
+}
+
 @media (max-width: 991.98px) {}
 
 @media (max-width: 767.98px) {
@@ -447,3 +365,8 @@ h4 {
         }
     }
 }
+
+
+@import 'navbar';
+
+@import 'calculadora';

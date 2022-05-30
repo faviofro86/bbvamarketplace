@@ -18,129 +18,13 @@
 </head>
 
 <body>
-    <header class="container-fluid p-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 py-4 text-center text-md-left">
-                    <img src="<?=URL::to('public/img/bbva_logo.webp')?>" alt="" height="40">
-                </div>
-                <div class="col-6"></div>
-            </div>
-        </div>
-        <div class="single-item">
 
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-md-3 offset-md-3 cont d-flex order-12 order-lg-1">
-                        <div class="align-self-center py-5 py-lg-2">
-                            <p class="titulo bl mb-0">Solicita tu</p>
-                            <p class="titulo am">préstamo vehicular</p>
-                            <div class="parrafo bl">Elige el auto perfecto para ti.</div>
-                            <div class="cta"></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 poly order-1 order-lg-12" style="background-image: url(<?=URL::to('public/img/prestamo.png')?>)">
-                        <div class="poly-f"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <header class="container-fluid p-0 pt-5">
+        <?php include "navbar.php"; ?>
+        <?php include "carrusel.php"; ?>
     </header>
-    <section class="container calcula">
-        <div class="row">
-
-            <div class="col-12">
-
-            </div>
-
-            <div class="col-12 col-lg-5">
-                <p class="titulo">Simula tu préstamo</p>
-                <p class="parr">Completa la siguiente información para simular tu préstamo</p>
-
-                <form>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Moneda</label>
-                        <div class="col-sm-8 d-flex justify-content-between">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="soles" value="option1">
-                                <label class="form-check-label lbl" for="soles">Soles</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="dolares" value="option2">
-                                <label class="form-check-label lbl" for="dolares">Dólares</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Inicial</label>
-                        <div class="col-sm-8 input-group">
-                            <input type="text" class="form-control" id="inputPassword">
-                            <div class="input-group-prepend" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
-                                <div class="input-group-text">?</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Préstamo</label>
-                        <div class="col-sm-8 input-group">
-                            <input type="text" class="form-control" id="inputPassword">
-                            <div class="input-group-prepend" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
-                                <div class="input-group-text">?</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Mensualidades</label>
-                        <div class="col-sm-8 input-group">
-                            <input type="text" class="form-control" id="inputPassword">
-                            <div class="input-group-prepend" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
-                                <div class="input-group-text">?</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="buttom">
-                        <button class="btn-g float-md-right">¡Calcula tu financiamiento!</button>
-                    </div>
-                </form>
-
-            </div>
-            <div class="col-12 col-lg-6 offset-md-1">
-                <img src="<?=URL::to('public/img/llave-banner.png')?>" alt="" class="img-fluid">
-            </div>
-        </div>
-    </section>
+    <?php include "calculadora.php"; ?>
 
     <section class="container mt-5">
         <div class="row">
@@ -155,11 +39,11 @@
                         <div class="form-group col-12 col-md-3">
                             <label for="inputState">Marca</label>
                             <select class="form-control" name="marca" required onchange="load(this.value)">
-								<option selected disabled hidden value="">Selecciona una marca</option>
-								<?php foreach($data['marcas'] as $marca){ ?>
-									<option value="<?php echo $marca->id; ?>"><?php echo $marca->marca; ?></option>
-								<?php } ?>
-							</select>
+                                <option selected disabled hidden value="">Selecciona una marca</option>
+                                <?php foreach($data['marcas'] as $marca){ ?>
+                                <option value="<?php echo $marca->id; ?>"><?php echo $marca->marca; ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
                         <div class="form-group col-12 col-md-3" id="modelo">
                             <label for="inputState">Modelo</label>
@@ -169,8 +53,8 @@
                                 <option>Audi</option>
                             </select>
                         </div>
-                        
-                      
+
+
                         <div class="form-group col-12 col-md-3">
                             <label for="inputState">Tipo</label>
                             <select id="inputState" class="form-control">
@@ -184,8 +68,7 @@
                         <div class="form-group col-12 col-md-3">
                             <label for="inputState">Condición</label>
                             <select id="inputState" class="form-control">
-                                <option selected></option>
-                                <option>Nuevo</option>
+                                <option selected>Nuevo</option>
                                 <option>Usado</option>
                             </select>
                         </div>
@@ -225,7 +108,7 @@
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
                                     <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
+                                    <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +119,7 @@
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
                                     <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
+                                    <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
                                 </div>
                             </div>
                         </div>
@@ -247,7 +130,7 @@
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
                                     <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
+                                    <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
                                 </div>
                             </div>
                         </div>
@@ -258,7 +141,7 @@
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
                                     <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
+                                    <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
                                 </div>
                             </div>
                         </div>
@@ -269,13 +152,15 @@
                                     <h5 class="card-title mb-0">MAZDA</h5>
                                     <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
                                     <hr>
-                                    <p class="card-text text-right"><small>desde US$ 22,790</small></p>
+                                    <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
+                    <div class="legal p-3">
+                        <p class="card-text text-right bl"><small>* sujeto a evaluación crediticia, cuotas estimadas con una inicial del 20% + cuotas dobles en julio y diciembre</small></p>
+                    </div>
 
                 </div>
             </div>
@@ -314,33 +199,53 @@
             dots: true,
             arrows: true,
             infinite: true,
-            speed: 300
+            speed: 300,
+            autoplaySpeed: 2000
         });
 
         $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
 
+        $("#monton, #montor, #inicialn, #inicialr, #mesn, #mesr").on("input", function() {
+
+
+            var monto = $("#monton").val();
+            var inicial = $("#inicialn").val();
+            var meses = $("#mesn").val();
+
+            var inte = 14.99 / 100;
+
+            var cuota = ((parseInt(monto) * inte) - parseInt(inicial)) / parseInt(meses);
+            var tasa = parseInt(monto) * inte;
+            var valor = parseInt(cuota) + parseInt(tasa);
+
+            $(".cuota").text(cuota.toFixed(2));
+            $(".tasa").text(tasa.toFixed(2));
+            $(".total").text(valor.toFixed(2));
+
+        });
+
     </script>
-   <script>
-	function load(str){
-	  var xmlhttp;
-	  if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
-		xmlhttp=new XMLHttpRequest();
-	  }
-	  else{// code for IE6, IE5
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	  xmlhttp.onreadystatechange=function(){
-		if (xmlhttp.readyState==4 && xmlhttp.status==200){
-		  document.getElementById("modelo").innerHTML=xmlhttp.responseText;
-		}
-	  }
-	  xmlhttp.open("POST","<?=URL::to('admin/poblarmodelo')?>",true);
-	  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	  xmlhttp.send("q="+str);
-	}  
-	</script>
+    <script>
+        function load(str) {
+            var xmlhttp;
+            if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else { // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("modelo").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("POST", "<?=URL::to('admin/poblarmodelo')?>", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send("q=" + str);
+        }
+
+    </script>
 </body>
 
 </html>

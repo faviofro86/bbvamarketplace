@@ -1,0 +1,28 @@
+/*
+.dropdown {
+    &:hover {
+        > .dropdown-menu {
+            display: block;
+        }
+    }
+}
+*/
+.megamenu {
+    position: static;
+
+    .dropdown-menu {
+        border: none;
+        width: 100%;
+    }
+}
+
+.navbar {
+    a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        
+        &:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+}
