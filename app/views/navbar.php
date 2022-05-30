@@ -2,7 +2,7 @@
 
         <div class="container">
 
-            <a href="#" class="navbar-brand font-weight-bold mr-auto">
+            <a href="<?=URL::to('/')?>" class="navbar-brand font-weight-bold mr-auto">
 
                 <img src="<?=URL::to('public/img/bbva_logo.webp')?>" alt="" height="40">
 
