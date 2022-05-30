@@ -35,6 +35,9 @@ class Home {
 	public function detalle() {
         View::render('detalle');
     }
+	public function marcas() {
+        View::render('marcas');
+    }
 	public function index2() {
         $meta = array(
             'title' => 'Home',

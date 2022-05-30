@@ -11,6 +11,9 @@ Route::get('detalle','Home@detalle');
 //Ruta asignada a controlador y funcion
 Route::get('listado','Home@listado');
 
+//Ruta asignada a controlador y funcion
+Route::get('marcas','Home@marcas');
+
 //Ruta para vista detalle de vehículo
 Route::get('autos/{slug}','Autos@detalle');
 
