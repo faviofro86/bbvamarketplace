@@ -16,10 +16,10 @@
                 <ul class="navbar-nav ml-auto d-flex align-items-center flex-row justify-content-center justify-content-lg-end pt-4 pt-lg-0">
                     <!-- Megamenu-->
                     <li class="nav-item mr-4">
-                        <a class=" bl" href="#">Registro</a>
+                        <a class=" bl" href="<?=URL::to('usuario/registrar_form')?>">Registro</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn__basic btn__medium-aqua font-weight-bold bl" href="#">Inicio de sesión</a>
+                        <a class="btn__basic btn__medium-aqua font-weight-bold bl" href="<?=URL::to('login')?>">Inicio de sesión</a>
                     </li>
                     
                 </ul>
