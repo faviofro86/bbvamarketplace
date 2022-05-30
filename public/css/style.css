@@ -315,7 +315,7 @@ a:hover {
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas: "slide-texto slide-texto slide-img slide-img slide-img";
-    height: 60vmin;
+    height: 40vmin;
   }
 }
 @media (max-width: 767.98px) {
@@ -349,7 +349,6 @@ a:hover {
     gap: 0px 0px;
     grid-template-areas: "slide-img" "slide-texto";
     height: 490px;
-    margin-top: 35px;
     justify-items: center;
   }
   .slide-cont .titulo {

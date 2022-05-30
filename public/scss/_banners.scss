@@ -213,7 +213,7 @@
         grid-template-rows: 1fr;
         gap: 0px 0px;
         grid-template-areas: "slide-texto slide-texto slide-img slide-img slide-img";
-        height: 60vmin;
+        height: 40vmin;
     }
 }
 
@@ -255,7 +255,6 @@
             "slide-texto";
 
         height: 490px;
-        margin-top: 35px;
         justify-items: center;
 
         .titulo {
