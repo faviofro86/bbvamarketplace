@@ -243,14 +243,25 @@
                             </form>
                         </div>
                     </div>
-                    <div class="row bgr mt-5 p-3">
+                    <?php foreach($data['adds'] as $adds){ ?>
+					<a href="<?php echo $adds->url1; ?>" class="card-link">
+                   		<div class="row bgr mt-5 p-3">
+                        	<div class="col-12">
+								<div class="card py-5">
+									<img src="<?=URL::to('public/banners/'.$adds->imagen);?>" class="img-fluid" alt="...">
+								</div>
+                        	</div>
+                        <!-- Bootstrap CSS 
                         <div class="col-12">
                             <img src="<?=URL::to('public/img/hyundai.svg')?>" alt="" class="img-fluid my-4">
                             <button class="btn-s mb-4">
                                 Ver más vehículos
                             </button>
                         </div>
-                    </div>
+                        -->
+                    	</div>
+					</a>
+					<?php } ?>
                 </div>
 
             </div>

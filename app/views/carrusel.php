@@ -1,107 +1,44 @@
 <div class="single-item">
-
+    
+    <?php foreach($data['banners'] as $banner){ ?>
     <div class="slide">
-
+		<?php if($banner->ubicacion==1){ ?>
         <div class="slide-cont">
             <div class="slide-texto">
-                <p class="titulo bl mb-0">Solicita tu</p>
-                <p class="titulo am">préstamo vehicular</p>
-                <div class="parrafo bl mb-4">Elige el auto perfecto para ti.</div>
+              	<?php $cadena = $banner->titulo;
+				# Cuántas palabras extraer
+				$cantidad_palabras = 3;
+				$palabras_arreglo = explode(" ", $cadena);
+				$primer_texto = implode(" ", array_slice($palabras_arreglo, 0, $cantidad_palabras));
+				if(strlen($primer_texto)>19){
+					$cantidad_palabras = 2;
+					$primer_texto = implode(" ", array_slice($palabras_arreglo, 0, $cantidad_palabras));						
+					$segundo_texto = implode(" ", array_slice($palabras_arreglo, $cantidad_palabras));
+				}else{
+					$segundo_texto = implode(" ", array_slice($palabras_arreglo, $cantidad_palabras));
+				}
+			    ?>
+                <p class="titulo bl mb-0"><?php echo $primer_texto; ?></p>
+                <p class="titulo am"><?php echo $segundo_texto; ?></p>
+                <div class="parrafo bl mb-4"><?php echo $banner->subtitulo; ?></div>
 
-                <a href="" class="car-link mr-4">
-                    <div class="btn__basic btn__medium-aqua">Cotiza aquí</div>
+                <a target="_blank" href="<?php echo $banner->url1; ?>" class="car-link mr-4">
+                    <div class="btn__basic btn__medium-aqua"><?php echo $banner->btn1; ?></div>
                 </a>
 
-                <a href="" class="car-link">
+                <a target="_blank" href="<?php echo $banner->url2; ?>" class="car-link">
                     <div class="complexmarquee__linkwrapper mt-4">
                         <img class="bbva-svgicon bbva-svgicon--core " src="<?=URL::to('public/img/3_029_oneclick.svg')?>" alt="">
-                        <span>Conoce la promoción </span>
+                        <span><?php echo $banner->btn2; ?></span>
                     </div>
                 </a>
             </div>
 
-            <div class="slide-img" style="background-image: url(<?=URL::to('public/img/1092x1236_1.jpg')?>)">
+            <div class="slide-img" style="background-image: url(<?=URL::to('public/banners/'.$banner->imagen)?>)">
             </div>
         </div>
-
+        <?php } ?>
     </div>
-
-    <div class="slide">
-
-        <div class="slide-cont">
-            <div class="slide-texto">
-                <p class="titulo bl mb-0">Solicita tu</p>
-                <p class="titulo am">préstamo vehicular</p>
-                <div class="parrafo bl mb-4">Elige el auto perfecto para ti.</div>
-
-                <a href="" class="car-link mr-4">
-                    <div class="btn__basic btn__medium-aqua">Cotiza aquí</div>
-                </a>
-
-                <a href="" class="car-link">
-                    <div class="complexmarquee__linkwrapper mt-4">
-                        <img class="bbva-svgicon bbva-svgicon--core " src="<?=URL::to('public/img/3_029_oneclick.svg')?>" alt="">
-                        <span>Conoce la promoción </span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="slide-img" style="background-image: url(<?=URL::to('public/img/1092x1236_2.jpg')?>)">
-            </div>
-        </div>
-
-    </div>
-
-    <div class="slide">
-
-        <div class="slide-cont">
-            <div class="slide-texto">
-                <p class="titulo bl mb-0">Solicita tu</p>
-                <p class="titulo am">préstamo vehicular</p>
-                <div class="parrafo bl mb-4">Elige el auto perfecto para ti.</div>
-
-                <a href="" class="car-link mr-4">
-                    <div class="btn__basic btn__medium-aqua">Cotiza aquí</div>
-                </a>
-
-                <a href="" class="car-link">
-                    <div class="complexmarquee__linkwrapper mt-4">
-                        <img class="bbva-svgicon bbva-svgicon--core " src="<?=URL::to('public/img/3_029_oneclick.svg')?>" alt="">
-                        <span>Conoce la promoción </span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="slide-img" style="background-image: url(<?=URL::to('public/img/1092x1236_3.jpg')?>)">
-            </div>
-        </div>
-
-    </div>
-
-    <div class="slide">
-
-        <div class="slide-cont">
-            <div class="slide-texto">
-                <p class="titulo bl mb-0">Solicita tu</p>
-                <p class="titulo am">préstamo vehicular</p>
-                <div class="parrafo bl mb-4">Elige el auto perfecto para ti.</div>
-
-                <a href="" class="car-link mr-4">
-                    <div class="btn__basic btn__medium-aqua">Cotiza aquí</div>
-                </a>
-
-                <a href="" class="car-link">
-                    <div class="complexmarquee__linkwrapper mt-4">
-                        <img class="bbva-svgicon bbva-svgicon--core " src="<?=URL::to('public/img/3_029_oneclick.svg')?>" alt="">
-                        <span>Conoce la promoción </span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="slide-img" style="background-image: url(<?=URL::to('public/img/1092x1236_4.jpg')?>)">
-            </div>
-        </div>
-
-    </div>
+    <?php } ?>
 
 </div>

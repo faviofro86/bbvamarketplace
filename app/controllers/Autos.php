@@ -164,7 +164,9 @@ class Autos {
 			//echo var_dump($c);
 			
 			DB::getinstance()->table('vehiculos')->where('slug',$slug)->update(['numvisitas'=>($a[0]["numvisitas"]+1)]);
-        	View::render('detalle', ['data'=>$a, 'imgs'=>$c]);
+			$banners = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',1)->get();
+			$adds = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',2)->get();
+        	View::render('detalle', ['data'=>$a, 'imgs'=>$c, 'banners'=>$banners,'adds' => $adds]);
 		}else{
 			View::render('detalle');
 		}		

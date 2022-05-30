@@ -22,8 +22,10 @@
 
     <header class="container-fluid p-0">
         
-        <?php include "carrusel.php"; ?>
+    <?php include "carrusel.php"; ?>
+    
     </header>
+    
     <?php include "calculadora.php"; ?>
 
     <section class="container mt-5">
@@ -96,11 +98,15 @@
 
 
                     <div class="d-flex flex-wrap flex-row">
+                        <?php foreach($data['adds'] as $adds){ ?>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card py-5">
-                                <img src="<?=URL::to('public/img/ad.png')?>" class="img-fluid" alt="...">
+                                <a href="<?php echo $adds->url1; ?>" class="card-link">
+                                <img src="<?=URL::to('public/banners/'.$adds->imagen);?>" class="img-fluid" alt="...">
+                                </a>
                             </div>
                         </div>
+                        <?php } ?>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
                                 <a href="autos/mini-cooper-s" class="card-link">

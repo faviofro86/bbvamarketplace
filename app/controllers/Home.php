@@ -27,7 +27,9 @@ class Home {
 		$categorias = DB::getinstance()->table('categorias')->where('estado',1)->get();
 		$condicion = DB::getinstance()->table('condicion')->get();
 		//Debug::varDump($a);
-        View::render('index', ['meta' => $meta,'data'=>$a,'marcas'=>$marcas,'categorias'=>$categorias,'condicion'=>$condicion]);
+        $banners = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',1)->get();
+		$adds = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',2)->get();
+        View::render('index', ['meta' => $meta,'data'=>$a,'marcas'=>$marcas,'categorias'=>$categorias,'condicion'=>$condicion, 'banners' => $banners,'adds' => $adds]);
     }
 	public function listado() {
         View::render('listado');

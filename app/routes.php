@@ -41,6 +41,11 @@ Route::get('admin/modelo_form','Autos@modelo_form');
 //Ruta para cargar vista de registro de modelo
 Route::post('admin/modelo_registrar','Autos@modelo_registrar');
 
+//Ruta para cargar vista de registro de banner
+Route::get('banner','Banners@banner_form');
+
+//Ruta para cargar vista de registro de banner
+Route::post('admin/banner_add','Banners@banner_add');
 
 
 /***************USUARIOS*****************/
