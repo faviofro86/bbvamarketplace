@@ -18,10 +18,10 @@
 </head>
 
 <body>
+    <?php include "navbar.php"; ?>
 
-
-    <header class="container-fluid p-0 pt-5">
-        <?php include "navbar.php"; ?>
+    <header class="container-fluid p-0">
+        
         <?php include "carrusel.php"; ?>
     </header>
     <?php include "calculadora.php"; ?>
@@ -31,7 +31,7 @@
             <div class="col-12">
                 <h2>Busca tu auto</h2>
             </div>
-            <form action="autos/mini-cooper-s" class="col-12 p-5 bgr mb-5 busca-home">
+            <form action="listado" class="col-12 p-5 bgr mb-5 busca-home">
 
                 <div class="col-12">
 

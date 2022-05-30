@@ -18,8 +18,8 @@
 </head>
 
 <body>
-    <header class="container-fluid p-0 pt-5">
-        <?php include "navbar.php"; ?>
+   <?php include "navbar.php"; ?>
+    <header class="container-fluid p-0">
         <?php include "carrusel.php"; ?>
     </header>
 
@@ -263,6 +263,11 @@
                         
                         
                     </div>
+                    
+                    <div class="legal p-3">
+                        <p class="card-text text-right bl"><small>* sujeto a evaluación crediticia, cuotas estimadas con una inicial del 20% + cuotas dobles en julio y diciembre</small></p>
+                    </div>
+                    
                 </div>
             </div>
         </div>

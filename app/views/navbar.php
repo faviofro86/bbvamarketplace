@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-expand-lg navbar-dark ba1 py-3 shadow-sm fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ba1 py-3 shadow-sm">
 
         <div class="container">
 

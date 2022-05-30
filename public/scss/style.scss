@@ -76,6 +76,10 @@ a {
     padding: 15px;
     border: 0;
     margin: 15px 0;
+    
+    &:hover {
+        color: $am;
+    }
 
     img {
         height: 1.5em;

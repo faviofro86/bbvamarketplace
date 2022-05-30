@@ -105,6 +105,9 @@ a:hover {
   border: 0;
   margin: 15px 0;
 }
+.btn-g:hover {
+  color: #F8CD51;
+}
 .btn-g img {
   height: 1.5em;
   margin-right: 6px;
@@ -568,6 +571,11 @@ h4 {
   width: 100%;
 }
 
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 .navbar a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
