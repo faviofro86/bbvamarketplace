@@ -38,7 +38,9 @@ class Home {
         View::render('detalle');
     }
 	public function marcas() {
-        View::render('marcas');
+		$banners = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',1)->get();
+		$adds = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',2)->get();
+        View::render('marcas',['banners' => $banners,'adds' => $adds]);
     }
 	public function index2() {
         $meta = array(
