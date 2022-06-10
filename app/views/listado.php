@@ -18,7 +18,7 @@
 </head>
 
 <body>
-   <?php include "navbar.php"; ?>
+    <?php include "navbar.php"; ?>
     <header class="container-fluid p-0">
         <?php include "carrusel.php"; ?>
     </header>
@@ -202,7 +202,7 @@
                 </div>
                 <div class="col-12 px-0">
                     <div class="d-flex flex-wrap flex-row dest-car">
-                       
+
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
                                 <a href="autos/mini-cooper-s">
@@ -216,7 +216,7 @@
                                 </a>
                             </div>
                         </div>
-                       
+
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
                                 <a href="autos/mini-cooper-s">
@@ -230,7 +230,7 @@
                                 </a>
                             </div>
                         </div>
-                       
+
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
                                 <a href="autos/mini-cooper-s">
@@ -244,7 +244,7 @@
                                 </a>
                             </div>
                         </div>
-                       
+
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
                                 <a href="autos/mini-cooper-s">
@@ -258,16 +258,16 @@
                                 </a>
                             </div>
                         </div>
-                        
-                        
-                        
-                        
+
+
+
+
                     </div>
-                    
+
                     <div class="legal p-3">
                         <p class="card-text text-right bl"><small>* sujeto a evaluación crediticia, cuotas estimadas con una inicial del 20% + cuotas dobles en julio y diciembre</small></p>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

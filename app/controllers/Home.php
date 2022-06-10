@@ -32,7 +32,9 @@ class Home {
         View::render('index', ['meta' => $meta,'data'=>$a,'marcas'=>$marcas,'categorias'=>$categorias,'condicion'=>$condicion, 'banners' => $banners,'adds' => $adds]);
     }
 	public function listado() {
-        View::render('listado');
+        $banners = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',1)->get();
+		$adds = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',2)->get();
+        View::render('listado',['banners' => $banners,'adds' => $adds]);
     }
 	public function detalle() {
         View::render('detalle');

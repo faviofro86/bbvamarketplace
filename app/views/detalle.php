@@ -30,7 +30,8 @@
                         <h1 class="titulo"><?= $data['data'][0]['marca']; ?></h1>
                         <h3 class="modelo"><?= $data['data'][0]['modelo']; ?></h3>
                         <hr>
-                        <p class="precio text-right">Desde US$ <?= number_format($data['data'][0]['precio']); ?></p>
+                        <p class="precio text-right m-0">Desde US$ <?= number_format($data['data'][0]['precio']); ?></p>
+                        <p class="text-right">Cuota desde US$ 610.00</p>
                         <hr>
                         <p class="version text-right">
                             <?= $data['data'][0]['resumen']; ?>
@@ -183,9 +184,14 @@
                         <div class="buttom">
                             <a class="btn-g" target="_blank" href="<?=URL::to('public/fichas/'.$data['data'][0]['fichatecnica'])?>"><img src="<?=URL::to('public/img/archivo.svg')?>" alt=""> Ficha técnica</a>
                         </div>
+
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="small">Las especificaciones y detalles del auto son en base a una versión básica</p>
+                    </div>
+                </div>
                 <div class="row mt-5 encuentra">
                     <div class="col-12">
                         <h4 class="modelo">Encuéntranos en</h4>
@@ -244,14 +250,14 @@
                         </div>
                     </div>
                     <?php foreach($data['adds'] as $adds){ ?>
-					<a href="<?php echo $adds->url1; ?>" class="card-link">
-                   		<div class="row bgr mt-5 p-3">
-                        	<div class="col-12">
-								<div class="card py-5">
-									<img src="<?=URL::to('public/banners/'.$adds->imagen);?>" class="img-fluid" alt="...">
-								</div>
-                        	</div>
-                        <!-- Bootstrap CSS 
+                    <a href="<?php echo $adds->url1; ?>" class="card-link">
+                        <div class="row bgr mt-5 p-3">
+                            <div class="col-12">
+                                <div class="card py-5">
+                                    <img src="<?=URL::to('public/banners/'.$adds->imagen);?>" class="img-fluid" alt="...">
+                                </div>
+                            </div>
+                            <!-- Bootstrap CSS 
                         <div class="col-12">
                             <img src="<?=URL::to('public/img/hyundai.svg')?>" alt="" class="img-fluid my-4">
                             <button class="btn-s mb-4">
@@ -259,9 +265,9 @@
                             </button>
                         </div>
                         -->
-                    	</div>
-					</a>
-					<?php } ?>
+                        </div>
+                    </a>
+                    <?php } ?>
                 </div>
 
             </div>

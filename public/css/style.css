@@ -126,70 +126,57 @@ a:hover {
   font-weight: 500;
 }
 
-.single-item {
-  background-color: #004480;
+.cont {
+  position: relative;
 }
 
-.slide-texto {
+.slide-bg-cont {
   background-color: #004480;
-  padding: 0 16px 24px;
-  padding-bottom: 80px;
+  min-height: 528px;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-.slide-texto .titulo {
+.slide-bg {
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+  grid-area: slide-img;
+  width: 50%;
+  background-size: cover;
+}
+
+.slide-txt-cont {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 20%;
+}
+
+.slide-txt {
+  width: 50%;
+  padding: 0 16px 80px;
+}
+.slide-txt .titulo {
   font-size: calc(55px - 0.5vw);
   line-height: calc(55px - 0.5vw);
   font-weight: 500;
 }
-
-.slide-texto .parrafo {
+.slide-txt .parrafo {
   font-size: calc(36px - 0.5vw);
   line-height: calc(36px - 0.5vw);
 }
-
-.poly {
-  height: 528px;
-  position: relative;
-  background-size: cover;
+.slide-txt .car-link {
+  text-decoration: none !important;
+  color: #ffffff;
 }
-
-.poly-f {
-  width: 0;
-  height: 0;
-  border-top: 528px solid #004480;
-  border-right: 14vw solid transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
+.slide-txt .car-link:hover {
+  color: #19739E !important;
 }
-
-.slick-arrow {
-  position: absolute;
-}
-
-.slick-prev {
-  top: 50%;
-  left: 5%;
-  z-index: 100;
-}
-
-.slick-next {
-  top: 50%;
-  right: 5%;
-}
-
-.dest-car .slick-prev {
-  top: 50%;
-  left: -2%;
-  z-index: 100;
-}
-.dest-car .slick-next {
-  top: 50%;
-  right: -2%;
-}
-
-
-.btn__basic {
+.slide-txt .btn__basic {
   font-family: BentonSansBBVA-Medium, Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 24px;
@@ -213,11 +200,10 @@ a:hover {
   cursor: pointer;
   background-color: #1973b8;
 }
-.btn__basic:hover {
+.slide-txt .btn__basic:hover {
   background-color: #2dcccd !important;
 }
-
-.btn__medium-aqua {
+.slide-txt .btn__medium-aqua {
   will-change: background-position;
   background-size: 210% 100%;
   background-position: 99% center;
@@ -227,11 +213,10 @@ a:hover {
   background-color: #028484;
   background-image: linear-gradient(100deg, #2dcccd 50%, #028484 50%);
 }
-.btn__medium-aqua:hover {
+.slide-txt .btn__medium-aqua:hover {
   background-color: #2dcccd !important;
 }
-
-.complexmarquee__linkwrapper {
+.slide-txt .complexmarquee__linkwrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,128 +225,74 @@ a:hover {
   align-items: baseline;
   color: #fff;
 }
-
-.bbva-svgicon {
+.slide-txt .bbva-svgicon {
   height: 20px;
   width: 20px;
   display: inline-block;
 }
-
-.bbva-svgicon {
+.slide-txt .bbva-svgicon {
   -webkit-filter: var(--svg-icon-color-default, brightness(0) saturate(100%) invert(40%) sepia(58%) saturate(655%) hue-rotate(163deg) brightness(92%) contrast(95%));
   filter: var(--svg-icon-color-default, brightness(0) saturate(100%) invert(40%) sepia(58%) saturate(655%) hue-rotate(163deg) brightness(92%) contrast(95%));
   margin-right: 8px;
   position: relative;
   top: 4px;
 }
-
-.bbva-svgicon--core {
+.slide-txt .bbva-svgicon--core {
   -webkit-filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0) hue-rotate(204deg) brightness(104%) contrast(102%);
   filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0) hue-rotate(204deg) brightness(104%) contrast(102%);
 }
 
-.car-link {
-  text-decoration: none !important;
-}
-.car-link:hover {
-  color: #19739E !important;
+.slick-arrow {
+  position: absolute;
 }
 
-.slide-cont {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas: ". slide-texto slide-img slide-img";
-  align-items: center;
-  justify-items: end;
-  height: 100vmin;
+.slick-prev {
+  top: 50%;
+  left: 5%;
+  z-index: 100;
 }
 
-.slide-texto {
-  grid-area: slide-texto;
+.slick-next {
+  top: 50%;
+  right: 5%;
 }
 
-.slide-img {
-  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
-  grid-area: slide-img;
-  background-position: left top;
-  background-size: cover;
-  width: 90%;
-  height: 100%;
-}
-
-@media (min-width: 1441px) {
-  .slide-cont {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas: ". slide-texto slide-img slide-img slide-img";
-    height: 50vmin;
-  }
-}
-@media (max-height: 900px) {
-  .slide-cont {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas: ". slide-texto slide-texto slide-img slide-img slide-img";
-    height: 60vmin;
-  }
-}
-@media (max-height: 1440px) {
-  .slide-cont {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas: "slide-texto slide-texto slide-img slide-img slide-img";
-    height: 40vmin;
-  }
-}
-@media (max-width: 767.98px) {
-  .slide-img {
+@media screen and (max-width: 720px) {
+  .slide-bg {
     clip-path: none;
-    grid-area: slide-img;
-    background-position: left top;
-    background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 210px;
   }
 
-  .slide-texto {
-    grid-area: slide-texto;
-    padding: 15px 16px 80px;
-    padding-bottom: 80px;
+  .slide-txt-cont {
+    width: 100%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
   }
 
-  .poly {
-    height: 182px;
+  .slide-txt {
+    width: 100%;
+    padding: 0 16px 80px;
   }
-
-  .poly-f {
-    display: none;
-  }
-
-  .slide-cont {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas: "slide-img" "slide-texto";
-    height: 490px;
-    justify-items: center;
-  }
-  .slide-cont .titulo {
-    font-size: calc(30px - 0.5vw);
-    line-height: calc(32px - 0.5vw);
+  .slide-txt .titulo {
+    font-size: calc(40px - 0.5vw);
+    line-height: calc(38px - 0.5vw);
     font-weight: 500;
   }
-  .slide-cont .parrafo {
-    font-size: calc(18px - 0.5vw);
-    line-height: calc(18px - 0.5vw);
+  .slide-txt .parrafo {
+    font-size: calc(26px - 0.5vw);
+    line-height: calc(24px - 0.5vw);
+  }
+
+  .slick-prev, .slick-next {
+    display: none !important;
   }
 }
 .busca-home {

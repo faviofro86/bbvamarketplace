@@ -50,9 +50,9 @@
                             <h6 for="">¿Cuánto cuesta el auto que quieres?</h6>
                             <div class="input-cont">
                                 <label class="small">Ingresa una cantidad</label>
-                                <input id="monton" type="number" class="form-control" value="2000" min="2000" max="100000" oninput="montor.value=monton.value" />
+                                <input id="monton" type="number" class="form-control" min="11000" max="1000000" oninput="montor.value=monton.value" />
                             </div>
-                            <input id="montor" type="range" class="form-control p-0" value="2000" min="2000" max="100000" oninput="monton.value=montor.value" />
+                            <input id="montor" type="range" class="form-control p-0" min="11000" max="1000000" value="0" oninput="monton.value=montor.value" />
 
 
                             <div class="form-group row mb-0">
@@ -72,9 +72,9 @@
                             <h6 for="">Inicial</h6>
                             <div class="input-cont">
                                 <label class="small">Ingresa una cantidad</label>
-                                <input id="inicialn" type="number" class="form-control" value="100" min="0" max="20000" oninput="inicialr.value=inicialn.value" />
+                                <input id="inicialn" type="number" class="form-control" min="11000" max="1000000" oninput="inicialr.value=inicialn.value" />
                             </div>
-                            <input id="inicialr" type="range" class="form-control p-0" min="0" max="20000" value="100" oninput="inicialn.value=inicialr.value" />
+                            <input id="inicialr" type="range" class="form-control p-0" min="11000" max="1000000" value="0" oninput="inicialn.value=inicialr.value" />
 
 
                             <div class="form-group row mb-0 label-leg">
@@ -82,7 +82,7 @@
                                 <label for="staticEmail" class="col-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
                             </div>
                             <div class="form-group row label-leg">
-                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small>$10,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small>$11,000.00</small></label>
                                 <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small>$1,000,000.00</small></label>
                             </div>
 
@@ -94,9 +94,9 @@
                             <h6 for="">Mensualidades</h6>
                             <div class="input-cont">
                                 <label class="small">Ingresa una cantidad</label>
-                                <input id="mesn" type="number" class="form-control" value="6" min="6" max="48" oninput="mesr.value=mesn.value" />
+                                <input id="mesn" type="number" class="form-control" min="1" max="48" oninput="mesr.value=mesn.value" />
                             </div>
-                            <input id="mesr" type="range" class="form-control p-0" min="6" max="48" value="6" oninput="mesn.value=mesr.value" />
+                            <input id="mesr" type="range" class="form-control p-0" min="1" max="48" value="1" oninput="mesn.value=mesr.value" />
 
 
                             <div class="form-group row mb-0">
@@ -104,8 +104,8 @@
                                 <label for="staticEmail" class="col-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
                             </div>
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small>6 meses</small></label>
-                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small>48 meses</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small>1 mes</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small>60 meses</small></label>
                             </div>
 
 
