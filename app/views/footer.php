@@ -46,6 +46,10 @@
                                     <input type="text" class="form-control" id="nombre">
                                 </div>
                                 <div class="form-group">
+                                    <label for="nombre">DNI</label>
+                                    <input type="text" class="form-control" id="nombre">
+                                </div>
+                                <div class="form-group">
                                     <label for="correo">Correo</label>
                                     <input type="email" class="form-control" id="correo">
                                 </div>
