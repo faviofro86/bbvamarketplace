@@ -196,6 +196,7 @@
                     <div class="col-12">
                         <h4 class="modelo">Encuéntranos en</h4>
                         <hr>
+                        <p class="precio"><?= $data['data'][0]['encuentralo']; ?></p>
                         <p class="precio">
                             <strong>Distrito / </strong>
                             Lorem ipsum dolor sit amet
@@ -299,7 +300,7 @@
 
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <a href="autos/mini-cooper-s">
+                                <a href="<?=URL::to('autos/mini-cooper-s')?>">
                                     <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
                                     <div class="card-body ba3 bl">
                                         <h5 class="card-title mb-0">MAZDA</h5>
