@@ -346,7 +346,7 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
 --
 
 INSERT INTO `vehiculos` (`id`, `marca_id`, `modelo_id`, `categoria_id`, `condicion_id`, `precio`, `img_banner`, `ano_modelo`, `ano_fabricacion`, `puertas`, `transmision`, `traccion`, `descripcion`, `resumen`, `fichatecnica`, `encuentralo`, `estado`, `numvisitas`, `creadopor`, `creado`, `modificadopor`, `modificado`, `slug`, `cilindrada`) VALUES
-(94, 4, 4, 2, 1, '17000', 'mini1.jpg', '2022', '2022', '5', 'Mecánica', 'Delantera', 'Auto pequeño', 'Mini Cooper auto pequeño', 'minicooper.pdf', 'Tiendas', 1, 50, 0, '2022-05-04 17:59:04', 0, '2022-05-04 17:59:04', 'mini-cooper-s', '1600'),
+(94, 4, 4, 2, 1, '17000', 'mini1.jpg', '2022', '2022', '5', 'Mecánica', 'Delantera', 'Auto pequeño', 'Mini Cooper auto pequeño', 'minicooper.pdf', 'Surco; Av Nombre 123; San Borja; Av Nombre 123; San Miguel; Av. Nombre 123', 1, 50, 0, '2022-05-04 17:59:04', 0, '2022-05-04 17:59:04', 'mini-cooper-s', '1600'),
 (97, 1, 1, 2, 1, '180000', 'yaris1.jpg', '2022', '2022', '5', 'Mecánica', 'Delantera', 'INNOVADOR PANEL CON RADIO TÁCTIL DE 7”, CON FUNCIÓN AM/FM, MP3, USB, BLUETOOTH, AUX, ANDROID AUTO® Y APPLE CARPLAY®. ASIMISMO, CUENTA CON CONTROLES EN EL VOLANTE PARA QUE PUEDAS RESPONDER LLAMADAS SIN QUITAR LAS MANOS DEL VOLANTE NI LA VISTA DEL CAMINO.', 'EQUIPADO CON UN MOTOR DUAL VVT-I DE 1.3L, EL RENOVADO TOYOTA YARIS ES EL BALANCE PERFECTO ENTRE RENDIMIENTO, DEPORTIVIDAD Y CONFORT. ¿ESTÁS LISTO PARA DESCUBRIRLO POR TI MISMO?', 'yaris.pdf', 'Tiendas', 1, 6, 0, '2022-05-29 17:33:12', 0, '2022-05-29 17:33:12', 'yaris-2022', '1600');
 
 --
