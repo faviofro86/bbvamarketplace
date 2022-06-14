@@ -21,11 +21,11 @@
     <?php include "navbar.php"; ?>
 
     <header class="container-fluid p-0">
-        
-    <?php include "carrusel.php"; ?>
-    
+
+        <?php include "carrusel.php"; ?>
+
     </header>
-    
+
     <?php include "calculadora.php"; ?>
 
     <section class="container mt-5">
@@ -102,7 +102,7 @@
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card py-5">
                                 <a href="<?php echo $adds->url1; ?>" class="card-link">
-                                <img src="<?=URL::to('public/banners/'.$adds->imagen);?>" class="img-fluid" alt="...">
+                                    <img src="<?=URL::to('public/banners/'.$adds->imagen);?>" class="img-fluid" alt="...">
                                 </a>
                             </div>
                         </div>
@@ -184,12 +184,13 @@
     </section>
 
     <?php include "footer.php" ?>
-    
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="<?=URL::to('public/js/jquery.slim.min.js')?>"></script>
     <script src="<?=URL::to('public/js/bootstrap.bundle.min.js')?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
 
@@ -208,23 +209,25 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
 
+        $('.monton').on('input', function() {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+        
         $("#monton, #montor, #inicialn, #inicialr, #mesn, #mesr").on("input", function() {
 
+            var loan = $('#monton').val(),
+                month = $('#mesn').val(),
+                int = 10,
+                down = $('#inicialn').val(),
+                amount = parseInt(loan),
+                months = parseInt(month),
+                down = parseInt(down),
+                monInt = int / 1200,
+                calculation = ((monInt + (monInt / (Math.pow((1 + monInt), months) - 1))) * (amount - (down || 0))).toFixed(2);
 
-            var monto = $("#monton").val();
-            var inicial = $("#inicialn").val();
-            var meses = $("#mesn").val();
+            if (isNaN(calculation)) calculation = 0.00;
 
-            var inte = 14.99 / 100;
-
-            var cuota = ((parseInt(monto) * inte) - parseInt(inicial)) / parseInt(meses);
-            var tasa = parseInt(monto) * inte;
-            var valor = parseInt(cuota) + parseInt(tasa);
-
-            $(".cuota").text(cuota.toFixed(2));
-            $(".tasa").text(tasa.toFixed(2));
-            $(".total").text(valor.toFixed(2));
-
+            $(".cuota").text(calculation);
         });
 
     </script>
