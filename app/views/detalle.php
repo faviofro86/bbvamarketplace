@@ -170,7 +170,7 @@
                     <div class="col-12 col-md-6 caract">
                         <p>
                             <strong>Motor </strong>
-                            <?= $data['data'][0]['cilindrada']; ?> L
+                            <?= $data['data'][0]['cilindrada']; ?> cc
                         </p>
                     </div>
 

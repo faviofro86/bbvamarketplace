@@ -182,7 +182,7 @@ class Autos {
 	public function poblarmodelo(){
 		$modelos = DB::getinstance()->table('modelo')->where('marca_id',Input::get('q'))->orderBy("modelo","asc")->get();
 		echo "<label class='form-label'>Modelo</label>
-		<select class='form-control' name='modelo' required>
+		<select class='form-control' name='modelo' required onchange='myFunction()' id='modelo'>
         <option value='' selected disabled hidden>Selecciona un modelo</option>";
 		foreach($modelos as $modelo){
 			echo "<option value='$modelo->id'>$modelo->modelo</option>";
@@ -205,7 +205,6 @@ class Autos {
 				'estado' => ['required' =>true],
 			]);  
 			if($validation->passed()){
-								
 				$a = DB::getinstance()->query("INSERT INTO marca(marca, estado) VALUES (?,?)", [Input::get('marca'), Input::get('estado')])->query("SELECT LAST_INSERT_ID()")->results();
 				
 				$b = json_decode(json_encode($a), true);
@@ -216,8 +215,8 @@ class Autos {
 				$p = json_encode($a);
 				echo $p;
 			}
-			
 		}
+		echo "<meta http-equiv='refresh' content='1;URL=marca_form'>";
 	}
 	
 	public function modelo_form(){
