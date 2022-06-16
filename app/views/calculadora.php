@@ -15,16 +15,16 @@
                     <div id="calculadora">
 
 
-                        <div class="form-group row">
+                        <div class="form-group row mt-2">
                             <h6 class="col-sm-4 col-form-label">Moneda</h6>
-                            <div class="col-sm-8 d-flex justify-content-md-between">
+                            <div class="col-sm-8 d-flex">
 
-                                <div class="form-check form-check-inline mr-5 mr-md-0">
-                                    <input class="form-check-input" type="radio" name="moneda" id="soles" value="soles" checked onclick="getElementById('mon').innerHTML = 'S/'">
+                                <div class="form-check form-check-inline mr-5">
+                                    <input class="form-check-input" type="radio" name="moneda" id="soles" value="soles" checked>
                                     <label class="form-check-label lbl" for="soles">Soles</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="moneda" id="dolares" value="dolar" onclick="getElementById('mon').innerHTML = '$'">
+                                    <input class="form-check-input" type="radio" name="moneda" id="dolares" value="dolar">
                                     <label class="form-check-label lbl" for="dolares">Dólares</label>
                                 </div>
 
@@ -50,9 +50,13 @@
                             <h6 for="">¿Cuánto cuesta el auto que quieres?</h6>
                             <div class="input-cont">
                                 <label class="small">Ingresa una cantidad</label>
-                                <input id="monton" type="number" class="form-control" min="11000" max="100000" oninput="montor.value=monton.value" />
+                                <div class="form-row d-flex align-items-center justify-content-center">
+                                    <div class="col-1 text-right"><span class="mon">S/</span></div>
+                                    <div class="col-11"><input id="monton" type="text" class="form-control" min="11000" max="100000" oninput="montor.value=monton.value" /></div>
+                                </div>
+
                             </div>
-                            <input id="montor" type="range" class="form-control p-0" min="11000" max="100000" value="0" oninput="monton.value=montor.value" />
+                            <input id="montor" type="range" class="form-control p-0 range" min="11000" max="100000" value="0" oninput="monton.value=montor.value" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)" />
 
 
                             <div class="form-group row mb-0">
@@ -60,8 +64,8 @@
                                 <label for="staticEmail" class="col-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
                             </div>
                             <div class="form-group row label-leg">
-                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small>$2,000.00</small></label>
-                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small>$100,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small class="mont-min">S/2,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small class="mont-max">S/100,000.00</small></label>
                             </div>
 
 
@@ -72,9 +76,12 @@
                             <h6 for="">Inicial</h6>
                             <div class="input-cont">
                                 <label class="small">Ingresa una cantidad</label>
-                                <input id="inicialn" type="number" class="form-control" min="11000" max="100000" oninput="inicialr.value=inicialn.value" />
+                                <div class="form-row d-flex align-items-center justify-content-center">
+                                    <div class="col-1 text-right"><span class="mon">S/</span></div>
+                                    <div class="col-11"><input id="inicialn" type="text" class="form-control" min="0" max="100000" oninput="inicialr.value=inicialn.value" /></div>
+                                </div>
                             </div>
-                            <input id="inicialr" type="range" class="form-control p-0" min="11000" max="100000" value="0" oninput="inicialn.value=inicialr.value" />
+                            <input id="inicialr" type="range" class="form-control p-0 range" min="0" max="100000" value="0" oninput="inicialn.value=inicialr.value" />
 
 
                             <div class="form-group row mb-0 label-leg">
@@ -82,8 +89,8 @@
                                 <label for="staticEmail" class="col-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
                             </div>
                             <div class="form-group row label-leg">
-                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small>$11,000.00</small></label>
-                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small>$100,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small class="ini-min">S/0.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small class="ini-max">S/100,000.00</small></label>
                             </div>
 
 
@@ -96,7 +103,7 @@
                                 <label class="small">Ingresa una cantidad</label>
                                 <input id="mesn" type="number" class="form-control" min="1" max="60" value="1" oninput="mesr.value=mesn.value" />
                             </div>
-                            <input id="mesr" type="range" class="form-control p-0" min="1" max="60" value="1" oninput="mesn.value=mesr.value" />
+                            <input id="mesr" type="range" class="form-control p-0 range" min="1" max="60" value="1" oninput="mesn.value=mesr.value" />
 
 
                             <div class="form-group row mb-0">
@@ -133,6 +140,14 @@
                                 <div class="buttom">
                                     <button class="btn-g mx-auto" data-toggle="modal" data-target="#staticBackdrop">Solicitalo</button>
                                 </div>
+                            </div>
+                            <div class="col-12">
+                                <p class="mt-3 mb-0">
+                                    <small class="bl">1. Monto aproximado (el cálculo de la cuota)</small>
+                                </p>
+                                <p>
+                                    <small class="bl">2. No se considera comisión por envio de estado de cuenta físico en caso se requiera</small>
+                                </p>
                             </div>
                         </div>
 

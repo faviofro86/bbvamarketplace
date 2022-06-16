@@ -196,19 +196,16 @@
                     <div class="col-12">
                         <h4 class="modelo">Encuéntranos en</h4>
                         <hr>
-                        <p class="precio"><?= $data['data'][0]['encuentralo']; ?></p>
-                        <p class="precio">
-                            <strong>Distrito / </strong>
-                            Lorem ipsum dolor sit amet
-                        </p>
-                        <p class="precio">
-                            <strong>Distrito / </strong>
-                            Lorem ipsum dolor sit amet
-                        </p>
-                        <p class="precio">
-                            <strong>Distrito / </strong>
-                            Lorem ipsum dolor sit amet
-                        </p>
+
+                            <?php
+                                $locales = $data['data'][0]['encuentralo'];
+                                $locales_ex = explode(';', $locales);
+                                foreach($locales_ex as $key => $value)
+                                    {
+                                        if($key%2==0){echo "<p class='precio'><strong>$value /</strong>";}
+                                        else{echo $value."</p>";}
+                                    }
+                            ?>
 
                     </div>
                 </div>

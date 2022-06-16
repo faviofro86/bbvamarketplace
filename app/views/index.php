@@ -190,7 +190,7 @@
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="<?=URL::to('public/js/jquery.slim.min.js')?>"></script>
     <script src="<?=URL::to('public/js/bootstrap.bundle.min.js')?>"></script>
-    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+    <script src="<?=URL::to('public/js/autoNumeric.js')?>"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
 
@@ -209,16 +209,59 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
 
-        $('.monton').on('input', function() {
+        $('#soles').click(function() {
+            $('#mon').text("S/ ")
+            $('.mon').text("S/ ")
+            $('.mont-min').text("S/2,000.00")
+            $('.mont-max').text("S/100,000.00")
+            $('.ini-min').text("S/0.00")
+            $('.ini-max').text("S/100,000.00")
+            
+        });
+
+        $('#dolares').click(function() {
+            $('#mon').text("$ ")
+            $('.mon').text("$ ")
+            $('.mont-min').text("$2,000.00")
+            $('.mont-max').text("$100,000.00")
+            $('.ini-min').text("$0.00")
+            $('.ini-max').text("$100,000.00")
+        });
+
+        //$('#dolares').moneda();
+
+        $('#monton, #inicialn').on('input', function() {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
         
+        $('#monton, #montor').on('input', function() {
+            var value = $(this).val();
+            if ((value !== '') && (value.indexOf('.') === -1)) {
+                $(this).val(Math.max(Math.min(value, 100000), -100000));
+            }
+        });
+
+        $('#inicialn, #inicialr').on('input', function() {
+            var max = $('#monton').val()
+            var value = $(this).val();
+            if ((value !== '') && (value.indexOf('.') === -1)) {
+                $(this).val(Math.max(Math.min(value, max), -max));
+            }
+        });
+
+        $('#mesn, #mesr').on('input', function() {
+            var value = $(this).val();
+            if ((value !== '') && (value.indexOf('.') === -1)) {
+                $(this).val(Math.max(Math.min(value, 60), -60));
+            }
+        });
+
         $("#monton, #montor, #inicialn, #inicialr, #mesn, #mesr").on("input", function() {
 
             var loan = $('#monton').val(),
+                down = $('#inicialn').val(),
                 month = $('#mesn').val(),
                 int = 10,
-                down = $('#inicialn').val(),
                 amount = parseInt(loan),
                 months = parseInt(month),
                 down = parseInt(down),
@@ -226,8 +269,18 @@
                 calculation = ((monInt + (monInt / (Math.pow((1 + monInt), months) - 1))) * (amount - (down || 0))).toFixed(2);
 
             if (isNaN(calculation)) calculation = 0.00;
-
             $(".cuota").text(calculation);
+        });
+
+        $("#monton, #montor").on("input", function() {
+            var max = $('#monton').val(),
+                inimax = $('#inicialn').val(),
+                inirmax = $('#inicialr').val();
+
+            if (max <= inimax) $('#inicialn').val(max);
+            //if (inimax > max) $('#inicialn').val(max);
+
+            $("#inicialn, #inicialr").attr('max', max);
         });
 
     </script>
