@@ -13,16 +13,20 @@
             </button>
             <div id="navbarContent" class="collapse navbar-collapse order-sm-12 order-lg-1">
                
-                <ul class="navbar-nav mr-auto d-flex align-items-center flex-row justify-content-center justify-content-lg-end pt-4 pt-lg-0">
-                    <!-- Megamenu-->
-                    <li class="nav-item ml-5">
-                        <a class="bl" href="<?=URL::to('marcas')?>">Marcas</a>
-                    </li>
-                    
-                </ul>
+                <div class="d-none d-lg-block">
+                    <ul class="navbar-nav mr-auto d-flex align-items-center flex-row justify-content-center justify-content-lg-end pt-4 pt-lg-0">
+                        <!-- Megamenu-->
+                        <li class="nav-item ml-5">
+                            <a class="bl" href="<?=URL::to('marcas')?>">Marcas</a>
+                        </li>
+                    </ul>
+                </div>
                
                 <ul class="navbar-nav ml-auto d-flex align-items-center flex-row justify-content-center justify-content-lg-end pt-4 pt-lg-0">
                     <!-- Megamenu-->
+                    <li class="nav-item mr-4 d-lg-none">
+                        <a class="bl" href="<?=URL::to('marcas')?>">Marcas</a>
+                    </li>
                     <li class="nav-item mr-4">
                         <a class=" bl" href="<?=URL::to('usuario/registrar_form')?>">Registro</a>
                     </li>
