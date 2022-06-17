@@ -173,5 +173,26 @@ class Banners {
 		}
 	}
 	
+	public function listar(){
+		Auth::validate([1]);
+		$banners = DB::getinstance()->table('banners')->get();
+		View::render('Admin/banners', ['banners'=>$banners]);
+	}
+	
+	public function enable(){
+		Auth::validate([1]);
+		$a=DB::getinstance()->query("UPDATE banners SET estado = 1 WHERE id =".Input::get('id'))->results();
+
+		$banners = DB::getinstance()->table('banners')->get();
+		View::render('Admin/banners', ['banners'=>$banners]);
+	}
+	
+	public function disable(){
+		Auth::validate([1]);
+		$a=DB::getinstance()->query("UPDATE banners SET estado = 0 WHERE id =".Input::get('id'))->results();
+		$banners = DB::getinstance()->table('banners')->get();
+		View::render('Admin/banners', ['banners'=>$banners]);		
+	}
+	
 
 }

@@ -27,12 +27,18 @@
                     <li class="nav-item mr-4 d-lg-none">
                         <a class="bl" href="<?=URL::to('marcas')?>">Marcas</a>
                     </li>
+                    <?php if(!Auth::isLoggedIn()){ ?>
                     <li class="nav-item mr-4">
                         <a class=" bl" href="<?=URL::to('usuario/registrar_form')?>">Registro</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn__basic btn__medium-aqua font-weight-bold bl" href="<?=URL::to('login')?>">Inicio de sesión</a>
                     </li>
+                    <?php } else { ?>
+                    <li class="nav-item">
+                        <a class="btn__basic btn__medium-aqua font-weight-bold bl" href="<?=URL::to('logout')?>">Cerrar sesión</a>
+                    </li>
+                    <?php } ?>
                     
                 </ul>
             </div>

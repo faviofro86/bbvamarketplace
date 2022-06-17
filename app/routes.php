@@ -6,13 +6,10 @@
 Route::get('/','Home@index');
 
 //Ruta asignada a controlador y funcion
-Route::get('detalle','Home@detalle');
+Route::get('listado','Autos@listado');
 
 //Ruta asignada a controlador y funcion
-Route::get('listado','Home@listado');
-
-//Ruta asignada a controlador y funcion
-Route::get('marcas','Home@marcas');
+Route::get('marcas','Autos@marcas');
 
 //Ruta para vista detalle de vehículo
 Route::get('autos/{slug}','Autos@detalle');
@@ -29,23 +26,56 @@ Route::post('ficha/{slug}','Autos@ficha');
 //Ruta asignada a controlador y funcion
 Route::post('admin/poblarmodelo','Autos@poblarmodelo');
 
-//Ruta para cargar vista de registro de marca
+//Ruta para cargar vista de registro de Marca
 Route::get('admin/marca_form','Autos@marca_form');
 
-//Ruta para cargar vista de registro de marca
+//Ruta para cargar vista de registro de Marca
 Route::post('admin/marca_registrar','Autos@marca_registrar');
 
-//Ruta para cargar vista de registro de modelo
+//Ruta para cargar vista de registro de Modelo
 Route::get('admin/modelo_form','Autos@modelo_form');
 
-//Ruta para cargar vista de registro de modelo
+//Ruta para cargar vista de registro de Modelo
 Route::post('admin/modelo_registrar','Autos@modelo_registrar');
 
-//Ruta para cargar vista de registro de banner
+//Ruta para listar Marcas
+Route::get('admin/listarmarcas','Autos@listar_marcas');
+
+//Ruta para listar Marcas
+Route::get('admin/modelos','Autos@listar_modelos');
+
+//Ruta para cargar vista de registro de Banner
 Route::get('admin/banner','Banners@banner_form');
 
-//Ruta para cargar vista de registro de banner
+//Ruta para cargar vista de registro de Banner
+Route::get('admin/banners','Banners@listar');
+
+//Ruta para cargar vista de registro de Banner
 Route::post('admin/banner_add','Banners@banner_add');
+
+//Ruta para listar Vehiculos
+Route::post('admin/lvehiculos','Autos@vehiculos');
+
+//Ruta para desactivar Marca
+Route::get('admin/disablemarca','Autos@disablemarca');
+
+//Ruta para activar Marca
+Route::get('admin/enablemarca','Autos@enablemarca');
+
+//Ruta para desactivar Banner
+Route::get('admin/disablebanner','Banners@disable');
+
+//Ruta para activar Banner
+Route::get('admin/enablebanner','Banners@enable');
+
+//Ruta para activar Modelo
+Route::get('admin/enablemodelo','Autos@enablemodelo');
+
+//Ruta para activar Modelo
+Route::get('admin/disablemodelo','Autos@disablemodelo');
+
+
+
 
 
 /***************USUARIOS*****************/
@@ -56,6 +86,7 @@ Route::post('usuario/editar','Usuario@editar');
 
 Route::get('login','Usuario@login_view');
 Route::post('login','Usuario@login');
+Route::get('logout',function(){Auth::logout();Redirect::to('/'); });
 
 
 
@@ -75,7 +106,7 @@ Route::get('decrypt',function(){
 	$encode = Encrypter::encode('123125|165145194323123');
 	echo  $encode;
 	echo "<br>";
-	echo Encrypter::decode($encode);
+	echo Encrypter::decode("S21VRlNyS3dqTXI2VWg1QzdCVUF3Zz09");
 
 	$marcas = DB::getinstance()->table('usuarios')->where('estado','3')->get();
 	Debug::varDump($marcas);

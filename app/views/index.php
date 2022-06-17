@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="<?=URL::to('public/css/style.css')?>">
 
-    <title>Hello, world!</title>
+    <title>BBVA Marketplace</title>
 </head>
 
 <body>
@@ -47,31 +47,30 @@
                                 <?php } ?>
                             </select>
                         </div>
-                        <div class="form-group col-12 col-md-3" id="modelo">
-                            <label for="inputState">Modelo</label>
-                            <select id="inputState" class="form-control" disabled>
-                                <option selected></option>
-                                <option>Mercedes</option>
-                                <option>Audi</option>
+                        <div class="form-group col-12 col-md-3">
+                            <label for="inputState">Tipo</label>
+                            <select id="inputState" class="form-control">
+                                <option selected disabled hidden value="">Selecciona una categoria</option>
+                                <?php foreach($data['categorias'] as $categoria){ ?>
+                                <option value="<?php echo $categoria->id; ?>"><?php echo $categoria->categoria; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
 
 
                         <div class="form-group col-12 col-md-3">
-                            <label for="inputState">Tipo</label>
-                            <select id="inputState" class="form-control">
-                                <option selected></option>
-                                <option>Coupé</option>
-                                <option>SUV</option>
-                                <option>Station Wagon</option>
-                                <option>Crossover</option>
+                            <label for="inputState">Transmisión</label>
+                            <select id="inputState" class="form-control" name="transmision">
+                                <option selected disabled hidden value="">Selecciona</option>
+                                <option value="Automática">Automática</option>
+                                <option value="Mecánica">Mecánica</option>
                             </select>
                         </div>
                         <div class="form-group col-12 col-md-3">
                             <label for="inputState">Condición</label>
-                            <select id="inputState" class="form-control">
+                            <select id="inputState" class="form-control" disabled>
+                               	<option selected disabled hidden value="">Selecciona</option>
                                 <option selected>Nuevo</option>
-                                <option>Usado</option>
                             </select>
                         </div>
                     </div>
@@ -107,71 +106,21 @@
                             </div>
                         </div>
                         <?php } ?>
+                        <?php foreach($data['destacados'] as $destacados){?>
                         <div class="col-12 col-md-6 col-lg-4 p-3">
                             <div class="card">
-                                <a href="autos/mini-cooper-s" class="card-link">
-                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
+                                <a href="<?=URL::to('autos/'.$destacados->slug)?>" class="card-link">
+                                    <img src="<?=URL::to('public/galeria/imgs/'.$destacados->slug."/".$destacados->img_banner)?>" class="card-img-top" alt="...">
                                     <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
+                                        <h5 class="card-title mb-0"><?= $destacados->marca ?></h5>
+                                        <p class="card-text mb-0"><?= $destacados->modelo ?></p>
                                         <hr>
-                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
+                                        <p class="card-text text-right">desde US$ <?= $destacados->precio ?><br><small>cuota desde US$ <?= $destacados->cuota ?> *</small></p>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 p-3">
-                            <div class="card">
-                                <a href="autos/mini-cooper-s" class="card-link">
-                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 p-3">
-                            <div class="card">
-                                <a href="autos/mini-cooper-s" class="card-link">
-                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 p-3">
-                            <div class="card">
-                                <a href="autos/mini-cooper-s" class="card-link">
-                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 p-3">
-                            <div class="card">
-                                <a href="autos/mini-cooper-s" class="card-link">
-                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        <?php } ?>
                     </div>
 
                     <div class="legal p-3">
@@ -282,25 +231,6 @@
 
             $("#inicialn, #inicialr").attr('max', max);
         });
-
-    </script>
-    <script>
-        function load(str) {
-            var xmlhttp;
-            if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            } else { // code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    document.getElementById("modelo").innerHTML = xmlhttp.responseText;
-                }
-            }
-            xmlhttp.open("POST", "<?=URL::to('admin/poblarmodelo')?>", true);
-            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xmlhttp.send("q=" + str);
-        }
 
     </script>
 </body>

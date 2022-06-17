@@ -36,6 +36,37 @@ class Autos {
         );
         View::render('home/index2', ['meta' => $meta]);
     }
+	
+	public function listado() {
+		$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
+		$categorias = DB::getinstance()->table('categorias')->where('estado',1)->get();
+		$autos=[];
+		
+		if(Input::get('marca')!='' && Input::get('categoria')!='' && Input::get('transmision')!=''){
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.marca_id =". Input::get('marca')." AND v.categoria_id =". Input::get('categoria')." AND v.transmision ='". Input::get('transmision')."'")->results();
+		}else if(Input::get('marca')=='' && Input::get('categoria')!='' && Input::get('transmision')!=''){
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.categoria_id =". Input::get('categoria')." AND v.transmision ='". Input::get('transmision')."'")->results();
+		}else if(Input::get('marca')!='' && Input::get('categoria')=='' && Input::get('transmision')!=''){
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v JOIN marca m ON m.id = v.marca_id JOIN modelo mo ON mo.marca_id = v.marca_id WHERE v.marca_id =". Input::get('marca')." AND v.transmision ='". Input::get('transmision')."'")->results();
+		}else if(Input::get('marca')!='' && Input::get('categoria')!=''){
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v JOIN marca m ON m.id = v.marca_id JOIN modelo mo ON mo.marca_id = v.marca_id WHERE v.marca_id =". Input::get('marca')." AND v.categoria_id =". Input::get('categoria'))->results();
+		}else if((Input::get('marca')!='') && (Input::get('categoria')=='')){
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.marca_id =". Input::get('marca'))->results();
+		}else if((Input::get('categoria')!='') && (Input::get('marca')=='')){
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.categoria_id =". Input::get('categoria'))->results();
+		}else if(Input::get('transmision')!=''){
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.transmision ='". Input::get('transmision')."'")->results();
+		}
+		//SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.estado = 1 AND v.categoria_id =" .$a[0]['categoria_id']. " ORDER BY numvisitas DESC LIMIT 6
+		
+		$d=DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.estado = 1 ORDER BY numvisitas DESC LIMIT 6")->results();
+		
+        $banners = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',1)->get();
+		$adds = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',2)->get();
+		//Debug::varDump($autos);
+        View::render('listado',['banners' => $banners,'adds' => $adds, 'autos'=>$autos, 'destacados'=>$d, 'marcas'=>$marcas, 'categorias'=>$categorias]);
+    }
+	
 	public function auto_registrar(){
 		if(Input::exists()){
 			$validate = new Validate();
@@ -45,6 +76,7 @@ class Autos {
 				'categoria' => ['required' =>true],
 				'condicion' => ['required' =>true],
 				'precio' => ['required' =>true],
+				'cuota' => ['required' =>true],
 				//'banner' => ['required' =>true],
 				'ano_modelo' => ['required' =>true],
 				'ano_fabricacion' => ['required' =>true],
@@ -161,12 +193,14 @@ class Autos {
 			
 			$c = DB::getinstance()->query("SELECT imagen from imagenes_vehiculos WHERE id_vehiculo ='$b'")->results();
 			$c = json_decode(json_encode($c), true);
-			//echo var_dump($c);
+			
+			$d=DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.estado = 1 AND v.categoria_id =" .$a[0]['categoria_id']. " ORDER BY numvisitas DESC LIMIT 6")->results();
+			//$d = DB::getinstance()->table('vehiculos')->where('estado',1)->where('categoria_id',$a[0]['categoria_id'])->limit(6)->orderBy('numvisitas', 'DESC')->results();
 			
 			DB::getinstance()->table('vehiculos')->where('slug',$slug)->update(['numvisitas'=>($a[0]["numvisitas"]+1)]);
 			$banners = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',1)->get();
 			$adds = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',2)->get();
-        	View::render('detalle', ['data'=>$a, 'imgs'=>$c, 'banners'=>$banners,'adds' => $adds]);
+        	View::render('detalle', ['data'=>$a, 'imgs'=>$c, 'banners'=>$banners,'adds' => $adds, 'destacados'=>$d]);
 		}else{
 			View::render('detalle');
 		}		
@@ -182,7 +216,7 @@ class Autos {
 	public function poblarmodelo(){
 		$modelos = DB::getinstance()->table('modelo')->where('marca_id',Input::get('q'))->orderBy("modelo","asc")->get();
 		echo "<label class='form-label'>Modelo</label>
-		<select class='form-control' name='modelo' required onchange='myFunction()' id='modelo'>
+		<select class='form-control' name='modelo' required onchange='myFunction()' id='modelos'>
         <option value='' selected disabled hidden>Selecciona un modelo</option>";
 		foreach($modelos as $modelo){
 			echo "<option value='$modelo->id'>$modelo->modelo</option>";
@@ -222,10 +256,22 @@ class Autos {
 	public function modelo_form(){
 		$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
 		$condicion = DB::getinstance()->table('condicion')->get();
-		View::render('Admin/modelonew', ['marcas'=>$marcas]);
+		View::render('admin/modelonew', ['marcas'=>$marcas]);
+	}
+	
+	public function vehiculos(){
+		$marcas = DB::getinstance()->table('vehiculos')->get();
+		View::render('admin/listarvehiculo', ['marcas'=>$marcas]);
+	}
+	
+	public function listar_marcas(){
+		Auth::validate([1]);
+		$marcas = DB::getinstance()->table('marca')->get();
+		View::render('admin/listarmarcas', ['marcas'=>$marcas]);
 	}
 	
 	public function modelo_registrar(){
+		Auth::validate([1]);
 		if(Input::exists()){
 			$validate = new Validate();
 			$validation = $validate->check(Input::all(),[
@@ -246,6 +292,55 @@ class Autos {
 			}
 			
 		}
+		Redirect::to('admin/modelo_form');
+	}
+	
+	public function enablemarca(){
+		Auth::validate([1]);
+		$a=DB::getinstance()->query("UPDATE marca SET estado = 1 WHERE id =".Input::get('id'))->results();
+
+		$marcas = DB::getinstance()->table('marca')->get();
+		View::render('Admin/listarmarcas', ['marcas'=>$marcas]);
+	}
+	
+	public function disablemarca(){
+		Auth::validate([1]);
+		$a=DB::getinstance()->query("UPDATE marca SET estado = 0 WHERE id =".Input::get('id'))->results();
+		$marcas = DB::getinstance()->table('marca')->get();
+		View::render('Admin/listarmarcas', ['marcas'=>$marcas]);		
+	}
+	
+	
+	public function marcas(){
+		Auth::validate([1]);
+		$banners = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',1)->get();
+		$adds = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',2)->get();
+		$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
+		View::render('marcas', ['marcas'=>$marcas,'banners'=>$banners,'adds' => $adds]);
+	}
+	
+	public function listar_modelos(){
+		Auth::validate([1]);
+		
+		$modelo = DB::getinstance()->query("SELECT m.*, ma.marca FROM modelo m INNER JOIN marca ma ON ma.id = m.marca_id")->results();
+		//"SELECT m.*, ma.marca FROM modelo m INNER JOIN marca ma ON ma.id = m.marca_id"
+		View::render('Admin/listarmodelos', ['modelo'=>$modelo]);
+	}
+	
+	public function disablemodelo(){
+		Auth::validate([1]);
+		$a=DB::getinstance()->query("UPDATE modelo SET estado = 0 WHERE id =".Input::get('id'))->results();
+
+		$modelo = DB::getinstance()->table('modelo')->get();
+		View::render('Admin/listarmodelos', ['modelo'=>$modelo]);
+	}
+	
+	public function enablemodelo(){
+		Auth::validate([1]);
+		$a=DB::getinstance()->query("UPDATE modelo SET estado = 1 WHERE id =".Input::get('id'))->results();
+
+		$modelo = DB::getinstance()->table('modelo')->get();
+		View::render('Admin/listarmodelos', ['modelo'=>$modelo]);
 	}
 	
 

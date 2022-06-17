@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="<?=URL::to('public/fontawesome-free/css/all.min.css')?>">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=URL::to('public/css/adminlte/adminlte.min.css')?>">
+  
 </head>
 
 <!--
@@ -89,7 +90,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   	<label class="form-label">Marca</label>
-					<select class="form-control" name="marca" required onchange="load(this.value)" id="marca">
+					<select class="form-control" name="marca" required onchange="load(this.value);" id="marca">
 					<option selected disabled hidden value="">Selecciona una marca</option>
 					<?php foreach($data['marcas'] as $marca){ ?>
 						<option value="<?php echo $marca->id; ?>"><?php echo $marca->marca; ?></option>
@@ -127,7 +128,8 @@
 					<input type="text" class="form-control" name="precio">
                 </div>
                 <div class="form-group">
-					
+					<label class="form-label">Cuota</label>
+					<input type="text" class="form-control" name="cuota">
                 </div>
               </div>
               <div class="col-md-6">
@@ -137,7 +139,7 @@
                 </div>
                 <div class="form-group">
 					<label class="form-label">Año Fabricación</label>
-					<input type="text" class="form-control" name="ano_fabricacion" id="ano">
+					<input type="text" class="form-control" name="ano_fabricacion" id="ano" onchange="myFunction();">
                 </div>
               </div>
               <div class="col-md-6">
@@ -187,7 +189,7 @@
                 </div>
                 <div class="form-group">
 					<label class="form-label">Slug</label>
-					<input type="text" class="form-control" name="slug" id="slug">
+					<input type="text" class="form-control" name="slug" id="slug" readonly>
                 </div>
               </div>
               <div class="col-md-6">
@@ -244,6 +246,7 @@
 	  xmlhttp.open("POST","<?=URL::to('admin/poblarmodelo')?>",true);
 	  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	  xmlhttp.send("q="+str);
+		myFunction();
 	}  
 	</script>
     <script>
@@ -273,23 +276,23 @@
     </script>
     <script>
 		function myFunction(){
-			const x = document.getElementById("marca").value;
-			const y = document.getElementById("modelo").value;
-			const z = document.getElementById("ano").value;
+			var x = document.getElementById('marca');
+			x = x.options[x.selectedIndex].innerHTML;
+			let y = document.getElementById("modelos");
+			y = y.options[y.selectedIndex].innerHTML;
+			let z = document.getElementById("ano").value;
 			
-			if (typeof x === '') {
-				const x = x.toLowerCase();
-			}
-			if (typeof y === '') {
-				const y = y.toLowerCase();
-			}
-				
-			const result = x + "_" + y + "_" + z;
-			
+			let result = x + "-" + y + "-" + z;
+			result = result.toLowerCase();
+						
 			document.getElementById("slug").value = result;
+			console.log(x);
+			console.log(y);
+			console.log(z);
 		}
 
 	</script>
+    
 
 <!-- AdminLTE App -->
 <script src="<?=URL::to('public/js/adminlte.min.js')?>"></script>

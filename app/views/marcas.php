@@ -24,51 +24,19 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-12 p-4">
-               
                 <h4 class="mb-3">Marcas</h4>
-                
             </div>
             <div class="col-12 p-4">
-            
-            <div class="row d-flex flex-wrap">
-               
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="listado"><img src="<?=URL::to('public/img/audi.jpg')?>" alt="" class="img-fluid"></a>
-                </div>
-               
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="listado"><img src="<?=URL::to('public/img/hyundai.jpg')?>" alt="" class="img-fluid"></a>
-                </div>
-               
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="listado"><img src="<?=URL::to('public/img/mini.jpg')?>" alt="" class="img-fluid"></a>
-                </div>
-               
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="listado"><img src="<?=URL::to('public/img/toyota.jpg')?>" alt="" class="img-fluid"></a>
-                </div>
-               
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="listado"><img src="<?=URL::to('public/img/audi.jpg')?>" alt="" class="img-fluid"></a>
-                </div>
-               
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="listado"><img src="<?=URL::to('public/img/hyundai.jpg')?>" alt="" class="img-fluid"></a>
-                </div>
-               
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="listado"><img src="<?=URL::to('public/img/mini.jpg')?>" alt="" class="img-fluid"></a>
-                </div>
-               
-                <div class="col-6 col-md-4 col-lg-3">
-                    <a href="listado"><img src="<?=URL::to('public/img/toyota.jpg')?>" alt="" class="img-fluid"></a>
-                </div>
-                
+				<div class="row d-flex flex-wrap">
+					
+                    <?php foreach($data['marcas'] as $marcas){ ?>
+					<div class="col-6 col-md-4 col-lg-3">
+						<a href="<?=URL::to('listado/?marca='.$marcas->id)?>"><img src="<?=URL::to('public/img/marcas/'.$marcas->imagen);?>" alt="" class="img-fluid"></a>
+					</div>
+					<?php } ?>
+					
+				</div>
             </div>
-             
-                
-            </div>
-
         </div>
     </div>
 

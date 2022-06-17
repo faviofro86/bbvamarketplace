@@ -219,6 +219,7 @@
                             <p class="titulo">¿Quieres que te ayudemos a elegir la mejor opción?</p>
                             <p class="sub">Déjanos tus datos y te contactaremos</p>
                         </div>
+                        <?php if(!Auth::isLoggedIn()){ ?>
                         <div class="col-12">
                             <form class="form-contacto">
                                 <div class="form-group">
@@ -246,6 +247,15 @@
                                 </button>
                             </form>
                         </div>
+                        <?php } else { ?>
+							<form class="form-contacto" action>
+								<input type="hidden" class="form-control" id="nombre" value="<?= Auth::get_array('nombre'); ?>">
+								<input type="hidden" class="form-control" id="apellido" value="<?= Auth::get_array('apellidos'); ?>">
+								<input type="hidden" class="form-control" id="correo" value="<?= Auth::get_array('correo'); ?>">
+								<input type="hidden" class="form-control" id="telefono" value="<?= Auth::get_array('telefono'); ?>">
+                                <button type="submit" class="btn-s mb-4">Llámame</button>
+                            </form>
+						<?php } ?>
                     </div>
                     <?php foreach($data['adds'] as $adds){ ?>
                     <a href="<?php echo $adds->url1; ?>" class="card-link">
@@ -272,84 +282,7 @@
         </div>
     </div>
 
-    <section class="container-fluid destacados ba1 mt-5">
-        <div class="container py-3">
-            <div class="row py-5">
-                <div class="col-12">
-                    <h2 class="bl">Destacados</h2>
-                </div>
-                <div class="col-12 px-0">
-                    <div class="d-flex flex-wrap flex-row dest-car">
-
-                        <div class="col-12 col-md-6 col-lg-4 p-3">
-                            <div class="card">
-                                <a href="autos/mini-cooper-s">
-                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-4 p-3">
-                            <div class="card">
-                                <a href="<?=URL::to('autos/mini-cooper-s')?>">
-                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-4 p-3">
-                            <div class="card">
-                                <a href="autos/mini-cooper-s">
-                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-4 p-3">
-                            <div class="card">
-                                <a href="autos/mini-cooper-s">
-                                    <img src="<?=URL::to('public/img/carro2.png')?>" class="card-img-top" alt="...">
-                                    <div class="card-body ba3 bl">
-                                        <h5 class="card-title mb-0">MAZDA</h5>
-                                        <p class="card-text mb-0">ALL NEW MAZDA 3 SPORT</p>
-                                        <hr>
-                                        <p class="card-text text-right">desde US$ 22,790<br><small>cuota desde US$ 790 *</small></p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-
-                    <div class="legal p-3">
-                        <p class="card-text text-right bl"><small>* sujeto a evaluación crediticia, cuotas estimadas con una inicial del 20% + cuotas dobles en julio y diciembre</small></p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php include "destacados.php" ?>
 
     <?php include "footer.php" ?>
 

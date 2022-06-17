@@ -36,9 +36,9 @@ class Auth {
             
             if ($user != null) {   
 
-                $marcas_bd == DB::getInstance()->table('permisos')->where('id_usuario',$user->id)->get();
+                $marcas_bd = DB::getInstance()->table('permisos')->where('id_usuario',$user->id)->get();
 
-                Session::put(Config::get('session/session_name'), ['id'=>Encrypter::encode($user->id),'nombre'=>$user->nombres,'apellidos'=>$user->apellidos,'correo'=>$user->correo,'marcas'=>$marcas_bd,'tipo'=>$user->tipousuario]);
+                Session::put(Config::get('session/session_name'), ['id'=>Encrypter::encode($user->id),'nombre'=>$user->nombres,'apellidos'=>$user->apellidos,'correo'=>$user->correo,'marcas'=>$marcas_bd,'tipo'=>$user->tipousuario, 'telefono'=>$user->telefono]);
 
                 Session::put('isLoggedIn', true);
                 return true;
@@ -54,7 +54,7 @@ class Auth {
                 return true;
 
             } else {
-                $tipo = Auth::get('tipo');
+                $tipo = Auth::get_array('tipo');
                 if(in_array($tipo,$niveles)){
                     return true;
                 } else {
@@ -107,7 +107,7 @@ class Auth {
         return true;
     }
 
-    public function isLoggedIn() {
+    public static function isLoggedIn() {
         if (Session::exists('isLoggedIn')) {
             return true;
         }
