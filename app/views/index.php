@@ -56,8 +56,6 @@
                                 <?php } ?>
                             </select>
                         </div>
-
-
                         <div class="form-group col-12 col-md-3">
                             <label for="inputState">Transmisión</label>
                             <select id="inputState" class="form-control" name="transmision">
