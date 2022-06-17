@@ -40,7 +40,7 @@
                     <div class="form-row">
                         <div class="form-group col-12 col-md-3">
                             <label for="inputState">Marca</label>
-                            <select class="form-control" name="marca" required onchange="load(this.value)">
+                            <select class="form-control" name="marca">
                                 <option selected disabled hidden value="">Selecciona una marca</option>
                                 <?php foreach($data['marcas'] as $marca){ ?>
                                 <option value="<?php echo $marca->id; ?>"><?php echo $marca->marca; ?></option>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group col-12 col-md-3">
                             <label for="inputState">Tipo</label>
-                            <select id="inputState" class="form-control">
+                            <select id="inputState" class="form-control" name="categoria">
                                 <option selected disabled hidden value="">Selecciona una categoria</option>
                                 <?php foreach($data['categorias'] as $categoria){ ?>
                                 <option value="<?php echo $categoria->id; ?>"><?php echo $categoria->categoria; ?></option>

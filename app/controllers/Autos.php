@@ -42,7 +42,9 @@ class Autos {
 		$categorias = DB::getinstance()->table('categorias')->where('estado',1)->get();
 		$autos=[];
 		
-		if(Input::get('marca')!='' && Input::get('categoria')!='' && Input::get('transmision')!=''){
+		if(Input::get('marca')=='' && Input::get('categoria')=='' && Input::get('transmision')==''){
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id")->results();
+		}else if(Input::get('marca')!='' && Input::get('categoria')!='' && Input::get('transmision')!=''){
 			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.marca_id =". Input::get('marca')." AND v.categoria_id =". Input::get('categoria')." AND v.transmision ='". Input::get('transmision')."'")->results();
 		}else if(Input::get('marca')=='' && Input::get('categoria')!='' && Input::get('transmision')!=''){
 			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.categoria_id =". Input::get('categoria')." AND v.transmision ='". Input::get('transmision')."'")->results();
