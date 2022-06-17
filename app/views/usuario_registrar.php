@@ -18,7 +18,7 @@
 
 <body>
 
-<?php include "navbar.php"; ?>
+    <?php include "navbar.php"; ?>
 
 
     <div class="container my-5">
@@ -29,10 +29,14 @@
                     <div class="mb-3">
                         <label class="form-label">Nombre</label>
                         <input type="text" class="form-control" name="nombre" id="nombre">
-                    </div>                    
+                    </div>
                     <div class="mb-3">
                         <label class="form-label">Número de documento</label>
                         <input type="text" class="form-control" name="dni" id="dni">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Teléfono</label>
+                        <input type="text" class="form-control" name="telefono" id="telefono">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Correo</label>
@@ -46,8 +50,11 @@
                         <label class="form-label">Repetir contraseña</label>
                         <input type="password" class="form-control" name="verificacion" id="verificacion">
                     </div>
+                    <div class="form-group form-check text-center">
+                        <input type="checkbox" class="form-check-input" id="politica">
+                        <label class="form-check-label small" for="politica">Acepto las políticas y tratamiento de datos</label>
+                    </div>
                     <button class="btn-g mx-auto" type="submit">Registrar</button>
-
                 </form>
             </div>
 
@@ -76,8 +83,8 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
-            document.getElementById('dni').addEventListener('input',function(){
-                if (this.value.length > 8) this.value = this.value.slice(0,8); 
+            document.getElementById('dni').addEventListener('input', function() {
+                if (this.value.length > 8) this.value = this.value.slice(0, 8);
             })
             $("#registro_usuario").submit(function(event) {
                 event.preventDefault();

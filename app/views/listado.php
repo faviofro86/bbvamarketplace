@@ -144,6 +144,7 @@
                                         <div class="card-body ba3 bl">
                                             <h5 class="card-title mb-0"><?= $autos->marca ?></h5>
                                             <p class="card-text mb-0"><?= $autos->modelo ?></p>
+                                            <small class="card-text mb-0"><?= $autos->categoria_id ?></small>
                                             <hr>
                                             <p class="card-text text-right">$<?= $autos->precio ?>.00<br><small>Cuota desde $<?= $autos->cuota ?>.00</small></p>
                                         </div>
@@ -157,9 +158,9 @@
                         </div>
                     </div>
 
-                    <div class="col-12 text-center a1 pt-4">
+                    <!-- <div class="col-12 text-center a1 pt-4">
                         <span class="medium">1</span> | 2 | 3 | 4
-                    </div>
+                    </div> -->
 
                     <div class="col-12 a1 p-5 d-md-none">
                         <div class="row bgr p-3">

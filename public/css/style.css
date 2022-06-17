@@ -1153,4 +1153,10 @@ img.coral3-Icon-image[src*="/content/dam/public-web/global/images/icons"] + img.
   display: none;
 }
 
+.img-carro {
+  height: 348px;
+  width: 348px;
+  background-size: cover;
+}
+
 /*# sourceMappingURL=style.css.map */
