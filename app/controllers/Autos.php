@@ -43,21 +43,21 @@ class Autos {
 		$autos=[];
 		
 		if(Input::get('marca')=='' && Input::get('categoria')=='' && Input::get('transmision')==''){
-			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id")->results();
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id")->results();
 		}else if(Input::get('marca')!='' && Input::get('categoria')!='' && Input::get('transmision')!=''){
-			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.marca_id =". Input::get('marca')." AND v.categoria_id =". Input::get('categoria')." AND v.transmision ='". Input::get('transmision')."'")->results();
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id WHERE v.marca_id =". Input::get('marca')." AND v.categoria_id =". Input::get('categoria')." AND v.transmision ='". Input::get('transmision')."'")->results();
 		}else if(Input::get('marca')=='' && Input::get('categoria')!='' && Input::get('transmision')!=''){
-			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.categoria_id =". Input::get('categoria')." AND v.transmision ='". Input::get('transmision')."'")->results();
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id WHERE v.categoria_id =". Input::get('categoria')." AND v.transmision ='". Input::get('transmision')."'")->results();
 		}else if(Input::get('marca')!='' && Input::get('categoria')=='' && Input::get('transmision')!=''){
-			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v JOIN marca m ON m.id = v.marca_id JOIN modelo mo ON mo.marca_id = v.marca_id WHERE v.marca_id =". Input::get('marca')." AND v.transmision ='". Input::get('transmision')."'")->results();
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id WHERE v.marca_id =". Input::get('marca')." AND v.transmision ='". Input::get('transmision')."'")->results();
 		}else if(Input::get('marca')!='' && Input::get('categoria')!=''){
-			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v JOIN marca m ON m.id = v.marca_id JOIN modelo mo ON mo.marca_id = v.marca_id WHERE v.marca_id =". Input::get('marca')." AND v.categoria_id =". Input::get('categoria'))->results();
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id WHERE v.marca_id =". Input::get('marca')." AND v.categoria_id =". Input::get('categoria'))->results();
 		}else if((Input::get('marca')!='') && (Input::get('categoria')=='')){
-			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.marca_id =". Input::get('marca'))->results();
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id WHERE v.marca_id =". Input::get('marca'))->results();
 		}else if((Input::get('categoria')!='') && (Input::get('marca')=='')){
-			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.categoria_id =". Input::get('categoria'))->results();
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id WHERE v.categoria_id =". Input::get('categoria'))->results();
 		}else if(Input::get('transmision')!=''){
-			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.transmision ='". Input::get('transmision')."'")->results();
+			$autos = DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id WHERE v.transmision ='". Input::get('transmision')."'")->results();
 		}
 		//SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.estado = 1 AND v.categoria_id =" .$a[0]['categoria_id']. " ORDER BY numvisitas DESC LIMIT 6
 		
@@ -196,7 +196,7 @@ class Autos {
 			$c = DB::getinstance()->query("SELECT imagen from imagenes_vehiculos WHERE id_vehiculo ='$b'")->results();
 			$c = json_decode(json_encode($c), true);
 			
-			$d=DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.estado = 1 AND v.categoria_id =" .$a[0]['categoria_id']. " ORDER BY numvisitas DESC LIMIT 6")->results();
+			$d=DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id WHERE v.estado = 1 AND v.categoria_id =" .$a[0]['categoria_id']. " ORDER BY numvisitas DESC LIMIT 6")->results();
 			//$d = DB::getinstance()->table('vehiculos')->where('estado',1)->where('categoria_id',$a[0]['categoria_id'])->limit(6)->orderBy('numvisitas', 'DESC')->results();
 			
 			DB::getinstance()->table('vehiculos')->where('slug',$slug)->update(['numvisitas'=>($a[0]["numvisitas"]+1)]);

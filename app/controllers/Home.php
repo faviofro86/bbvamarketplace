@@ -29,7 +29,7 @@ class Home {
 		//Debug::varDump($a);
         $banners = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',1)->get();
 		$adds = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',2)->get();
-		$d=DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.estado = 1 AND v.categoria_id =" .$a[0]['categoria_id']. " ORDER BY numvisitas DESC LIMIT 5")->results();
+		$d=DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id WHERE v.estado = 1 AND v.categoria_id =" .$a[0]['categoria_id']. " ORDER BY numvisitas DESC LIMIT 5")->results();
         View::render('index', ['meta' => $meta,'data'=>$a,'marcas'=>$marcas,'categorias'=>$categorias,'condicion'=>$condicion, 'banners' => $banners,'adds' => $adds, 'destacados'=>$d]);
     }
 

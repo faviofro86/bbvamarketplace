@@ -144,7 +144,7 @@
                                         <div class="card-body ba3 bl">
                                             <h5 class="card-title mb-0"><?= $autos->marca ?></h5>
                                             <p class="card-text mb-0"><?= $autos->modelo ?></p>
-                                            <small class="card-text mb-0"><?= $autos->categoria_id ?></small>
+                                            <small class="card-text mb-0"><?= $autos->categoria ?></small>
                                             <hr>
                                             <p class="card-text text-right">$<?= $autos->precio ?>.00<br><small>Cuota desde $<?= $autos->cuota ?>.00</small></p>
                                         </div>

@@ -112,7 +112,7 @@
                                     <div class="card-body ba3 bl">
                                         <h5 class="card-title mb-0"><?= $destacados->marca ?></h5>
                                         <p class="card-text mb-0"><?= $destacados->modelo ?></p>
-                                        <small class="card-text mb-0"><?= $destacados->categoria_id ?></small>
+                                        <small class="card-text mb-0"><?= $destacados->categoria ?></small>
                                         <hr>
                                         <p class="card-text text-right">desde US$ <?= $destacados->precio ?><br><small>cuota desde US$ <?= $destacados->cuota ?> *</small></p>
                                     </div>
