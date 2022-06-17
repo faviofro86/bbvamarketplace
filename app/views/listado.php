@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="<?=URL::to('public/css/style.css')?>">
 
-    <title>Hello, world!</title>
+    <title>BBVA Marketplace</title>
 </head>
 
 <body>
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="buttom">
-									<button class="btn-g">Buscar <img src="<?=URL::to('public/img/lupa.svg')?>" alt="" class="img-fluid ml-2"></button>
+									<button class="btn-g" style="width: 100%">Buscar <img src="<?=URL::to('public/img/lupa.svg')?>" alt="" class="img-fluid ml-2"></button>
 								</div>
                             </div>
                         </div>
