@@ -130,7 +130,7 @@ class Autos {
 					mkdir($targetdir, 0777, true);
 				}
 				
-				$a = DB::getinstance()->query("INSERT INTO vehiculos(marca_id, modelo_id, categoria_id, condicion_id, precio, img_banner, ano_modelo, ano_fabricacion, puertas, transmision, traccion, descripcion, resumen, fichatecnica, encuentralo, estado, slug, cilindrada) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [Input::get('marca'), Input::get('modelo'), Input::get('categoria'), Input::get('condicion'), Input::get('precio'), $_FILES['banner1']["name"], Input::get('ano_modelo'), Input::get('ano_fabricacion'), Input::get('puertas'), Input::get('transmision'), Input::get('traccion'), Input::get('descripcion'), Input::get('resumen'), $_FILES['ficha']["name"], Input::get('encuentralo'), Input::get('estado'), Input::get('slug'), Input::get('cilindrada')])->query("SELECT LAST_INSERT_ID()")->results();
+				$a = DB::getinstance()->query("INSERT INTO vehiculos(marca_id, modelo_id, categoria_id, condicion_id, precio, cuota, img_banner, ano_modelo, ano_fabricacion, puertas, transmision, traccion, descripcion, resumen, fichatecnica, encuentralo, estado, slug, cilindrada) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [Input::get('marca'), Input::get('modelo'), Input::get('categoria'), Input::get('condicion'), Input::get('precio'), Input::get('cuota'), $_FILES['banner1']["name"], Input::get('ano_modelo'), Input::get('ano_fabricacion'), Input::get('puertas'), Input::get('transmision'), Input::get('traccion'), Input::get('descripcion'), Input::get('resumen'), $_FILES['ficha']["name"], Input::get('encuentralo'), Input::get('estado'), Input::get('slug'), Input::get('cilindrada')])->query("SELECT LAST_INSERT_ID()")->results();
 				
 				
 				$b = json_decode(json_encode($a), true);
@@ -312,7 +312,6 @@ class Autos {
 	
 	
 	public function marcas(){
-		Auth::validate([1]);
 		$banners = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',1)->get();
 		$adds = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',2)->get();
 		$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
