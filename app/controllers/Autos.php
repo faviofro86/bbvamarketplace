@@ -61,7 +61,7 @@ class Autos {
 		}
 		//SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.estado = 1 AND v.categoria_id =" .$a[0]['categoria_id']. " ORDER BY numvisitas DESC LIMIT 6
 		
-		$d=DB::getinstance()->query("SELECT v.*, m.*, mo.modelo FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id WHERE v.estado = 1 ORDER BY numvisitas DESC LIMIT 6")->results();
+		$d=DB::getinstance()->query("SELECT v.*, m.*, mo.modelo, c.categoria FROM vehiculos v INNER JOIN marca m ON m.id = v.marca_id INNER JOIN modelo mo ON mo.id = v.modelo_id INNER JOIN categorias c ON c.id = v.categoria_id WHERE v.estado = 1 ORDER BY numvisitas DESC LIMIT 6")->results();
 		
         $banners = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',1)->get();
 		$adds = DB::getinstance()->table('banners')->where('estado',1)->where('ubicacion',2)->get();
