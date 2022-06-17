@@ -160,20 +160,20 @@
         $('#soles').click(function() {
             $('#mon').text("S/ ")
             $('.mon').text("S/ ")
-            $('.mont-min').text("S/2,000.00")
-            $('.mont-max').text("S/100,000.00")
+            $('.mont-min').text("S/5,000.00")
+            $('.mont-max').text("S/250,000.00")
             $('.ini-min').text("S/0.00")
-            $('.ini-max').text("S/100,000.00")
+            $('.ini-max').text("S/250,000.00")
             
         });
 
         $('#dolares').click(function() {
             $('#mon').text("$ ")
             $('.mon').text("$ ")
-            $('.mont-min').text("$2,000.00")
-            $('.mont-max').text("$100,000.00")
+            $('.mont-min').text("$5,000.00")
+            $('.mont-max').text("$250,000.00")
             $('.ini-min').text("$0.00")
-            $('.ini-max').text("$100,000.00")
+            $('.ini-max').text("$250,000.00")
         });
 
         //$('#dolares').moneda();
@@ -185,7 +185,7 @@
         $('#monton, #montor').on('input', function() {
             var value = $(this).val();
             if ((value !== '') && (value.indexOf('.') === -1)) {
-                $(this).val(Math.max(Math.min(value, 100000), -100000));
+                $(this).val(Math.max(Math.min(value, 250000), -0));
             }
         });
 
@@ -198,6 +198,13 @@
         });
 
         $('#mesn, #mesr').on('input', function() {
+            var value = $(this).val();
+            if ((value !== '') && (value.indexOf('.') === -1)) {
+                $(this).val(Math.max(Math.min(value, 60), -60));
+            }
+        });
+        
+        $('.cuota').on('input', function() {
             var value = $(this).val();
             if ((value !== '') && (value.indexOf('.') === -1)) {
                 $(this).val(Math.max(Math.min(value, 60), -60));
