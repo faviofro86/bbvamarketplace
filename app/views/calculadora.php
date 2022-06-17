@@ -52,11 +52,11 @@
                                 <label class="small">Ingresa una cantidad</label>
                                 <div class="form-row d-flex align-items-center justify-content-center">
                                     <div class="col-1 text-right"><span class="mon">S/</span></div>
-                                    <div class="col-11"><input id="monton" type="text" class="form-control" min="11000" max="100000" oninput="montor.value=monton.value" /></div>
+                                    <div class="col-11"><input id="monton" type="text" class="form-control" min="5000" max="250000" oninput="montor.value=monton.value" /></div>
                                 </div>
 
                             </div>
-                            <input id="montor" type="range" class="form-control p-0 range" min="11000" max="100000" value="0" oninput="monton.value=montor.value" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)" />
+                            <input id="montor" type="range" class="form-control p-0 range" min="5000" max="250000" value="0" oninput="monton.value=montor.value" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)" />
 
 
                             <div class="form-group row mb-0">
@@ -64,8 +64,8 @@
                                 <label for="staticEmail" class="col-6 col-form-label text-right pb-0 label-leg"><small>Máximo</small></label>
                             </div>
                             <div class="form-group row label-leg">
-                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small class="mont-min">S/2,000.00</small></label>
-                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small class="mont-max">S/100,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small class="mont-min">S/5,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small class="mont-max">S/250,000.00</small></label>
                             </div>
 
 
@@ -78,10 +78,10 @@
                                 <label class="small">Ingresa una cantidad</label>
                                 <div class="form-row d-flex align-items-center justify-content-center">
                                     <div class="col-1 text-right"><span class="mon">S/</span></div>
-                                    <div class="col-11"><input id="inicialn" type="text" class="form-control" min="0" max="100000" oninput="inicialr.value=inicialn.value" /></div>
+                                    <div class="col-11"><input id="inicialn" type="text" class="form-control" min="0" max="250000" oninput="inicialr.value=inicialn.value" /></div>
                                 </div>
                             </div>
-                            <input id="inicialr" type="range" class="form-control p-0 range" min="0" max="100000" value="0" oninput="inicialn.value=inicialr.value" />
+                            <input id="inicialr" type="range" class="form-control p-0 range" min="0" max="250000" value="0" oninput="inicialn.value=inicialr.value" />
 
 
                             <div class="form-group row mb-0 label-leg">
@@ -90,7 +90,7 @@
                             </div>
                             <div class="form-group row label-leg">
                                 <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small class="ini-min">S/0.00</small></label>
-                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small class="ini-max">S/100,000.00</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small class="ini-max">S/250,000.00</small></label>
                             </div>
 
 
