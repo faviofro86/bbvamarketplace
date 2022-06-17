@@ -18,7 +18,16 @@ class Usuario {
 						'tabla'  => 'usuarios',
 						'campo' => 'correo'
 					],
-				],	
+				],
+				'dni' => [
+					'required' => true,
+					'max' => 8,
+					'min' => 8,
+					'unique' => [
+						'tabla'  => 'usuarios',
+						'campo' => 'dni'
+					],
+				],
 				'pass' => [
 					'required' =>true,
 				],
@@ -32,7 +41,7 @@ class Usuario {
 				$datos_de_registro = array(
 					"nombres" => Input::get('nombre'),
 					"apellidos" => '',
-					"dni" => '',
+					"dni" => Input::get('dni'),
 					"telefono" => '',
 					"correo" => Input::get('correo'),
 					"password" => Encrypter::encode(Input::get('pass')),

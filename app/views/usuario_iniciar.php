@@ -74,7 +74,7 @@
                     data: $(this).serialize(),
                     dataType: "json",
                     success: function(response) {
-                        window.location = Script.route('/')
+                        window.location = Script.route('')
                         console.log(response);
                     },
                     error: function(jqXHR, status) {

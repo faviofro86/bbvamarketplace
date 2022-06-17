@@ -32,9 +32,14 @@ class Auth {
 
     public static function login($username = null, $password = null) {
         if ($username != null && $password != null) {
-            $user = DB::getinstance()->table('usuarios')->where('correo',$username)->where('password',$password)->first();
-            if ($user != null) {      
-                Session::put(Config::get('session/session_name'), ['id'=>Encrypter::encode($user->id),'nombre'=>$user->nombres,'apellidos'=>$user->apellidos,'correo'=>$user->correo]);
+            $user = DB::getinstance()->table('usuarios')->where('correo',$username)->where('password',$password)->where('estado',1)->first();
+            
+            if ($user != null) {   
+
+                $marcas_bd == DB::getInstance()->table('permisos')->where('id_usuario',$user->id)->get();
+
+                Session::put(Config::get('session/session_name'), ['id'=>Encrypter::encode($user->id),'nombre'=>$user->nombres,'apellidos'=>$user->apellidos,'correo'=>$user->correo,'marcas'=>$marcas_bd,'tipo'=>$user->tipousuario]);
+
                 Session::put('isLoggedIn', true);
                 return true;
             }
@@ -42,9 +47,21 @@ class Auth {
         return false;
     }
 
-    public static function validate($rute = "/"){
-        if(Session::exists(Config::get('session/session_name'))){
-           return true;
+    public static function validate($niveles=[]) {
+        if(Session::exists(Config::get('session/session_name'))) {
+            if($niveles  == []) {
+
+                return true;
+
+            } else {
+                $tipo = Auth::get('tipo');
+                if(in_array($tipo,$niveles)){
+                    return true;
+                } else {
+                    Redirect::to(404);
+                }
+                Redirect::to(404);
+            }
         } else {
             Redirect::to(404);
         }

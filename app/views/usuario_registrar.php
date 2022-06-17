@@ -29,6 +29,10 @@
                     <div class="mb-3">
                         <label class="form-label">Nombre</label>
                         <input type="text" class="form-control" name="nombre" id="nombre">
+                    </div>                    
+                    <div class="mb-3">
+                        <label class="form-label">Número de documento</label>
+                        <input type="text" class="form-control" name="dni" id="dni">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Correo</label>
@@ -72,6 +76,9 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById('dni').addEventListener('input',function(){
+                if (this.value.length > 8) this.value = this.value.slice(0,8); 
+            })
             $("#registro_usuario").submit(function(event) {
                 event.preventDefault();
                 $.ajax({
@@ -86,7 +93,7 @@
                                 response.message,
                                 'success'
                             ).then(function() {
-                                window.location = Script.route('/')
+                                window.location = Script.route('')
                             });
                         } else {
                             Swal.fire(
