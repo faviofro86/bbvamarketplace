@@ -74,8 +74,14 @@ Route::get('admin/enablemodelo','Autos@enablemodelo');
 //Ruta para activar Modelo
 Route::get('admin/disablemodelo','Autos@disablemodelo');
 
+//Ruta para listar Categorías
+Route::get('admin/categorias','Autos@listar_categorias');
 
+//Ruta para listar Categorías
+Route::get('admin/disablecategoria','Autos@disablecategoria');
 
+//Ruta para listar Categorías
+Route::get('admin/enablecategoria','Autos@enablecategoria');
 
 
 /***************USUARIOS*****************/

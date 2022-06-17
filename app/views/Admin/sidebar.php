@@ -56,6 +56,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="<?=URL::to('admin/categorias')?>" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Listar Categorías</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?=URL::to('admin/banners')?>" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Listar Banners</p>

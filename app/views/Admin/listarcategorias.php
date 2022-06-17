@@ -69,7 +69,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Lista de Banners</h1>
+            <h1 class="m-0">Lista de Marcas</h1>
           </div><!-- /.col -->
           
         </div><!-- /.row -->
@@ -86,38 +86,24 @@
 			  <thead>
 				<tr>
 				  <th style="width: 10px">#</th>
-				  <th>Imagen</th>
-				  <th>Título</th>
-				  <th>Subtítulo</th>
-				  <th>Botón 1</th>
-				  <th>Destino 1</th>
-				  <th>Botón 2</th>
-				  <th>Destino 2</th>
-				  <th>Ubicación</th>
+				  <th>Categoría</th>
 				  <th>Acciones</th>
 				  <th style="width: 40px">Estado</th>
 				</tr>
 			  </thead>
 			  <tbody>
-				<?php $x = 0; foreach($data['banners'] as $banner){ ?>
+				<?php $x = 0; foreach($data['categorias'] as $categoria){ ?>
 				<tr>
 				  <td><?php echo $x=$x+1; ?></td>
-				  <td><img src="<?=URL::to('public/banners/'.$banner->imagen);?>" width="100"></td>
-				  <td><?php echo $banner->titulo; ?></td>
-				  <td><?php echo $banner->subtitulo; ?></td>
-				  <td><?php echo $banner->btn1; ?></td>
-				  <td><?php echo $banner->url1; ?></td>
-				  <td><?php echo $banner->btn2; ?></td>
-				  <td><?php echo $banner->url2; ?></td>
-				  <td><?php $r = ($banner->ubicacion=="1") ? 'Superior' : 'Lateral'; echo $r; ?></td>
+				  <td><?php echo $categoria->categoria; ?></td>
 				  <td>
-				  <?php if($banner->estado=="1"){
-					echo "<a href='".URL::to('admin/disablebanner?id='.$banner->id)."' class='btn btn-danger'>Desactivar</a>";
+				  <?php if($categoria->estado=="1"){
+					echo "<a href='".URL::to('admin/disablecategoria?id='.$categoria->id)."' class='btn btn-danger'>Desactivar</a>";
 					}else{
-					echo "<a href='".URL::to('admin/enablebanner?id='.$banner->id)."' class='btn btn-primary'>Activar</a>";}
+					echo "<a href='".URL::to('admin/enablecategoria?id='.$categoria->id)."' class='btn btn-primary'>Activar</a>";}
 					?>
 				  </td>
-				  <td><?php $r = ($banner->estado=="1") ? 'Activado' : 'Desactivado'; echo $r; ?></td>
+				  <td><?php if($categoria->estado=="1"){echo "Activada";}else{echo "Desactivada";} ?></td>
 				</tr>
 				<?php } ?>
 

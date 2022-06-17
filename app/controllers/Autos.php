@@ -209,6 +209,7 @@ class Autos {
     }
 	
 	public function auto_form(){
+		Auth::validate([1]);
 		$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
 		$categorias = DB::getinstance()->table('categorias')->where('estado',1)->get();
 		$condicion = DB::getinstance()->table('condicion')->get();
@@ -227,6 +228,7 @@ class Autos {
 	}
 	
 	public function marca_form(){
+		Auth::validate([1]);
 		$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
 		$categorias = DB::getinstance()->table('categorias')->where('estado',1)->get();
 		$condicion = DB::getinstance()->table('condicion')->get();
@@ -234,6 +236,7 @@ class Autos {
 	}
 	
 	public function marca_registrar(){
+		Auth::validate([1]);
 		if(Input::exists()){
 			$validate = new Validate();
 			$validation = $validate->check(Input::all(),[
@@ -256,6 +259,7 @@ class Autos {
 	}
 	
 	public function modelo_form(){
+		Auth::validate([1]);
 		$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
 		$condicion = DB::getinstance()->table('condicion')->get();
 		View::render('admin/modelonew', ['marcas'=>$marcas]);
@@ -342,6 +346,28 @@ class Autos {
 
 		$modelo = DB::getinstance()->table('modelo')->get();
 		View::render('Admin/listarmodelos', ['modelo'=>$modelo]);
+	}
+	
+	public function listar_categorias(){
+		Auth::validate([1]);
+		$categorias = DB::getinstance()->query("SELECT * FROM categorias")->results();
+		View::render('Admin/listarcategorias', ['categorias'=>$categorias]);
+	}
+	
+	public function disablecategoria(){
+		Auth::validate([1]);
+		$a=DB::getinstance()->query("UPDATE categorias SET estado = 0 WHERE id =".Input::get('id'))->results();
+
+		$categorias = DB::getinstance()->query("SELECT * FROM categorias")->results();
+		View::render('Admin/listarcategorias', ['categorias'=>$categorias]);
+	}
+	
+	public function enablecategoria(){
+		Auth::validate([1]);
+		$a=DB::getinstance()->query("UPDATE categorias SET estado = 1 WHERE id =".Input::get('id'))->results();
+
+		$categorias = DB::getinstance()->query("SELECT * FROM categorias")->results();
+		View::render('Admin/listarcategorias', ['categorias'=>$categorias]);
 	}
 	
 
