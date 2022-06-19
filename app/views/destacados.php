@@ -20,7 +20,7 @@
                                         <hr>
                                         <div class="p-calc">
                                             <input type="hidden" class="p-total" value="<?= $destacados->precio ?>">
-                                            <p class="card-text text-right">desde US$ <?= $destacados->precio ?><br><small>cuota desde US$ <span class="p-cuota"><?= $destacados->cuota ?></span> *</small></p>
+                                            <p class="card-text text-right">desde US$ <?= $destacados->precio ?><br><small>cuota desde US$ <span class="p-cuota"></span> *</small></p>
                                         </div>
                                     </div>
                                 </a>
