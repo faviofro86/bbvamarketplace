@@ -30,8 +30,9 @@
                         <h1 class="titulo"><?= $data['data'][0]['marca']; ?></h1>
                         <h3 class="modelo"><?= $data['data'][0]['modelo']; ?></h3>
                         <hr>
+                        <input type="hidden" class="d-precio" value="<?= $data['data'][0]['precio']; ?>">
                         <p class="precio text-right m-0">Desde US$ <?= number_format($data['data'][0]['precio']); ?></p>
-                        <p class="text-right">Cuota desde US$ 610.00</p>
+                        <p class="text-right">Cuota desde US$ <span class="d-cuota"></span></p>
                         <hr>
                         <p class="version text-right">
                             <?= $data['data'][0]['resumen']; ?>
@@ -72,27 +73,28 @@
                                 Llévalo
                             </span>
                             <span class="titulo-credito">
-                                a crédito
+                                a crédito *
                             </span>
                         </div>
                         <div class="col-3 text-center">
                             <span class="small d-block">&nbsp;</span>
-                            <span class="monto d-block">US$ 1600</span>
-                            <span class="cuota">36 cuotas</span>
+                            <div class="monto d-block">US$ <span class="calc1">1600</span></div>
+                            <span class="cuota">48 cuotas</span>
                         </div>
                         <div class="col-3 text-center">
                             <span class="small d-block">Más solicitado</span>
-                            <span class="monto d-block">US$ 1600</span>
-                            <span class="cuota">36 cuotas</span>
+                            <div class="monto d-block">US$ <span class="calc2">1600</span></div>
+                            <span class="cuota">60 cuotas</span>
                         </div>
                         <div class="col-3 text-center">
                             <span class="small d-block">&nbsp;</span>
-                            <span class="monto d-block">US$ 1600</span>
-                            <span class="cuota">36 cuotas</span>
+                            <div class="monto d-block">US$ <span class="calc3">1600</span></div>
+                            <span class="cuota">72 cuotas</span>
                         </div>
                         <div class="col-12 text-center">
                             <hr class="my-2">
                             <span>Con 10% de inicial</span>
+                            <p class="card-text bl text-center my-2"><small>* sujeto a evaluación crediticia, cuotas estimadas con una inicial del 20% + cuotas dobles en julio y diciembre</small></p>
                         </div>
                     </div>
                 </div>
@@ -106,7 +108,7 @@
                                     Llévalo
                                 </span>
                                 <span class="titulo-credito">
-                                    a crédito
+                                    a crédito *
                                 </span>
                             </div>
                             <div class="col-12 p-0">
@@ -115,18 +117,21 @@
                         </div>
                         <div class="col-6">
                             <div class="col-12 text-center">
-                                <span class="monto d-block">US$ 1600</span>
-                                <span class="cuota">36 cuotas</span>
+                                <div class="monto d-block">US$ <span class="calc1">1600</span></div>
+                                <span class="cuota">48 cuotas</span>
                             </div>
-                            <div class="col-12 text-center my-4">
+                            <div class="col-12 text-center my-4 p-0">
                                 <span class="small d-block">Más solicitado</span>
-                                <span class="monto d-block">US$ 1600</span>
-                                <span class="cuota">36 cuotas</span>
+                                <div class="monto d-block">US$ <span class="calc2">1600</span></div>
+                                <span class="cuota">60 cuotas</span>
                             </div>
                             <div class="col-12 text-center">
-                                <span class="monto d-block">US$ 1600</span>
-                                <span class="cuota">36 cuotas</span>
+                                <div class="monto d-block">US$ <span class="calc3">1600</span></div>
+                                <span class="cuota">72 cuotas</span>
                             </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="card-text bl text-center mt-3"><small>* sujeto a evaluación crediticia, cuotas estimadas con una inicial del 20% + cuotas dobles en julio y diciembre</small></p>
                         </div>
                     </div>
                 </div>
@@ -197,7 +202,7 @@
                         <h4 class="modelo">Encuéntranos en</h4>
                         <hr>
 
-                            <?php
+                        <?php
                                 $locales = $data['data'][0]['encuentralo'];
                                 $locales_ex = explode(';', $locales);
                                 foreach($locales_ex as $key => $value)
@@ -248,14 +253,14 @@
                             </form>
                         </div>
                         <?php } else { ?>
-							<form class="form-contacto" action>
-								<input type="hidden" class="form-control" id="nombre" value="<?= Auth::get_array('nombre'); ?>">
-								<input type="hidden" class="form-control" id="apellido" value="<?= Auth::get_array('apellidos'); ?>">
-								<input type="hidden" class="form-control" id="correo" value="<?= Auth::get_array('correo'); ?>">
-								<input type="hidden" class="form-control" id="telefono" value="<?= Auth::get_array('telefono'); ?>">
-                                <button type="submit" class="btn-s mb-4">Llámame</button>
-                            </form>
-						<?php } ?>
+                        <form class="form-contacto" action>
+                            <input type="hidden" class="form-control" id="nombre" value="<?= Auth::get_array('nombre'); ?>">
+                            <input type="hidden" class="form-control" id="apellido" value="<?= Auth::get_array('apellidos'); ?>">
+                            <input type="hidden" class="form-control" id="correo" value="<?= Auth::get_array('correo'); ?>">
+                            <input type="hidden" class="form-control" id="telefono" value="<?= Auth::get_array('telefono'); ?>">
+                            <button type="submit" class="btn-s mb-4">Llámame</button>
+                        </form>
+                        <?php } ?>
                     </div>
                     <?php foreach($data['adds'] as $adds){ ?>
                     <a href="<?php echo $adds->url1; ?>" class="card-link">
@@ -305,14 +310,45 @@
         $(document).ready(function() {
             //$(".caract:nth-child(even)").append("<hr>");
 
+            var count = $('.p-calc').length
+            var i = 0;
+            while (i < count) {
+                $(".p-calc").eq(i).each(function() {
+                    var loan = $('input.p-total').eq(i).val(),
+                        down = parseInt(loan) * 10 / 100,
+                        month = 72,
+                        int = 10,
+                        amount = parseInt(loan),
+                        months = parseInt(month),
+                        down = parseInt(down),
+                        monInt = int / 1200,
+                        calculation = ((monInt + (monInt / (Math.pow((1 + monInt), months) - 1))) * (amount - (down || 0))).toFixed(2);
+                    $(this).find(".p-cuota").text(calculation);
+                    i++;
+                });
+            }
+
+            var loan = $('.d-precio').val(),
+                down = parseInt(loan) * 10 / 100,
+                int = 10,
+                amount = parseInt(loan),
+                down = parseInt(down),
+                monInt = int / 1200,
+                cuotamax = ((monInt + (monInt / (Math.pow((1 + monInt), 72) - 1))) * (amount - (down || 0))).toFixed(2),
+                cuota_min = ((monInt + (monInt / (Math.pow((1 + monInt), 48) - 1))) * (amount - (down || 0))).toFixed(2),
+                cuota_med = ((monInt + (monInt / (Math.pow((1 + monInt), 60) - 1))) * (amount - (down || 0))).toFixed(2),
+                cuota_max = ((monInt + (monInt / (Math.pow((1 + monInt), 72) - 1))) * (amount - (down || 0))).toFixed(2);
+
+            $(".d-cuota").text(cuotamax);
+            $(".calc1").text(cuota_min);
+            $(".calc2").text(cuota_med);
+            $(".calc3").text(cuota_max);
 
             if ($(window).width() > 991) {
                 $("<div class='col-12'><hr class='mt-0'></div>").insertAfter(".caract:nth-child(odd)");
             } else {
                 $("<div class='col-12'><hr class='mt-0'></div>").insertAfter(".caract");
             }
-
-
 
             $('.slider-for').slick({
                 slidesToShow: 1,

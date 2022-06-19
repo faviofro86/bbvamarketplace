@@ -18,7 +18,10 @@
                                         <p class="card-text mb-0"><?= $destacados->modelo ?></p>
                                         <small class="card-text mb-0"><?= $destacados->categoria ?></small>
                                         <hr>
-                                        <p class="card-text text-right">desde US$ <?= $destacados->precio ?><br><small>cuota desde US$ <?= $destacados->cuota ?> *</small></p>
+                                        <div class="p-calc">
+                                            <input type="hidden" class="p-total" value="<?= $destacados->precio ?>">
+                                            <p class="card-text text-right">desde US$ <?= $destacados->precio ?><br><small>cuota desde US$ <span class="p-cuota"><?= $destacados->cuota ?></span> *</small></p>
+                                        </div>
                                     </div>
                                 </a>
                             </div>

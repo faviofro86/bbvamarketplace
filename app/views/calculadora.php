@@ -101,9 +101,9 @@
                             <h6 for="">Mensualidades</h6>
                             <div class="input-cont">
                                 <label class="small">Ingresa una cantidad</label>
-                                <input id="mesn" type="number" class="form-control" min="1" max="60" value="1" oninput="mesr.value=mesn.value" />
+                                <input id="mesn" type="number" class="form-control" min="1" max="72" value="1" oninput="mesr.value=mesn.value" />
                             </div>
-                            <input id="mesr" type="range" class="form-control p-0 range" min="1" max="60" value="1" oninput="mesn.value=mesr.value" />
+                            <input id="mesr" type="range" class="form-control p-0 range" min="1" max="72" value="1" oninput="mesn.value=mesr.value" />
 
 
                             <div class="form-group row mb-0">
@@ -112,7 +112,7 @@
                             </div>
                             <div class="form-group row">
                                 <label for="staticEmail" class="col-6 col-form-label pt-0 label-leg"><small>1 mes</small></label>
-                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small>60 meses</small></label>
+                                <label for="staticEmail" class="col-6 col-form-label text-right pt-0 label-leg"><small>72 meses</small></label>
                             </div>
 
 

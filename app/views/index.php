@@ -67,7 +67,7 @@
                         <div class="form-group col-12 col-md-3">
                             <label for="inputState">Condición</label>
                             <select id="inputState" class="form-control" disabled>
-                               	<option selected disabled hidden value="">Selecciona</option>
+                                <option selected disabled hidden value="">Selecciona</option>
                                 <option selected>Nuevo</option>
                             </select>
                         </div>
@@ -114,7 +114,10 @@
                                         <p class="card-text mb-0"><?= $destacados->modelo ?></p>
                                         <small class="card-text mb-0"><?= $destacados->categoria ?></small>
                                         <hr>
-                                        <p class="card-text text-right">desde US$ <?= $destacados->precio ?><br><small>cuota desde US$ <?= $destacados->cuota ?> *</small></p>
+                                        <div class="p-calc">
+                                            <input type="hidden" class="p-total" value="<?= $destacados->precio ?>">
+                                            <p class="card-text text-right">desde US$ <?= $destacados->precio ?><br><small>cuota desde US$ <span class="p-cuota"><?= $destacados->cuota ?></span> *</small></p>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
@@ -145,6 +148,26 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script>
+        $(document).ready(function() {
+            var count = $('.p-calc').length
+            var i = 0;
+            while (i < count) {
+                $(".p-calc").eq(i).each(function() {
+                    var loan = $('input.p-total').eq(i).val(),
+                        down = parseInt(loan) * 10 / 100,
+                        month = 72,
+                        int = 10,
+                        amount = parseInt(loan),
+                        months = parseInt(month),
+                        down = parseInt(down),
+                        monInt = int / 1200,
+                        calculation = ((monInt + (monInt / (Math.pow((1 + monInt), months) - 1))) * (amount - (down || 0))).toFixed(2);
+                    $(this).find(".p-cuota").text(calculation);
+                    i++;
+                });
+            }
+        });
+
         $('.single-item').slick({
             dots: true,
             arrows: true,
@@ -164,7 +187,7 @@
             $('.mont-max').text("S/250,000.00")
             $('.ini-min').text("S/0.00")
             $('.ini-max').text("S/250,000.00")
-            
+
         });
 
         $('#dolares').click(function() {
@@ -181,7 +204,7 @@
         $('#monton, #inicialn').on('input', function() {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
-        
+
         $('#monton, #montor').on('input', function() {
             var value = $(this).val();
             if ((value !== '') && (value.indexOf('.') === -1)) {
@@ -200,14 +223,7 @@
         $('#mesn, #mesr').on('input', function() {
             var value = $(this).val();
             if ((value !== '') && (value.indexOf('.') === -1)) {
-                $(this).val(Math.max(Math.min(value, 60), -60));
-            }
-        });
-        
-        $('.cuota').on('input', function() {
-            var value = $(this).val();
-            if ((value !== '') && (value.indexOf('.') === -1)) {
-                $(this).val(Math.max(Math.min(value, 60), -60));
+                $(this).val(Math.max(Math.min(value, 72), -72));
             }
         });
 

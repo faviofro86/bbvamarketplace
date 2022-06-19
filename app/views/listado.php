@@ -46,20 +46,20 @@
                                 <div class="form-group col-12 p-0">
                                     <label for="inputState">Marca</label>
                                     <select class="form-control" name="marca">
-										<option selected disabled hidden value="">Selecciona una marca</option>
-										<?php foreach($data['marcas'] as $marca){ ?>
-										<option value="<?php echo $marca->id; ?>"><?php echo $marca->marca; ?></option>
-										<?php } ?>
-                            		</select>
+                                        <option selected disabled hidden value="">Selecciona una marca</option>
+                                        <?php foreach($data['marcas'] as $marca){ ?>
+                                        <option value="<?php echo $marca->id; ?>"><?php echo $marca->marca; ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                                 <div class="form-group col-12 p-0">
                                     <label for="inputState">Tipo</label>
                                     <select id="inputState" class="form-control" name="categoria">
-										<option selected disabled hidden value="">Selecciona</option>
-										<?php foreach($data['categorias'] as $categoria){ ?>
-										<option value="<?php echo $categoria->id; ?>"><?php echo $categoria->categoria; ?></option>
-										<?php } ?>
-									</select>
+                                        <option selected disabled hidden value="">Selecciona</option>
+                                        <?php foreach($data['categorias'] as $categoria){ ?>
+                                        <option value="<?php echo $categoria->id; ?>"><?php echo $categoria->categoria; ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                                 <div class="form-group col-12 p-0">
                                     <label for="inputState">Transmisión</label>
@@ -86,8 +86,8 @@
                                     </div>
                                 </div>
                                 <div class="buttom">
-									<button class="btn-g" style="width: 100%">Buscar <img src="<?=URL::to('public/img/lupa.svg')?>" alt="" class="img-fluid ml-2"></button>
-								</div>
+                                    <button class="btn-g" style="width: 100%">Buscar <img src="<?=URL::to('public/img/lupa.svg')?>" alt="" class="img-fluid ml-2"></button>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -136,7 +136,7 @@
                 <div class="row det-header">
                     <div class="col-12">
                         <div class="d-flex flex-wrap flex-row">
-                           <?php if(count($data['autos'])>0){ foreach($data['autos'] as $autos){ ?>
+                            <?php if(count($data['autos'])>0){ foreach($data['autos'] as $autos){ ?>
                             <div class="col-12 col-md-6 p-3">
                                 <div class="card">
                                     <a href="<?=URL::to('autos/'.$autos->slug )?>">
@@ -146,15 +146,18 @@
                                             <p class="card-text mb-0"><?= $autos->modelo ?></p>
                                             <small class="card-text mb-0"><?= $autos->categoria ?></small>
                                             <hr>
-                                            <p class="card-text text-right">$<?= $autos->precio ?>.00<br><small>Cuota desde $<?= $autos->cuota ?>.00</small></p>
+                                            <div class="p-calc">
+                                                <input type="hidden" class="p-total" value="<?= $autos->precio ?>">
+                                                <p class="card-text text-right">desde US$ <?= $autos->precio ?><br><small>cuota desde US$ <span class="p-cuota"><?= $autos->cuota ?></span> *</small></p>
+                                            </div>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                             <?php }
 							}else{ echo "No se encontraron resultados";} ?>
-                            
-            
+
+
                         </div>
                     </div>
 
@@ -205,7 +208,7 @@
 
 
 
-	<?php include "destacados.php" ?>
+    <?php include "destacados.php" ?>
     <?php include "footer.php" ?>
 
 
@@ -221,8 +224,23 @@
 
     <script>
         $(document).ready(function() {
-            //$(".caract:nth-child(even)").append("<hr>");
-
+            var count = $('.p-calc').length
+            var i = 0;
+            while (i < count) {
+                $(".p-calc").eq(i).each(function() {
+                    var loan = $('input.p-total').eq(i).val(),
+                        down = parseInt(loan) * 10 / 100,
+                        month = 72,
+                        int = 10,
+                        amount = parseInt(loan),
+                        months = parseInt(month),
+                        down = parseInt(down),
+                        monInt = int / 1200,
+                        calculation = ((monInt + (monInt / (Math.pow((1 + monInt), months) - 1))) * (amount - (down || 0))).toFixed(2);
+                    $(this).find(".p-cuota").text(calculation);
+                    i++;
+                });
+            }
 
             if ($(window).width() > 991) {
                 $("<div class='col-12'><hr class='mt-0'></div>").insertAfter(".caract:nth-child(odd)");
