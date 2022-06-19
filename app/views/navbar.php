@@ -31,7 +31,7 @@
                         <a class="bl text-center" href="<?=URL::to('marcas')?>">Marcas</a>
                     </li>
                     <li class="nav-item  mx-4 d-lg-none">
-                        <a class="bl" href="<?=URL::to('marcas')?>">Ver todos</a>
+                        <a class="bl" href="<?=URL::to('listado')?>">Ver todos</a>
                     </li>
 
                 </ul>
