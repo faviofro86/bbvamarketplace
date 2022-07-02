@@ -5,6 +5,8 @@
 $a1: #072146;
 $a2: #004480;
 $a3: #19739E;
+$a4: #D4EDFC;
+$a5: #18558f;
 $am: #F8CD51;
 $ro: #C03851;
 $gr: #E4E4E4;
@@ -35,6 +37,14 @@ $bl: #ffffff;
     background-color: $a3;
 }
 
+.ba4 {
+    background-color: $a4;
+}
+
+.ba5 {
+    background-color: $a5;
+}
+
 .bgr {
     background-color: $gr;
 }
@@ -50,7 +60,7 @@ header {
 
 .fixed {
     position: sticky;
-    top: 15px;
+    top: 100px;
 }
 
 a {
@@ -390,4 +400,18 @@ h4 {
     height: 348px;
     width: 348px;
     background-size: cover;
+}
+
+.listItem__bullet {
+    width: 0.4375rem;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+    box-sizing: content-box;
+    height: 0;
+    border: 0.21875rem solid transparent;
+    border-top: 0 solid;
+    border-bottom: 0.4375rem solid var(--cells-lists-listItem-bullet-border-bottom-color, var(--bbva-white-medium-blue, #49A5E6));
+    border-right: 0.21875rem;
+    text-overflow: clip;
+    margin-right: 12px;
 }

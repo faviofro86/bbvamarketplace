@@ -129,17 +129,42 @@
 
                     <div class="ba2 bl calc-res d-flex align-items-center">
                         <div class="row p-5">
-                            <div class="col-12 mb-4 text-center">
+                            <!-- <div class="col-12 mb-4 text-center">
                                 <img src="<?=URL::to('public/img/Microillustration.svg')?>" alt="" class="img-fluid">
-                            </div>
+                            </div> -->
                             <div class="col-12 mb-4 text-center">
-                                <h5><strong>Tu cuota desde:</strong></h5>
-                                <p class="h2 mb-0"><span id="mon">S/</span> <span class="cuota">0.00</span></p>
+                                <h6><strong>Importe a solicitar:</strong></h6>
+                                <p class="h2 mb-0"><span id="div-p">S/</span> <span id="mon-p">0.00</span></p>
                             </div>
                             <div class="col-12">
-                                <div class="buttom">
+                                <p class="mt-3 mb-0 d-flex justify-content-between">
+                                    <span class="bl">Cuota:</span><span><span id="mon">S/ </span><span class="cuota">0.00</span></span>
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p class="mt-3 mb-0 d-flex justify-content-between">
+                                    <span class="bl">Duración total:</span><span><span id="meses-t">1</span><span> meses</span></span>
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p class="mt-3 mb-0 d-flex justify-content-between">
+                                    <span class="bl">TCEA Referencial de Operación:</span><span> 10.000008%</span>
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <div class="buttom mt-4">
                                     <button class="btn-g mx-auto" data-toggle="modal" data-target="#staticBackdrop">Solicitalo</button>
                                 </div>
+                            </div>
+                            <div class="col-12">
+                                <p class="mt-3 mb-0 d-flex justify-content-between">
+                                    <button data-toggle="modal" data-target="#detalle" class="btn"><strong class="bl">+ Detalle del préstamo</strong></button>
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p class="mt-0 mb-0 d-flex justify-content-between">
+                                    <button data-toggle="modal" data-target="#cronograma" class="btn"><strong class="bl">+ Cronograma de pagos</strong></button>
+                                </p>
                             </div>
                             <div class="col-12">
                                 <p class="mt-3 mb-0">
@@ -154,6 +179,178 @@
                     </div>
                 </div>
 
+                <div class="col-12 ba4 mt-5 p-4">
+                    <h6>IMPORTANTE</h6>
+                    <ul class="list-group">
+                        <li class="d-flex"><div class="listItem__bullet"></div>Los datos emitidos por este simulador son referenciales.</li>
+                        <li class="d-flex"><div class="listItem__bullet"></div>El otorgamiento del préstamo está sujeto a evaluación crediticia.</li>
+                        <li class="d-flex"><div class="listItem__bullet"></div>La fecha de desembolso, para efectos de esta simulación, es la fecha de solicitud que ha ingresado en este simulador.</li>
+                        <li class="d-flex"><div class="listItem__bullet"></div>La simulación no incluye el ITF.</li>
+                        <li class="d-flex"><div class="listItem__bullet"></div>La tasa de interés es fija.</li>
+                        <li class="d-flex"><div class="listItem__bullet"></div>Usted podrá contratar directamente su póliza de seguro, con las mismas características y beneficios a la ofrecida, y endosarla a favor del Banco. El endoso de la póliza está sujeto a comisión publicada en nuestro tarifario en: www.bbva.pe</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="detalle" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="staticBackdropLabel">Detalle del préstamo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12">
+                        <p class="mt-3 mb-0 d-flex justify-content-between">
+                            <span>Producto</span><span>Préstamo Auto Nuevo</span>
+                        </p>
+                        <p class="mt-2 mb-0 d-flex justify-content-between">
+                            <span>Importe a solicitar</span><span><span class="det-mont-mon">S/ </span><span class="det-mont">50,000.00</span></span>
+                        </p>
+                        <p class="mt-2 mb-0 d-flex justify-content-between">
+                            <span>Cuota *</span><span><span class="det-cuot-mon">S/ </span><span class="det-cuot">1,055.62</span></span>
+                        </p>
+                        <p class="mt-2 mb-0 d-flex justify-content-between">
+                            <span>Duración total</span><span><span class="det-mes">60</span><span> meses</span></span>
+                        </p>
+                        <p class="mt-2 mb-0 d-flex justify-content-between">
+                            <span>Fecha de solicitud</span><span><?php echo date("d/m/Y") ?></span>
+                        </p>
+                        <p class="mt-2 mb-0 d-flex justify-content-between">
+                            <span>Días de pago</span><span><?php echo date("d") ?></span>
+                        </p>
+                        <p class="mt-2 mb-0 d-flex justify-content-between">
+                            <span>Tipo Seguro de Desgravamen</span><span>SIN SEGURO</span>
+                        </p>
+                        <p class="mt-2 mb-0 d-flex justify-content-between">
+                            <span>Importe Seguro de Desgravamen</span><span>S/ 0.00</span>
+                        </p>
+                        <p class="mt-2 mb-0 d-flex justify-content-between">
+                            <span>Tasa Efectiva Anual</span><span>10%</span>
+                        </p>
+                        <p class="mt-2 mb-0 d-flex justify-content-between">
+                            <span>TCEA Referencial de Operación</span><span>10.000008%</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cronograma" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cronograma de pagos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="col-12">
+                        <table class="table table-hover" style="width: 150%">
+                            <thead>
+                                <tr align="center">
+                                    <th scope="col">Mes</th>
+                                    <th scope="col">Vencimiento</th>
+                                    <th scope="col">Amortización</th>
+                                    <th scope="col">Interés</th>
+                                    <th scope="col">Comisiones + seguros</th>
+                                    <th scope="col">Subvención</th>
+                                    <th scope="col">Cuota</th>
+                                    <th scope="col">Saldo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr align="center">
+                                    <th scope="row">1</th>
+                                    <td><?php echo date("d/m/Y") ?></td>
+                                    <td><span class="tb-mon">S/</span> 643.57</td>
+                                    <td><span class="tb-mon">S/</span> 412.05</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 1,055.62</td>
+                                    <td><span class="tb-mon">S/</span> 49,356.43</td>
+                                </tr>
+                                <tr align="center">
+                                    <th scope="row">2</th>
+                                    <td><?php echo date("d/m/Y", strtotime("+1 month")) ?></td>
+                                    <td><span class="tb-mon">S/</span> 643.57</td>
+                                    <td><span class="tb-mon">S/</span> 412.05</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 1,055.62</td>
+                                    <td><span class="tb-mon">S/</span> 49,356.43</td>
+                                </tr>
+                                <tr align="center">
+                                    <th scope="row">3</th>
+                                    <td><?php echo date("d/m/Y", strtotime("+2 month")) ?></td>
+                                    <td><span class="tb-mon">S/</span> 643.57</td>
+                                    <td><span class="tb-mon">S/</span> 412.05</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 1,055.62</td>
+                                    <td><span class="tb-mon">S/</span> 49,356.43</td>
+                                </tr>
+                                <tr align="center">
+                                    <th scope="row">4</th>
+                                    <td><?php echo date("d/m/Y", strtotime("+3 month")) ?></td>
+                                    <td><span class="tb-mon">S/</span> 643.57</td>
+                                    <td><span class="tb-mon">S/</span> 412.05</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 1,055.62</td>
+                                    <td><span class="tb-mon">S/</span> 49,356.43</td>
+                                </tr>
+                                <tr align="center">
+                                    <th scope="row">5</th>
+                                    <td><?php echo date("d/m/Y", strtotime("+4 month")) ?></td>
+                                    <td><span class="tb-mon">S/</span> 643.57</td>
+                                    <td><span class="tb-mon">S/</span> 412.05</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 1,055.62</td>
+                                    <td><span class="tb-mon">S/</span> 49,356.43</td>
+                                </tr>
+                                <tr align="center">
+                                    <th scope="row">6</th>
+                                    <td><?php echo date("d/m/Y", strtotime("+5 month")) ?></td>
+                                    <td><span class="tb-mon">S/</span> 643.57</td>
+                                    <td><span class="tb-mon">S/</span> 412.05</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 1,055.62</td>
+                                    <td><span class="tb-mon">S/</span> 49,356.43</td>
+                                </tr>
+                                <tr align="center">
+                                    <th scope="row">7</th>
+                                    <td><?php echo date("d/m/Y", strtotime("+6 month")) ?></td>
+                                    <td><span class="tb-mon">S/</span> 643.57</td>
+                                    <td><span class="tb-mon">S/</span> 412.05</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 0.00</td>
+                                    <td><span class="tb-mon">S/</span> 1,055.62</td>
+                                    <td><span class="tb-mon">S/</span> 49,356.43</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div> -->
+            </div>
+        </div>
+    </div>

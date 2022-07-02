@@ -64,6 +64,14 @@
   background-color: #19739E;
 }
 
+.ba4 {
+  background-color: #D4EDFC;
+}
+
+.ba5 {
+  background-color: #18558f;
+}
+
 .bgr {
   background-color: #E4E4E4;
 }
@@ -79,7 +87,7 @@ header {
 
 .fixed {
   position: sticky;
-  top: 15px;
+  top: 100px;
 }
 
 a {
@@ -1157,6 +1165,20 @@ img.coral3-Icon-image[src*="/content/dam/public-web/global/images/icons"] + img.
   height: 348px;
   width: 348px;
   background-size: cover;
+}
+
+.listItem__bullet {
+  width: 0.4375rem;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+  box-sizing: content-box;
+  height: 0;
+  border: 0.21875rem solid transparent;
+  border-top: 0 solid;
+  border-bottom: 0.4375rem solid var(--cells-lists-listItem-bullet-border-bottom-color, var(--bbva-white-medium-blue, #49A5E6));
+  border-right: 0.21875rem;
+  text-overflow: clip;
+  margin-right: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */

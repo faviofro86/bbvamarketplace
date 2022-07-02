@@ -183,6 +183,10 @@
         $('#soles').click(function() {
             $('#mon').text("S/ ")
             $('.mon').text("S/ ")
+            $('#div-p').text("S/ ")
+            $('.det-mont-mon').text("S/ ")
+            $('.det-cuot-mon').text("S/ ")
+            $('.tb-mon').text("S/ ")
             $('.mont-min').text("S/5,000.00")
             $('.mont-max').text("S/250,000.00")
             $('.ini-min').text("S/0.00")
@@ -193,6 +197,10 @@
         $('#dolares').click(function() {
             $('#mon').text("$ ")
             $('.mon').text("$ ")
+            $('#div-p').text("$ ")
+            $('.det-mont-mon').text("$ ")
+            $('.det-cuot-mon').text("$ ")
+            $('.tb-mon').text("$ ")
             $('.mont-min').text("$5,000.00")
             $('.mont-max').text("$250,000.00")
             $('.ini-min').text("$0.00")
@@ -241,6 +249,11 @@
 
             if (isNaN(calculation)) calculation = 0.00;
             $(".cuota").text(calculation);
+            $(".det-cuot").text(calculation);
+            $("#mon-p").text(loan);
+            $(".det-mont").text(loan);
+            $("#meses-t").text(month);
+            $(".det-mes").text(month);
         });
 
         $("#monton, #montor").on("input", function() {

@@ -1,12 +1,6 @@
-    <nav class="navbar navbar-expand-lg navbar-dark ba1 py-3 shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark ba3 py-3 shadow-sm">
 
         <div class="container">
-
-            <a href="<?=URL::to('/')?>" class="navbar-brand font-weight-bold mr-auto">
-
-                <img src="<?=URL::to('public/img/bbva_logo.webp')?>" alt="" height="40">
-
-            </a>
 
             <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler order-md-1">
                 <span class="navbar-toggler-icon"></span>
@@ -16,7 +10,7 @@
                 <div class="d-none d-lg-block">
                     <ul class="navbar-nav mr-auto d-flex align-items-center flex-row justify-content-center justify-content-lg-end pt-4 pt-lg-0">
                         <!-- Megamenu-->
-                        <li class="nav-item ml-5">
+                        <li class="nav-item">
                             <a class="bl" href="<?=URL::to('marcas')?>">Marcas</a>
                         </li>
                         <li class="nav-item ml-5">
