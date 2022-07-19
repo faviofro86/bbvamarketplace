@@ -444,7 +444,13 @@
         });
 
     </script>
+    <script src="<?=URL::to('public/js/iframeResizer.min.js')?>"></script>
+    <script>
+        iFrameResize({
+            log: true
+        }, '#content-iframe')
 
+    </script>
 </body>
 
 </html>

@@ -350,7 +350,7 @@
         });
 
     </script>
-
+    <script src="<?=URL::to('public/js/iframeResizer.min.js')?>"></script>
 </body>
 
 </html>
