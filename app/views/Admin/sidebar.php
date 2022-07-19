@@ -19,12 +19,13 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+            <?php if(Auth::get_array('tipo')==1){?>
           <li class="nav-item">
             <a href="<?=URL::to('admin/marca_form')?>" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Registrar Marca<span class="right badge badge-danger">1</span></p>
             </a>
-          </li>
+          </li><?php } ?>
           <li class="nav-item">
             <a href="<?=URL::to('admin/modelo_form')?>" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
