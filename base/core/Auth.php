@@ -37,8 +37,13 @@ class Auth {
             if ($user != null) {   
 
                 $marcas_bd = DB::getInstance()->table('permisos')->where('id_usuario',$user->id)->get();
+                $marcas_usuario = [];
 
-                Session::put(Config::get('session/session_name'), ['id'=>Encrypter::encode($user->id),'nombre'=>$user->nombres,'apellidos'=>$user->apellidos,'correo'=>$user->correo,'marcas'=>$marcas_bd,'tipo'=>$user->tipousuario, 'telefono'=>$user->telefono]);
+                foreach($marcas_bd as $v => $k){
+                    $marcas_usuario[] = $k->id_marca;
+                }
+
+                Session::put(Config::get('session/session_name'), ['id'=>Encrypter::encode($user->id),'nombre'=>$user->nombres,'apellidos'=>$user->apellidos,'correo'=>$user->correo,'marcas'=>$marcas_usuario,'tipo'=>$user->tipousuario, 'telefono'=>$user->telefono]);
 
                 Session::put('isLoggedIn', true);
                 return true;
@@ -66,36 +71,7 @@ class Auth {
             Redirect::to(404);
         }
     }
-    /*
-    public static function login($username = null, $password = null) {
-        if ($username != null && $password != null) {
-            $class = Config::get('user/user_class');
-            if(Config::get('user/hash_active')){
-                $user = $class::find($username, Config::get('user/userField'));
-                if ($user != null) {
-                    if ($user->{Config::get('user/passwordField')} === Hash::make($password,$user->{Config::get('user/saltField')})) {
-                        //Estas Dos Lineas Loguean realmente al Usuario         
-                        Session::put(Config::get('session/session_name'), $user);
-                        Session::put('isLoggedIn', true);
-                        return true;
-                    }
-                }
-            }else{
-                $user = $class::where(Config::get('user/userField'),$username)
-                ->where(Config::get('user/passwordField'),$password)
-                ->first();
-                if ($user != null) {
-                    //Estas Dos Lineas Loguean realmente al Usuario         
-                    Session::put(Config::get('session/session_name'), $user);
-                    Session::put('isLoggedIn', true);
-                    return true;
-                }
-            }
-            
-        }
-        return false;
-    }
-    */
+
     public static function logout() {
         Session::destroy();
     }
