@@ -93,7 +93,7 @@ class Autos {
 				'estado' => ['required' =>true],
 				'slug' => ['required' =>true],
 				'cantidad' => ['required' =>true],
-			]);  
+			]);
 			if($validation->passed()){
 				
 				$dirpdf = Path::to('public').DIRECTORY_SEPARATOR.'fichas'.DIRECTORY_SEPARATOR;
