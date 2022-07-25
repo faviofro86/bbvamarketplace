@@ -94,6 +94,11 @@ Route::get('login','Usuario@login_view');
 Route::post('login','Usuario@login');
 Route::get('logout',function(){Auth::logout();Redirect::to('/'); });
 
+/******MASIVO******/
+Route::get('admin/masivo_form','Masivo@registrar_form');
+Route::get('admin/masivo_listar','Masivo@listar');
+Route::post('admin/masivo_registrar','Masivo@carga_masiva');
+
 
 
 
