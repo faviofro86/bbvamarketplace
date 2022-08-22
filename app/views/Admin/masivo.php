@@ -15,16 +15,6 @@
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-        <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link" href="<?=URL::to('logout')?>">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
   
   <!-- Main Sidebar Container -->
   <?php	include 'sidebar.php'; ?>

@@ -28,36 +28,6 @@
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-        <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
-    </ul>
-  </nav>
   
   <!-- Main Sidebar Container -->
   <?php	include 'sidebar.php'; ?>
@@ -87,6 +57,7 @@
 				<tr>
 				  <th style="width: 10px">#</th>
 				  <th>Marcas</th>
+                  <th>Imágen</th>
 				  <th>Acciones</th>
 				  <th style="width: 40px">Estado</th>
 				</tr>
@@ -96,12 +67,14 @@
 				<tr>
 				  <td><?php echo $x=$x+1; ?></td>
 				  <td><?php echo $marcas->marca; ?></td>
+                  <td><img src="<?=URL::to('public/img/marcas/'.$marcas->imagen);?>" width="100"></td>
 				  <td>
 				  <?php if($marcas->estado=="1"){
 					echo "<a href='".URL::to('admin/disablemarca?id='.$marcas->id)."' class='btn btn-danger'>Desactivar</a>";
 					}else{
 					echo "<a href='".URL::to('admin/enablemarca?id='.$marcas->id)."' class='btn btn-primary'>Activar</a>";}
-					?>
+                      ?>
+                      <a href="<?=URL::to('admin/marca_edit?id='.$marcas->id); ?>" class='btn btn-success'>Editar</a>
 				  </td>
 				  <td><?php if($marcas->estado=="1"){echo "Activada";}else{echo "Desactivada";} ?></td>
 				</tr>

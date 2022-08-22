@@ -29,36 +29,6 @@
 
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-        <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
-    </ul>
-  </nav>
   
   <!-- Main Sidebar Container -->
   <?php	include 'sidebar.php'; ?>
@@ -128,8 +98,8 @@
 					<input type="text" class="form-control" name="precio">
                 </div>
                 <div class="form-group">
-					<label class="form-label">Cuota</label>
-					<input type="text" class="form-control" name="cuota">
+					<label class="form-label">Tracción</label>
+					<input type="text" class="form-control" name="traccion">
                 </div>
               </div>
               <div class="col-md-6">
@@ -158,8 +128,8 @@
 					<input type="text" class="form-control" name="transmision">
                 </div>
                 <div class="form-group">
-					<label class="form-label">Tracción</label>
-					<input type="text" class="form-control" name="traccion">
+					<label class="form-label">Resumen</label>
+					<input type="text" class="form-control" name="resumen">
                 </div>
               </div>
               <div class="col-md-6">
@@ -168,8 +138,8 @@
 					<input type="text" class="form-control" name="descripcion">
                 </div>
                 <div class="form-group">
-					<label class="form-label">Resumen</label>
-					<input type="text" class="form-control" name="resumen">
+					<label class="form-label">Estado</label>
+					<input type="text" class="form-control" name="estado">
                 </div>
               </div>
               <div class="col-md-6">
@@ -183,10 +153,7 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group">
-					<label class="form-label">Estado</label>
-					<input type="text" class="form-control" name="estado">
-                </div>
+                
                 <div class="form-group">
 					<label class="form-label">Slug</label>
 					<input type="text" class="form-control" name="slug" id="slug" readonly>

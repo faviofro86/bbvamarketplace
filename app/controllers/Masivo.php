@@ -10,7 +10,7 @@ class Masivo {
     $usuarios = self::map_arr($usuarios);
 
     $masivo = DB::getinstance()->table('masivo')->get();
-    View::render('admin\listamasivo', [ 'masivo'=>$masivo, 'marcas' => $marcas,'usuarios'=>$usuarios]);
+    View::render('Admin'.DIRECTORY_SEPARATOR.'listamasivo', [ 'masivo'=>$masivo, 'marcas' => $marcas,'usuarios'=>$usuarios]);
 
   }
 
@@ -32,7 +32,7 @@ class Masivo {
       $marca_db = DB::getInstance()->query('SELECT * FROM marca WHERE estado = 1')->results();
     }
     //$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
-    View::render('admin\masivo', [ 'marcas'=>$marca_db]);
+    View::render('Admin'.DIRECTORY_SEPARATOR.'masivo', [ 'marcas'=>$marca_db]);
 
   }
 

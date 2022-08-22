@@ -1,3 +1,11 @@
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav ml-auto">
+        <a class="nav-link" href="<?=URL::to('logout');?>">
+          <img src="<?=URL::to('public/img/power.png')?>" height="25">
+        </a>
+    </ul>
+  </nav>
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?=URL::to('/')?>" class="brand-link">
@@ -66,6 +74,30 @@
             <a href="<?=URL::to('admin/banners')?>" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Listar Banners</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=URL::to('admin/usuario_crear')?>" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Crear Usuario</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=URL::to('admin/usuario_listar')?>" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Listar Usuarios</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=URL::to('admin/masivo_form')?>" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Subida Masiva</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=URL::to('admin/masivo_listar')?>" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Listar Masivos</p>
             </a>
           </li>
         </ul>

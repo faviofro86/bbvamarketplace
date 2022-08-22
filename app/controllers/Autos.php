@@ -259,10 +259,10 @@ class Autos {
 	}
 	
 	public function modelo_form(){
-		Auth::validate([1]);
+		Auth::validate([1,2]);
 		$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
 		$condicion = DB::getinstance()->table('condicion')->get();
-		View::render('admin/modelonew', ['marcas'=>$marcas]);
+		View::render('Admin/modelonew', ['marcas'=>$marcas]);
 	}
 	
 	public function vehiculos(){
@@ -271,13 +271,13 @@ class Autos {
 	}
 	
 	public function listar_marcas(){
-		Auth::validate([1]);
+		Auth::validate([1,2]);
 		$marcas = DB::getinstance()->table('marca')->get();
-		View::render('admin/listarmarcas', ['marcas'=>$marcas]);
+		View::render('Admin/listarmarcas', ['marcas'=>$marcas]);
 	}
 	
 	public function modelo_registrar(){
-		Auth::validate([1]);
+		Auth::validate([1,2]);
 		if(Input::exists()){
 			$validate = new Validate();
 			$validation = $validate->check(Input::all(),[
@@ -323,29 +323,129 @@ class Autos {
 		$marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
 		View::render('marcas', ['marcas'=>$marcas,'banners'=>$banners,'adds' => $adds]);
 	}
+    
+    public function editar_marca(){
+		Auth::validate([1]);
+        
+        $marcas = DB::getinstance()->query("SELECT * FROM marca WHERE id =".Input::get('id'))->results();
+		View::render('Admin/marcaedit', ['marcas'=>$marcas]);
+	}
+    
+    public function marca_editar(){
+		if(Input::exists()){
+			$validate = new Validate();
+			$validation = $validate->check(Input::all(),[
+				'marca' => ['required' =>true],
+				'logo' => ['required' =>true],
+				'id' => ['required' =>true]
+			]);  
+			if($validation->passed()){
+				
+				$dir = Path::to('public').DIRECTORY_SEPARATOR.'img'.DIRECTORY_SEPARATOR.'marcas'.DIRECTORY_SEPARATOR;
+
+				$logo = $_FILES["logo"];
+				$target = $dir . basename($logo["name"]);
+				$uploadOk = 1;
+				$imageFileType = strtolower(pathinfo($target,PATHINFO_EXTENSION));
+
+				if (file_exists($target)) {
+					$uploadOk = 0;
+				}
+
+				if ($logo["size"] > 500000) {
+					$uploadOk = 0;
+				}
+
+				if($imageFileType != "jpg") {
+					$uploadOk = 0;
+				}
+
+				if ($uploadOk == 0) {
+					echo "El archivo no se subio.";
+				} else {
+					if (move_uploaded_file($logo["tmp_name"], $target)) {
+						//echo "El archivo ". htmlspecialchars( basename( $_FILES["imgingr"]["name"])). " ha sido subido.";
+					} else {
+						echo "Hubo un error subiendo el archivo.";
+					}
+				}
+
+				$a = DB::getinstance()->query("UPDATE marca SET marca='".Input::get('marca')."', imagen='".$_FILES['banner']["name"]."' WHERE id=".Input::get('id'))->results();
+												
+			}else{
+				$p = $validation->errors();
+				$p = json_encode($a);
+				echo $p;
+			}
+			
+		}
+	}
 	
 	public function listar_modelos(){
-		Auth::validate([1]);
+		Auth::validate([1,2]);
 		
 		$modelo = DB::getinstance()->query("SELECT m.*, ma.marca FROM modelo m INNER JOIN marca ma ON ma.id = m.marca_id")->results();
 		//"SELECT m.*, ma.marca FROM modelo m INNER JOIN marca ma ON ma.id = m.marca_id"
 		View::render('Admin/listarmodelos', ['modelo'=>$modelo]);
 	}
+    
+    public function editar_modelo(){
+		Auth::validate([1,2]);
+        
+        $marcas = DB::getinstance()->table('marca')->where('estado',1)->get();
+		$modelo = DB::getinstance()->query("SELECT m.*, ma.marca FROM modelo m INNER JOIN marca ma ON ma.id = m.marca_id WHERE m.id =".Input::get('id'))->results();
+		View::render('Admin/modeloedit', ['modelo'=>$modelo,'marcas'=>$marcas]);
+	}
+    
+    public function modelo_editar(){
+		Auth::validate([1,2]);
+		if(Input::exists()){
+			$validate = new Validate();
+			$validation = $validate->check(Input::all(),[
+				'marca' => ['required' =>true],
+                'id' => ['required' =>true],
+                'modelo' => ['required' =>true],
+			]);  
+			if($validation->passed()){
+								
+				//$a = DB::getinstance()->query("UPDATE modelo SET marca_id =".Input::get('marca').", modelo='".Input::get('modelo')."', estado=".Input::get('estado')." WHERE id=".Input::get('id'))->results();
+                
+                $datos_de_update = array(
+					"marca_id" => Input::get('marca'),
+					"modelo" => Input::get('modelo')
+				);
+
+				$id = Input::get('id');
+
+				$respuesta = DB::getinstance()->table('modelo')->where('id',$id)->update($datos_de_update);
+				echo json_encode(["status"=> 200,"message"=>'Actualización completada']);
+				
+			}else{
+				$p = $validation->errors();
+				$p = json_encode($a);
+				echo $p;
+			}
+			
+		}
+		Redirect::to('admin/modelos');
+	}
 	
 	public function disablemodelo(){
-		Auth::validate([1]);
+		Auth::validate([1,2]);
 		$a=DB::getinstance()->query("UPDATE modelo SET estado = 0 WHERE id =".Input::get('id'))->results();
 
 		$modelo = DB::getinstance()->table('modelo')->get();
-		View::render('Admin/listarmodelos', ['modelo'=>$modelo]);
+        Redirect::to('admin/modelos', ['modelo'=>$modelo]);
+		//View::render('Admin/listarmodelos', ['modelo'=>$modelo]);
 	}
 	
 	public function enablemodelo(){
-		Auth::validate([1]);
+		Auth::validate([1,2]);
 		$a=DB::getinstance()->query("UPDATE modelo SET estado = 1 WHERE id =".Input::get('id'))->results();
 
 		$modelo = DB::getinstance()->table('modelo')->get();
-		View::render('Admin/listarmodelos', ['modelo'=>$modelo]);
+        Redirect::to('admin/modelos', ['modelo'=>$modelo]);
+		//View::render('Admin/listarmodelos', ['modelo'=>$modelo]);
 	}
 	
 	public function listar_categorias(){

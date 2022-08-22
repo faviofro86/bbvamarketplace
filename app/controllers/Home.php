@@ -80,4 +80,7 @@ class Home {
 			View::render('home/index');
 		}		
     }
+    public function login(){
+		View::render('admin_iniciar');
+	}
 }
